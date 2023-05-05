@@ -1,0 +1,143 @@
+<div class='wrapper'>
+
+    <main class="container">
+
+        <h1>Cadastro de Produtos</h1>
+ 
+        <form class="form" [formGroup]="formProduto" (ngSubmit)="onSubmit()">
+
+            <label>
+                <input class="input" type="text" name="nome" formControlName="nome">
+                <span>Nome do produto</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="descrição" required formControlName="descrição">
+                <span>Descriçaõ do produto</span>
+            </label>
+
+            <label>
+                <input class="input" name="valor" type="number" required formControlName="valor">
+                <span>Valor do produto</span>
+            </label>
+
+            <fieldset class="box-radio">
+
+                <legend>Produto disponivel</legend>
+
+                <input type="radio" class="select" name="disponivel" id="sim" valor="sim" formControlName="disponivel">
+                <label for="sim">Sim</label>
+
+                <input type="radio" class="select" name="disponivel" id="nao" valor="não">
+                <label for="nao">Não</label>
+
+            </fieldset>
+
+
+            <button href="#" class="fancy" type="submit">
+                <span class="top-key"></span>
+                <span class="text">Cadastrar</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </form>
+
+    </main>
+
+
+    <section class="listagem-container">
+
+        <div class="tabela-container">
+
+            <table>
+                <thead>
+                    <tr class="table-title" >
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Disponivel</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-corp" *ngFor="let produtos of produtos">
+                        <td>{{produtos.nome}}</td>
+                        <td>{{produtos.valor}}</td>
+                        <td>{{produtos.disponivel}}</td>
+                        <td class="btn-td">
+                            <div>
+                                <button class="button" type="button">
+                                    <span class="button__text">Delete</span>
+                                    <span class="button__icon"><svg class="svg" height="512" viewBox="0 0 512 512"
+                                            width="512" xmlns="http://www.w3.org/2000/svg">
+                                            <title></title>
+                                            <path
+                                                d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px">
+                                            </path>
+                                            <line
+                                                style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+                                                x1="80" x2="432" y1="112" y2="112"></line>
+                                            <path
+                                                d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px">
+                                            </path>
+                                            <line
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                                x1="256" x2="256" y1="176" y2="400"></line>
+                                            <line
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                                x1="184" x2="192" y1="176" y2="400"></line>
+                                            <line
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                                x1="328" x2="320" y1="176" y2="400"></line>
+                                        </svg></span>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="button-edit" type="button">
+                                    <span class="button__text">Edit</span>
+                                    <span class="button__icon"><svg class="svg" height="512" viewBox="0 0 512 512"
+                                            width="512" xmlns="http://www.w3.org/2000/svg">
+                                            <title></title>
+                                            <path
+                                                d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px">
+                                            </path>
+                                            <line
+                                                style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"
+                                                x1="80" x2="432" y1="112" y2="112"></line>
+                                            <path
+                                                d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px">
+                                            </path>
+                                            <line
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                                x1="256" x2="256" y1="176" y2="400"></line>
+                                            <line
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                                x1="184" x2="192" y1="176" y2="400"></line>
+                                            <line
+                                                style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
+                                                x1="328" x2="320" y1="176" y2="400"></line>
+                                        </svg></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="btn-cadastro">
+
+            <button href="#" class="fancy">
+                <span class="top-key"></span>
+                <span class="text">+ produto</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </div>
+    </section>
+
+</div>
