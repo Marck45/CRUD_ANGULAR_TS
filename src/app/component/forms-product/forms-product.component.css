@@ -258,6 +258,9 @@ h1{
     text-align: center;
     color: #666666;
     font-size: 0.9em;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
   }
 
   /* btn da table */
@@ -266,130 +269,8 @@ h1{
     flex-direction: column;
   }
 
-
-
-/* butão de deletar */
-  .button {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    cursor: pointer;  
-    display: flex;
-    align-items: center;
-    border: 1px solid #cc0000;
-    background-color: #e50000;
-    overflow: hidden;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  
-  .button, .button__icon, .button__text {
-    transition: all 0.3s;
-  }
-  
-  .button .button__text {
-    transform: translateX(35px);
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .button .button__icon {
-    position: absolute;
-    transform: translateX(109px);
-    height: 100%;
-    width: 20px;
-    background-color: #cc0000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .button .svg {
-    width: 20px;
-  }
-  
-  .button:hover {
-    background: #cc0000;
-  }
-  
-  .button:hover .button__text {
-    color: transparent;
-  }
-  
-  .button:hover .button__icon {
-    width: 148px;
-    transform: translateX(0);
-  }
-  
-  .button:active .button__icon {
-    background-color: #b20000;
-  }
-  
-  .button:active {
-    border: 1px solid #b20000;
+  .btn-cadastro{
+    margin-top: 50px;
   }
 
-  /* butão de editar */
-
-  .button-edit {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    cursor: pointer;  
-    display: flex;
-    align-items: center;
-    border: 1px solid #012371;
-    background-color: #0F4DDB;
-    overflow: hidden;
-    text-align: center;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  
-  .button-edit, .button__icon, .button__text {
-    transition: all 0.3s;
-  }
-  
-  .button-edit .button__text {
-    transform: translateX(35px);
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .button-edit .button__icon {
-    position: absolute;
-    transform: translateX(109px);
-    height: 100%;
-    width: 20px;
-    background-color: #012371;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .button-edit .svg {
-    width: 20px;
-  }
-  
-  .button-edit:hover {
-    background: #012371;
-  }
-  
-  .button-edit:hover .button__text {
-    color: transparent;
-  }
-  
-  .button-edit:hover .button__icon {
-    width: 148px;
-    transform: translateX(0);
-  }
-  
-  .button-edit:active .button__icon {
-    background-color: #012371;
-  }
-  
-  .button-edit:active {
-    border: 1px solid #012371;
-  }
 

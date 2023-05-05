@@ -13,6 +13,8 @@ import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 })
 export class FormsProductComponent implements OnInit {
 
+  listagem = document.querySelector('#listagem');
+
   produto = {} as Produtos;
   produtos: Produtos[] = [];  
   
@@ -44,10 +46,8 @@ export class FormsProductComponent implements OnInit {
 
   async onSubmit() {
     // aqui você pode implementar a logica para fazer seu formulário salvar
-    console.log(this.formProduto.value);
-  
-    // chamando a função createForm para limpar os campos na tela
-
+    console.log('form',this.formProduto.value);
+    
     // this.formProduto.reset(new ProdutosClass());
 
     this.cadastrarProduto(this.formProduto.value);
@@ -70,18 +70,20 @@ export class FormsProductComponent implements OnInit {
 
   // cadastrar um novo produto
   async cadastrarProduto(form: any) {
+
     const produto = {
       nome: form.nome,
       valor: form.valor,
       descricao: form.descricao,
       disponivel: form.disponivel,
+
     };
-    
+  
     (await this.produtosAPiService.saveProduto(produto)).subscribe(
-      (response: any) => {
+      (response: Produtos[]) => {
         console.log('Produto cadastrado', response);
         this.getProducts();
-        this.cleanForm(form);
+        // this.cleanForm(form);
       },
       (error: any) => {
         console.error('Erro ao cadastrar produto', error);

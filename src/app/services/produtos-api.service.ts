@@ -31,7 +31,8 @@ export class ProdutosAPiService {
 
   // cadastrar novo produto
   async saveProduto(produto:Produtos){
-    return this.httpClient.post<Produtos[]>(this.url, JSON.stringify(produto))
+    console.warn(produto)
+    return this.httpClient.post<Produtos[]>(this.url, produto)
     .pipe(
       retry(2)
       ,catchError(this.handleError));
