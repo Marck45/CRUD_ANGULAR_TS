@@ -6,6 +6,9 @@
     padding: 5rem;
 }
 
+.hide{
+  display: none;
+}
 
 .container .listagem-container{
     display: flex;
@@ -16,12 +19,12 @@
 }
 
 h1{
-    border-radius: 25px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #666666,
-             -50px -50px 100px #ffffff;
+  border-radius: 10px;
+  background: linear-gradient(315deg, #5c5c5c, #6d6d6d);
+  box-shadow:  -15px -15px 30px #555555,
+               15px 15px 30px #777777;
 
-    color: rgba(88, 87, 87, 0.822);
+    color: #e6e6e6;
     font-size: 34px;
     padding: 15px;
     font-weight: bold;
@@ -37,7 +40,7 @@ h1{
     flex-direction: column;
     align-items: center;
     min-width: 45%;
-    min-height: 300px;
+    max-height: 300px;
     padding: 4rem;
     border-radius: 25px;
     position: relative;
@@ -117,10 +120,6 @@ h1{
     margin-left:50px;
   }
 
-
-
-
-  
   /* botão subimit */
   .fancy {
     background-color: transparent;
@@ -232,8 +231,8 @@ h1{
   .listagem-container{
     display: flex;
     flex-direction: column;
-    min-width: 45%;
-    min-height: 400px;
+    max-width: 50%;
+    height: 500px;
     padding: 50px;
     position: relative;
     border-radius: 25px;
@@ -243,34 +242,82 @@ h1{
   }
 
   .tabela-container{
-   padding: 5rem;
+   padding: 1rem;
    display: flex;
    flex-direction: column;
+   height: 400px;
+  }
+
+  table{
+    height: 400px;
+    overflow: auto;
   }
 
   .table-title{
     background-color: #818181;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 15px;
     padding: 1rem;
+  }
+
+  .table-title th{
+    border: 1px solid rgba(7, 7, 7, 0.397);
+    border-radius: 15px;
+    padding: 0.5rem;
   }
 
   .table-corp td{
-    border-bottom: 1px solid #666666;
+    border: 1px solid #666666;
     text-align: center;
     color: #666666;
     font-size: 0.9em;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
+    padding: 0.5rem;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 15px;
+    max-height: 50px;
   }
 
   /* btn da table */
-  .btn-td{
-    display: flex;
-    flex-direction: column;
-  }
 
   .btn-cadastro{
     margin-top: 50px;
+    padding: 0;
   }
 
+
+  /* btn delete */
+
+  .btn{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .edit{
+    border-radius: 10px;
+    background: #236014;
+    box-shadow: inset -5px -5px 0px #17400d,
+            inset 5px 5px 0px #2f801b;
+    color: #e6e6e6;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  .delete{
+    border-radius: 10px;
+    background: #A70702;
+    box-shadow: inset -5px -5px 0px #700501,
+            inset 5px 5px 0px #de0903;
+    color: #e6e6e6;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  .edit:hover, .delete:hover{
+    background-color: #666666;
+    box-shadow: none;
+  }
 

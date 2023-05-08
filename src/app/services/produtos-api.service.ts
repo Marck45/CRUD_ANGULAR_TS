@@ -40,10 +40,19 @@ export class ProdutosAPiService {
 
   // deletar um produto cadastrardo 
   async deleteProduto(produto:Produtos){
-    return this.httpClient.delete<Produtos>(this.url + '/' + produto, this.httpOptions)
+    return this.httpClient.delete<Produtos>(this.url + '/' + produto._id, this.httpOptions)
     .pipe(
       retry(1)
         ,catchError(this.handleError));
+  }
+
+  // atualizar um produto
+  async UpdateProduto(produto:Produtos){
+    return this.httpClient.patch<Produtos>(this.url + '/' + produto._id, this.httpOptions)
+    .pipe(
+      retry(1)
+      ,catchError(this.handleError));
+
   }
 
    // Manipulação de erros

@@ -3,11 +3,11 @@
     <main class="container">
 
         <h1>Cadastro de Produtos</h1>
- 
-        <form class="form" [formGroup]="formProduto" (ngSubmit)="onSubmit()">
+        <!-- formulario de cadastro -->
+        <form class="form" id="formCadastro" [formGroup]="formProduto" (ngSubmit)="onSubmit()">
 
             <label>
-                <input class="input" type="text" name="nome" formControlName="nome" required="">
+                <input class="input" type="text" name="nome" formControlName="nome" required="" >
                 <span>Nome do produto</span>
             </label>
 
@@ -33,9 +33,46 @@
 
             </fieldset>
 
-            <button href="#" class="fancy" type="submit">
+            <button href="#" class="fancy" type="submit" [disabled]="!formProduto.valid">
                 <span class="top-key"></span>
                 <span class="text">Cadastrar</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </form>
+
+        <!-- formulario de edição -->
+        <form class="hide" id="formId" [formGroup]="formProduto" (ngSubmit)="atualizarProduto(produto)">
+            <label>
+                <input class="input" type="text" id="nameEdit" name="nome" formControlName="nome" required="" value="">
+                <span>Nome do produto</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" id="descricaoEdit" name="descricao" required formControlName="descricao" required="">
+                <span>Descrição do produto</span>
+            </label>
+
+            <label>
+                <input class="input" name="valor" id="valorEdit" type="number" required formControlName="valor" required="">
+                <span>Valor do produto</span>
+            </label>
+
+            <fieldset class="box-radio">
+
+                <legend>Produto disponivel</legend>
+
+                <input type="radio" class="select" name="disponivel" id="disponivel" value=true formControlName="disponivel" checked required="">
+                <label for="disponivel">Sim</label>
+
+                <input type="radio" class="select" name="disponivel" id="nao" value=false formControlName="disponivel" required="">
+                <label for="nao">Não</label>
+
+            </fieldset>
+
+            <button href="#" class="fancy" type="submit" [disabled]="!formProduto.valid">
+                <span class="top-key"></span>
+                <span class="text">Salvar</span>
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
@@ -48,21 +85,26 @@
 
         <div class="tabela-container">
 
-            <table>
+            <table id="corp-list">
                 <thead>
                     <tr class="table-title" >
                         <th>Nome</th>
                         <th>Valor</th>
                         <th>Disponivel</th>
                         <th>Descrição</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="table-corp" *ngFor="let produtos of produtos">
                         <td>{{produtos.nome}}</td>
-                        <td>{{produtos.valor}}</td>
+                        <td>{{produtos.valor + ' ' +'R$'}}</td>
                         <td>{{produtos.disponivel}}</td>
                         <td>{{produtos.descricao}}</td>
+                        <td>
+                            <!-- <button class="btn , edit" (click)="onEdit(produtos)">Editar</button> -->
+                            <button class="btn delete" (click)="deleteProduto(produtos)">Deletar</button>
+                        </td>
                     </tr>
                 </tbody>
 
@@ -71,7 +113,7 @@
         </div>
         <div class="btn-cadastro">
 
-            <button class="fancy"(click)="onSubmit()">
+            <button class="fancy"(click)="onSubmit()" [disabled]="!formProduto.valid">
                 <span class="top-key"></span>
                 <span class="text">+ produto</span>
                 <span class="bottom-key-1"></span>
