@@ -18,6 +18,7 @@ export class FormsProductComponent implements OnInit {
   produtos: Produtos[] = [];  
   
   formProduto!: FormGroup;
+  FormProdutoEdit!: FormGroup;
 
   constructor(private produtosAPiService:ProdutosAPiService) {}
 
@@ -28,12 +29,12 @@ export class FormsProductComponent implements OnInit {
 
     this.createForm();
 
-  }
- 
-  createForm() {
 
+  }
+  // criação de produto form
+  createForm() {
     this.formProduto = new FormGroup({
-  
+      _id: new FormControl(),
       nome: new FormControl(),
       valor: new FormControl(),
       descricao: new FormControl(),
@@ -43,22 +44,21 @@ export class FormsProductComponent implements OnInit {
 
   }
 
+  // criação de form de edição
+
   // cadastro de produto
   async onSubmit() {
-    // aqui você pode implementar a logica para fazer seu formulário salvar
-    console.log('form',this.formProduto.value);
-    
     // this.formProduto.reset(new ProdutosClass());
-
-
     this.cadastrarProduto(this.formProduto.value);
    
   }
-
-  // abetura do formulario de edição
-
-  // envio o formulario editado
-  onEdit(produto: Produtos){
+  // esconder formularios
+  esconderForm(){
+    
+  }
+ 
+  // Abertura do formulario de edção
+  async onEdit(formProduto:any){
     // Escondo o formulario de cadastro e exibe o de edição
     const formViwer = document.querySelector('#formId');
     const formHide = document.querySelector('#formCadastro');
@@ -66,6 +66,7 @@ export class FormsProductComponent implements OnInit {
     let descricaoForm = document.getElementById('descricaoEdit') as HTMLInputElement;
     let valorForm = document.getElementById('valorEdit') as HTMLInputElement;
     let disponivelForm = document.getElementById('disponivel') as HTMLInputElement;
+    let idForm = document.getElementById('idEdit') as HTMLInputElement;
 
     // mudar dados formulario
     formViwer?.classList.remove('hide');
@@ -74,15 +75,15 @@ export class FormsProductComponent implements OnInit {
     formHide?.classList.add('hide');
     formHide?.classList.remove('form');
 
-    console.log(produto);
 
     // atribuir valores ao forms
-    nameForm.value = produto.nome;
-    descricaoForm.value = produto.descricao;
-    // valorForm.value = produto.valor;
-    // disponivelForm.value = produto.disponivel;
-
+    nameForm.value = formProduto.nome;
+    descricaoForm.value = formProduto.descricao;
+    valorForm.value = formProduto.valor.toString();
+    disponivelForm.value = formProduto.disponivel.toString();
+    idForm.value = formProduto._id;
     console.log('formulario de edição acionado');
+    
   }
 
   // carregar todos os produtos 
@@ -92,7 +93,6 @@ export class FormsProductComponent implements OnInit {
 
       this.produtos = produtos;
 
-      console.log(produtos);
       console.log('produtos carregados com sucesso')
 
     });
@@ -149,25 +149,28 @@ export class FormsProductComponent implements OnInit {
   }
 
   // upDateProduto
-  async atualizarProduto(form: any){
+  async atualizarProduto(formProduto:any){
+
+    console.log(formProduto , 'estou aqui');
 
     const produto = {
-      _id: form._id,
-      nome: form.nome,
-      valor: form.valor,
-      descricao: form.descricao,
-      disponivel: form.disponivel,
-
+      _id: formProduto._id,
+      nome: formProduto.nome,
+      valor: formProduto.valor,
+      descricao: formProduto.descricao,
+      disponivel: formProduto.disponivel,
     };
-
-    (await (this.produtosAPiService.UpdateProduto(produto))).subscribe(
-      (response:Produtos) => {
-        console.log('produto atualizado', response, produto);
+    
+    (await this.produtosAPiService.UpdateProduto(produto)).subscribe(
+      (response: Produtos[]) => {
+        console.log('produto atualizado', response);
+        this.getProducts();
       },
       (error: any) => {
-        console.error('Erro ao cadastrar produto', error);
+        console.error('Erro ao atualizar produto', error);
       }
     )
+    this.cleanForm();
 
   }
 

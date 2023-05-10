@@ -47,12 +47,11 @@ export class ProdutosAPiService {
   }
 
   // atualizar um produto
-  async UpdateProduto(produto:Produtos){
-    return this.httpClient.patch<Produtos>(this.url + '/' + produto._id, this.httpOptions)
+  async UpdateProduto(produto: Produtos){
+    return this.httpClient.put<Produtos[]>(this.url + '/' + produto._id, produto)
     .pipe(
       retry(1)
       ,catchError(this.handleError));
-
   }
 
    // Manipulação de erros

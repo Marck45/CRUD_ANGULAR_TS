@@ -5,9 +5,12 @@
         <h1>Cadastro de Produtos</h1>
         <!-- formulario de cadastro -->
         <form class="form" id="formCadastro" [formGroup]="formProduto" (ngSubmit)="onSubmit()">
-
             <label>
-                <input class="input" type="text" name="nome" formControlName="nome" required="" >
+                <input class="input" type="text" name="id" formControlName="_id" required >
+                <span>Cod do Produto</span>
+            </label>
+            <label>
+                <input class="input" type="text" name="nome" formControlName="nome" value="" required="">
                 <span>Nome do produto</span>
             </label>
 
@@ -42,7 +45,11 @@
         </form>
 
         <!-- formulario de edição -->
-        <form class="hide" id="formId" [formGroup]="formProduto" (ngSubmit)="atualizarProduto(produto)">
+        <form class="hide" id="formId" [formGroup]="formProduto" (ngSubmit)="atualizarProduto(this.formProduto.value)">
+            <label>
+                <input class="input" type="text" id="idEdit" name="id" formControlName="_id" required="" value="">
+                <span>Cod Cadastro</span>
+            </label>
             <label>
                 <input class="input" type="text" id="nameEdit" name="nome" formControlName="nome" required="" value="">
                 <span>Nome do produto</span>
@@ -70,7 +77,7 @@
 
             </fieldset>
 
-            <button href="#" class="fancy" type="submit" [disabled]="!formProduto.valid">
+            <button href="#" class="fancy" type="submit">
                 <span class="top-key"></span>
                 <span class="text">Salvar</span>
                 <span class="bottom-key-1"></span>
@@ -98,11 +105,11 @@
                 <tbody>
                     <tr class="table-corp" *ngFor="let produtos of produtos">
                         <td>{{produtos.nome}}</td>
-                        <td>{{produtos.valor + ' ' +'R$'}}</td>
+                        <td>{{produtos.valor + ',00 ' +'R$'}}</td>
                         <td>{{produtos.disponivel}}</td>
                         <td>{{produtos.descricao}}</td>
                         <td>
-                            <!-- <button class="btn , edit" (click)="onEdit(produtos)">Editar</button> -->
+                            <button class="btn , edit" (click)="onEdit(produtos)">Editar</button>
                             <button class="btn delete" (click)="deleteProduto(produtos)">Deletar</button>
                         </td>
                     </tr>
@@ -113,7 +120,7 @@
         </div>
         <div class="btn-cadastro">
 
-            <button class="fancy"(click)="onSubmit()" [disabled]="!formProduto.valid">
+            <button class="fancy" [disabled]="!formProduto.valid">
                 <span class="top-key"></span>
                 <span class="text">+ produto</span>
                 <span class="bottom-key-1"></span>
