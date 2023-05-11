@@ -8,7 +8,7 @@ import { Produtos } from '../models/produtos';
 })
 export class ProdutosAPiService {
 
-  url = 'http://localhost:3000/produto'; 
+  url = 'https://api-crud-angular-marck.onrender.com/produto'; 
 
 
   // injetando o HttpClient
