@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeappComponent } from './pages/homeapp/homeapp.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { SuporteComponent } from './pages/suporte/suporte.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FormsProductComponent } from './component/forms-product/forms-product.component'; 
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent
   },
   {
-    path: 'cadastros', component: CadastroComponent
+    path: 'cadastros', component: FormsProductComponent
   },
   {
     path: 'suporte', component: SuporteComponent

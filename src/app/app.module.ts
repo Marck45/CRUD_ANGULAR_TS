@@ -10,7 +10,6 @@ import { HomeappComponent } from './pages/homeapp/homeapp.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SuporteComponent } from './pages/suporte/suporte.component';
 import { LoginComponent } from './pages/login/login.component';
-import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { MenuSideComponent } from './component/menu-side/menu-side.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,7 +21,6 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     SuporteComponent,
     LoginComponent,
-    CadastroComponent,
     MenuSideComponent
   ],
   imports: [

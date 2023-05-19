@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
+    max-width: 100%;
+    padding: 5rem 0rem 0rem 0rem;
 }
 
 .hide{
@@ -12,10 +13,8 @@
 
 .container .listagem-container{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 250px;
+    justify-content: flex-end;
 }
 
 h1{
@@ -28,22 +27,19 @@ h1{
     font-size: 34px;
     padding: 15px;
     font-weight: bold;
-    margin-bottom: 50px;
     margin-right: 50px;
     text-align: center;
 }
 
 
 .form {
-    margin-right: 50px;
+    margin-right: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 45%;
-    max-height: 350px;
-    padding: 4rem;
+    min-width: 35%;
+    padding: 2rem;
     border-radius: 25px;
-    position: relative;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  50px 50px 100px #666666,
              -50px -50px 100px #ffffff;
@@ -231,9 +227,8 @@ h1{
   .listagem-container{
     display: flex;
     flex-direction: column;
-    max-width: 50%;
-    height: 500px;
-    padding: 50px;
+    min-width: 65%;
+    padding: 1rem;
     position: relative;
     border-radius: 25px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
@@ -242,59 +237,51 @@ h1{
   }
 
   .tabela-container{
-   padding: 1rem;
+   padding: 0.5rem;
    display: flex;
    flex-direction: column;
-   height: 200px;
   }
 
   table{
-    height: 400px;
     overflow: auto;
-  }
-
-  .table-title{
-    background-color: #818181;
-    outline: 0;
-    border-radius: 15px;
-    padding: 1rem;
   }
 
   .table-title th{
     border-radius: 15px;
-    padding: 0.7rem;
     background: #9733be;
     box-shadow: inset -20px 20px 60px #802ba2,
-            inset 20px -20px 60px #ae3bdb;
-            color: #fff;
+                inset 20px -20px 60px #ae3bdb;
+  
+      color: #e6e6e6;
+      font-size: 18px;
+      padding: 10px;
+      font-weight: bold;
+      margin-bottom: 50px;
+      margin-right: 50px;
+      text-align: center;
   }
 
   .table-corp td{
-    border: 1px solid #666666;
     text-align: center;
     color: #666666;
     font-size: 0.9em;
     padding: 0.5rem;
-    outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 15px;
-    height: 40px;
   }
 
   /* btn da table */
 
   .btn-cadastro{
-    margin-top: 250px;
     padding: 0;
   }
-
 
   /* btn delete */
 
   .btn{
     padding: 0.5rem;
     border-radius: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
   }
 
   .edit{

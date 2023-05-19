@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomeappComponent {
 
+  mainImg: string = '/assets/img/Sistema cadastro.PNG'
+
 }
