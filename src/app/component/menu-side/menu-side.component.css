@@ -1,0 +1,50 @@
+.side-menu-main{
+    max-width: 25%;
+    margin: 0;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  50px 50px 100px #666666,
+             -50px -50px 100px #ffffff;
+    padding: 1rem 6rem 1rem 6rem;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+.social a img{
+    height: 60px;
+}
+
+.social a, .option-menu a{
+    text-decoration: none;
+    list-style: none;
+    color: #666666;
+}
+
+
+.option-menu{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  50px 50px 100px #666666,
+             -50px -50px 100px #ffffff;
+    padding: 1rem 6rem 1rem 6rem;
+    border-radius: 25px;
+    
+}
+
+.option-menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.option-menu ul li{
+    margin-top: 2rem;
+}
