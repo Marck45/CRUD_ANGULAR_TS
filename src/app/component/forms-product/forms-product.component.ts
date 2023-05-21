@@ -52,10 +52,6 @@ export class FormsProductComponent implements OnInit {
     this.cadastrarProduto(this.formProduto.value);
    
   }
-  // esconder formularios
-  esconderForm(){
-    
-  }
  
   // Abertura do formulario de edção
   async onEdit(formProduto:any){

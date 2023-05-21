@@ -95,6 +95,7 @@
             <table id="corp-list">
                 <thead>
                     <tr class="table-title" >
+                        <th>Codigo</th>
                         <th>Nome</th>
                         <th>Valor</th>
                         <th>Disponivel</th>
@@ -104,6 +105,7 @@
                 </thead>
                 <tbody>
                     <tr class="table-corp" *ngFor="let produtos of produtos">
+                        <td>{{produtos._id}}</td>
                         <td>{{produtos.nome}}</td>
                         <td>{{produtos.valor + ',00 ' +'R$'}}</td>
                         <td>{{produtos.disponivel}}</td>

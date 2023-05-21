@@ -1,1 +1,52 @@
-<p>login works!</p>
+<main class="wrapper">
+  <div class="img-login">
+    <img [src]="imgLogin" alt="imagem de login" />
+  </div>
+  <div class="form-login">
+    <div class="title-form">
+      <h2>Login</h2>
+    </div>
+    <div class="form-login">
+      <form action="submit">
+        <label>
+          <input
+            class="input"
+            type="text"
+            name="nome"
+            formControlName="nome"
+            required
+          />
+          <span>Nome</span>
+        </label>
+        <label>
+          <input
+            class="input"
+            type="text"
+            name="password"
+            formControlName="password"
+            required
+          />
+          <span>Senha</span>
+        </label>
+        <button href="#" class="fancy" type="submit" [disabled]="">
+          <span class="top-key"></span>
+          <span class="text">Entrar</span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </button>
+      </form>
+    </div>
+    <div class="suporte">
+      <a href="#" (click)="forgetPass()">Esqueceu sua senha?</a>
+    </div>
+
+    <div class="social-login">
+      <div class="google">
+        <a href="#"><img [src]="googleImg" alt="Login pelo google" /></a>
+      </div>
+      <div class="facebook">
+        <a href="#"><img [src]="faceImg" alt="login pelo facebook" /></a>
+      </div>
+    </div>
+  </div>
+</main>
