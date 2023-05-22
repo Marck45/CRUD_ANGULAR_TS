@@ -8,7 +8,11 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 })
 export class MenuSideComponent {
 
+<<<<<<< HEAD
   iconLinkedin:string = '/assets/img/linkedinIncon.png';
+=======
+  iconLinkedin:string = '/assets/img/linkedinIcon.png';
+>>>>>>> afc2b581d3c404986ea699d19ee33bd23863af4d
   iconGitHub:string = '/assets/img/GitHubIcon.png';
   iconTwitter:string = '/assets/img/TTicon.png';
 

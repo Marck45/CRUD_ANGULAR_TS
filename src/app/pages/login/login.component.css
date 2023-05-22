@@ -203,6 +203,7 @@ form label {
     justify-content: center;
     align-items: center;
     width: 50%;
+<<<<<<< HEAD
     height: 200px;
   }
 
@@ -221,6 +222,16 @@ form label {
     display: flex;
     justify-content: center;
     align-items: center;
+=======
+    padding: 0.5rem;
+    height: 200px;
+  }
+
+  .google, .facebook{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+>>>>>>> afc2b581d3c404986ea699d19ee33bd23863af4d
   }
 
   /* link de reset de senha */
@@ -231,6 +242,10 @@ form label {
   .suporte a {
     text-decoration: none;
     color: #802ba2;
+<<<<<<< HEAD
   }
 
  
+=======
+  }
+>>>>>>> afc2b581d3c404986ea699d19ee33bd23863af4d
