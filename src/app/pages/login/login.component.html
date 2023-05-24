@@ -7,28 +7,32 @@
       <h2>Login</h2>
     </div>
     <div class="form-login">
-      <form action="submit">
-        <label>
+      <form action="submit" id="formLogin" [formGroup]="formLogin" *ngIf="formLogin" (ngSubmit)="onSubmitLogin()" >
+        <label for="nome">
           <input
             class="input"
             type="text"
             name="nome"
+            id="nome"
+            value=""
             formControlName="nome"
-            required
+            required="nome"
           />
           <span>Nome</span>
         </label>
-        <label>
+        <label for="password">
           <input
             class="input"
             type="text"
             name="password"
+            id="password"
+            value=""
             formControlName="password"
             required
           />
           <span>Senha</span>
         </label>
-        <button href="#" class="fancy" type="submit" [disabled]="">
+        <button href="#" class="fancy" type="submit" [disabled]="!formLogin.valid">
           <span class="top-key"></span>
           <span class="text">Entrar</span>
           <span class="bottom-key-1"></span>

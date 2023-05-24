@@ -29,8 +29,8 @@ export class FormsProductComponent implements OnInit {
 
     this.createForm();
 
-
   }
+
   // criação de produto form
   createForm() {
     this.formProduto = new FormGroup({
@@ -44,16 +44,14 @@ export class FormsProductComponent implements OnInit {
 
   }
 
-  // criação de form de edição
-
   // cadastro de produto
   async onSubmit() {
-    // this.formProduto.reset(new ProdutosClass());
+
     this.cadastrarProduto(this.formProduto.value);
    
   }
  
-  // Abertura do formulario de edção
+  // Abertura do formulario de edição
   async onEdit(formProduto:any){
     // Escondo o formulario de cadastro e exibe o de edição
     const formViwer = document.querySelector('#formId');
@@ -175,7 +173,7 @@ export class FormsProductComponent implements OnInit {
 
     this.createForm();
 
-    console.log('Formulario resetado')
+    console.log('Formulario resetado');
 
   }
 
