@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 3rem;
 }
 
 .menuside{
-    max-width: 15%;
+    min-width: 15%;
     margin-right: 5px;
 }
+
