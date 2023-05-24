@@ -5,7 +5,6 @@
     align-items: center;
     max-width: 100%;
     padding: 5rem 0rem 0rem 0rem;
-    margin: auto;
 }
 
 .dash-title{
@@ -15,8 +14,8 @@
                 inset 20px -20px 60px #ae3bdb;
   
       color: #e6e6e6;
-      font-size: 18px;
-      padding: 0px 25px 0px 25px;
+      font-size: 24px;
+      padding: 5px 25px 5px 25px;
       font-weight: bold;
       text-align: center;
       margin-bottom: 3rem;
