@@ -9,10 +9,11 @@
 
 .img-login{
     margin-right: 4rem;
+    width: 50%;
 }
 
 .img-login img{
-    max-width: 800px;
+    width: 100%;
     border-radius: 25px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  50px 50px 100px #666666,
@@ -24,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 50%;
 }
 
 .title-form{

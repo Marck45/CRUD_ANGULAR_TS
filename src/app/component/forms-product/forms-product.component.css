@@ -36,22 +36,21 @@ h1{
     margin-right: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-width: 35%;
-    padding: 2rem;
+    align-items: flex-start;
+    min-width: 30%;
+    padding: 1rem;
     border-radius: 25px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  50px 50px 100px #666666,
              -50px -50px 100px #ffffff;
   }
-  
  
   .form label {
     position: relative;
   }
   
   .form label .input {
-    width: 300px;
+  
     padding: 10px 10px 20px 10px;
     outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.397);
