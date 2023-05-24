@@ -1,0 +1,82 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 5rem 0rem 0rem 0rem;
+    margin: auto;
+}
+
+.dash-title{
+    border-radius: 25px;
+    background: #9733be;
+    box-shadow: inset -20px 20px 60px #802ba2,
+                inset 20px -20px 60px #ae3bdb;
+  
+      color: #e6e6e6;
+      font-size: 18px;
+      padding: 0px 25px 0px 25px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 3rem;
+}
+
+.dash-container{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    text-align: center;
+}
+
+.mini-box{
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+/* box pequenas de dados */
+.dash-min{
+
+    width: 31%;
+    height: 150px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  50px 50px 100px #666666,
+             -50px -50px 100px #ffffff;
+}
+
+.large-box{
+    margin-top: 3rem;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dash-large{
+    border-radius: 25px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  50px 50px 100px #666666,
+             -50px -50px 100px #ffffff;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* titulos e imagens */
+
+.title-min{
+    font-size: 18px;
+    color: #9733be;
+    font-weight: bolder;
+}
+
+.text-min{
+    font-size: 24px;
+    font-weight: bolder;
+}
