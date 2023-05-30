@@ -109,7 +109,6 @@ export class FormsProductComponent implements OnInit {
       (response: Produtos[]) => {
         console.log('Produto cadastrado', response);
         this.getProducts();
-        // this.cleanForm(form);
       },
       (error: any) => {
         console.error('Erro ao cadastrar produto', error);

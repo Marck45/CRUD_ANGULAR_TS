@@ -1,7 +1,7 @@
 .wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     max-width: 100%;
     padding: 5rem 1rem 0rem 0rem;
@@ -15,29 +15,32 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .container{
-  width: 40%;
+  width: 30%;
 }
 
 h1{
-  width: 90%;
+  width: 80%;
   border-radius: 25px;
   background: #9733be;
   box-shadow: inset -20px 20px 60px #802ba2,
               inset 20px -20px 60px #ae3bdb;
 
     color: #e6e6e6;
-    font-size: 34px;
-    padding: 25px;
+    font-size: 28px;
+    padding: 15px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 .form {
-    margin-right: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,10 +54,12 @@ h1{
  
   .form label {
     position: relative;
+    width: 80%;
+
   }
   
   .form label .input {
-    width: 100%;
+    min-width: 100%;
     padding: 10px 10px 20px 10px;
     outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.397);
@@ -230,6 +235,7 @@ h1{
   .listagem-container{
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     max-width: 60%;
     padding: 1rem;
     position: relative;
