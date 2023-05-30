@@ -13,7 +13,6 @@
     background: #9733be;
     box-shadow: inset -20px 20px 60px #802ba2,
               inset 20px -20px 60px #ae3bdb;
-              padding: 1rem;
     border-radius: 25px;
     color: #e6e6e6;
     margin-bottom: 4rem;
@@ -54,3 +53,15 @@
     text-align: center;
     width: 60%;
 }
+
+.main-apresentacao p{
+    background: #9733be;
+    box-shadow: inset -20px 20px 60px #802ba2,
+              inset 20px -20px 60px #ae3bdb;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #e6e6e6;
+    padding: 1rem;
+}
+
