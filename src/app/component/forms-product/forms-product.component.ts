@@ -87,7 +87,7 @@ export class FormsProductComponent implements OnInit {
 
       this.produtos = produtos;
 
-      console.log('produtos carregados com sucesso')
+      console.log('produtos carregados com sucesso');
 
     });
 
@@ -117,6 +117,7 @@ export class FormsProductComponent implements OnInit {
 
     this.cleanForm();
   }
+
 
   // resetar formulario
   cleanForm() {

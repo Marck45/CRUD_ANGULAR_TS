@@ -5,26 +5,49 @@
   <div class="dash-container">
     <div class="mini-box">
       <div class="dash-min">
-        <h5 class="title-min">Produtos</h5>
-        <p class="text-min">05</p>
+        <div>
+          <h5 class="title-min">Estoque</h5>
+          <p class="text-min" id="estoque">0{{estoque}}</p>
+        </div>
+        <div>
+          <img [src]="iconEstoque" alt="estoque">
+        </div>
       </div>
       <div class="dash-min">
-        <h5 class="title-min">Produtos</h5>
-        <p class="text-min">05</p>
+        <div>
+          <h5 class="title-min">Valor total</h5>
+          <p class="text-min" id="valor">R$ {{somaValor}},00</p>
+        </div>
+        <div>
+          <img [src]="iconValor" alt="estoque">
+        </div>
       </div>
       <div class="dash-min">
-        <h5 class="title-min">Produtos</h5>
-        <p class="text-min">05</p>
+        <div>
+          <h5 class="title-min">Vendas</h5>
+          <p class="text-min" id="vendas">Em breve</p>
+        </div>
+        <div>
+          <img [src]="totalVendas" alt="estoque">
+        </div>
       </div>
     </div>
     <div class="large-box">
       <div class="dash-large">
-        <h5 class="title-min">Historico de vendas</h5>
-        <p class="text-min">Grafico</p>
+        <div>
+          <h5 class="title-min">Mês à Mês</h5>
+        </div>
+        <div>
+          <img [src]="imgColuna" alt="grafico de pizza">
+        </div>
       </div>
       <div class="dash-large">
-        <h5 class="title-min">Historico de vendas</h5>
-        <p class="text-min">Grafico</p>
+        <div>
+          <h5 class="title-min">Historico de vendas</h5>
+        </div>
+        <div>
+          <img [src]="imgPizza" alt="grafico de pizza">
+        </div>
       </div>
     </div>
   </div>

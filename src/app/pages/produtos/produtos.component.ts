@@ -116,6 +116,8 @@ export class ProdutosComponent implements OnInit {
         console.error('Erro ao atualizar produto', error);
       }
     );
+
+    alert('Produto atualizado');
     this.cleanForm();
   }
 
@@ -124,5 +126,14 @@ export class ProdutosComponent implements OnInit {
     this.createForm();
 
     console.log('Formulario resetado');
+
+    const formViwer = document.querySelector('#formId');
+    const formHide = document.querySelector('#table-box');
+
+    formViwer?.classList.add('hide');
+    formViwer?.classList.remove('form');
+
+    formHide?.classList.remove('hide');
+    formHide?.classList.add('tabela-container');
   }
 }

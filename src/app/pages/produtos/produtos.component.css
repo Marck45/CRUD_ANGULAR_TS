@@ -15,7 +15,7 @@
   position: relative;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
@@ -41,7 +41,7 @@
   flex-direction: column;
   border-radius: 25px;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 50px 50px 100px #666666, -50px -50px 100px #ffffff;
+  box-shadow: 50px 50px 100px #3ad0e8, -50px -50px 100px #9733be;
   margin: 3rem 0 3rem 0;
 }
 
@@ -111,7 +111,7 @@
 /* botão subimit */
 .fancy {
   background-color: transparent;
-  border: 2px solid #cacaca;
+  border: 2px solid #802ba2;
   border-radius: 15px;
   box-sizing: border-box;
   color: #fff;
@@ -135,7 +135,7 @@
   content: " ";
   width: 1.7rem;
   height: 2px;
-  background: #cacaca;
+  background: #3ad0e8;
   top: 50%;
   left: 1.5em;
   position: absolute;
@@ -153,7 +153,7 @@
   transition: all 0.3s ease-in-out;
   text-transform: lowercase;
   text-decoration: none;
-  color: #818181;
+  color: #3ad0e8;
   transform: translateX(30%);
 }
 
@@ -163,7 +163,7 @@
   top: -2px;
   left: 0.625rem;
   position: absolute;
-  background: white;
+  background: #3ad0e8;
   transition: width 0.5s ease-out, left 0.3s ease-out;
 }
 
@@ -173,7 +173,7 @@
   right: 1.875rem;
   bottom: -2px;
   position: absolute;
-  background: white;
+  background: #3ad0e8;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
@@ -183,13 +183,13 @@
   right: 0.725rem;
   bottom: -2px;
   position: absolute;
-  background: white;
+  background: #3ad0e8;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
 .fancy:hover {
   color: white;
-  background: #cacaca;
+  background: #9733be;
 }
 
 .fancy:hover::before {
@@ -213,108 +213,102 @@
   width: 0;
 }
 
-
 /* formulario de edição */
 
-
-h1{
+h1 {
   width: 80%;
   border-radius: 25px;
   background: #9733be;
-  box-shadow: inset -20px 20px 60px #802ba2,
-              inset 20px -20px 60px #ae3bdb;
+  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
 
-    color: #e6e6e6;
-    font-size: 28px;
-    padding: 15px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 3rem;
-    margin-left: auto;
-    margin-right: auto;
+  color: #e6e6e6;
+  font-size: 28px;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-    padding: 2rem;
-    border-radius: 25px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #666666,
-             -50px -50px 100px #ffffff;
-  }
- 
-  .form label {
-    position: relative;
-    width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+  padding: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 50px 50px 100px #3ad0e8, -50px -50px 100px #9733be;
+}
 
-  }
-  
-  .form label .input {
-    min-width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-  
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .form label .input:valid + span {
-    color: green;
-  }
+.form label {
+  position: relative;
+  width: 100%;
+}
 
-  /* radio de produto */
+.form label .input {
+  min-width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid #3ad0e8;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
 
-  .box-radio{
-    margin-bottom: 35px;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 15px;
-    margin-bottom: 15px;
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: #9733be;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
 
-  }
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
 
-  legend{
-    text-align: center;
-    color: grey;
-    font-size: 0.9em;
-  }
+.form label .input:focus + span,
+.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
 
-  .box-radio label {
-    margin-right:50px;
-    color: grey;
-    font-size: 0.9em;
-  }
+.form label .input:valid + span {
+  color: green;
+}
 
-  .box-radio input {
-    margin-left:50px;
-  }
+/* radio de produto */
+
+.box-radio {
+  margin-bottom: 35px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+legend {
+  text-align: center;
+  color: grey;
+  font-size: 0.9em;
+}
+
+.box-radio label {
+  margin-right: 50px;
+  color: grey;
+  font-size: 0.9em;
+}
+
+.box-radio input {
+  margin-left: 50px;
+}

@@ -39,7 +39,9 @@
 
 /* box pequenas de dados */
 .dash-min{
-
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 31%;
     height: 150px;
     border-radius: 25px;
@@ -74,9 +76,16 @@
     font-size: 18px;
     color: #9733be;
     font-weight: bolder;
+    margin: 0.5rem 0 2rem 0 ;
 }
 
 .text-min{
     font-size: 24px;
     font-weight: bolder;
+    color:#3ad0e8;
+}
+
+.dash-large img{
+    max-width: 100%;
+    max-height: 80%;
 }
