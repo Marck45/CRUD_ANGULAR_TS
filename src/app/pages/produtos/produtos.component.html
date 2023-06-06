@@ -1,0 +1,88 @@
+ <section class="listagem-container" id="listagem">
+
+    <h2 class="produto-title" id="prod-title">Produtos Cadastrados</h2>
+
+        <div class="tabela-container" id="table-box">
+
+            <table id="corp-list">
+                <thead>
+                    <tr class="table-title" >
+                        <th>Codigo</th>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Disponivel</th>
+                        <th>Descrição</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-corp" *ngFor="let produtos of produtos">
+                        <td>{{produtos._id}}</td>
+                        <td>{{produtos.nome}}</td>
+                        <td>{{produtos.valor + ',00 ' +'R$'}}</td>
+                        <td>{{produtos.disponivel}}</td>
+                        <td>{{produtos.descricao}}</td>
+                        <td>
+                            <button class="btn , edit"(click)="onEdit(produtos)">Editar</button>
+                            <button class="btn delete" (click)="deleteProduto(produtos)">Deletar</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div class="btn-cadastro" routerLink="/cadastros">
+            
+                <button class="fancy">
+                    <span class="top-key"></span>
+                    <span class="text">+ produto</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                </button>
+            </div>
+
+        </div>
+
+        
+
+         <!-- formulario de edição -->
+         <form class="hide" id="formId" [formGroup]="formProduto" (ngSubmit)="atualizarProduto(this.formProduto.value)">
+            <label>
+                <input class="input" type="text" id="idEdit" name="id" formControlName="_id" required="" value="">
+                <span>Cod Cadastro</span>
+            </label>
+            <label>
+                <input class="input" type="text" id="nameEdit" name="nome" formControlName="nome" required="" value="">
+                <span>Nome do produto</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" id="descricaoEdit" name="descricao" required formControlName="descricao" required="">
+                <span>Descrição do produto</span>
+            </label>
+
+            <label>
+                <input class="input" name="valor" id="valorEdit" type="number" required formControlName="valor" required="">
+                <span>Valor do produto</span>
+            </label>
+
+            <fieldset class="box-radio">
+
+                <legend>Produto disponivel</legend>
+
+                <input type="radio" class="select" name="disponivel" id="disponivel" value=true formControlName="disponivel" checked required="">
+                <label for="disponivel">Sim</label>
+
+                <input type="radio" class="select" name="disponivel" id="nao" value=false formControlName="disponivel" required="">
+                <label for="nao">Não</label>
+
+            </fieldset>
+
+            <button class="fancy" type="submit">
+                <span class="top-key"></span>
+                <span class="text">Salvar</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </form>
+
+    </section>

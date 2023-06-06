@@ -1,0 +1,320 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1rem 0rem 0rem;
+}
+
+.listagem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  padding: 1rem;
+  position: relative;
+}
+
+.hide{
+  display: none;
+}
+
+.produto-title {
+  width: 15%;
+  border-radius: 25px;
+  background: #9733be;
+  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
+
+  color: #e6e6e6;
+  font-size: 28px;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabela-container {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 50px 50px 100px #666666, -50px -50px 100px #ffffff;
+  margin: 3rem 0 3rem 0;
+}
+
+.table-title th {
+  border-radius: 15px;
+  background: #9733be;
+  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
+
+  color: #e6e6e6;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.table-corp td {
+  text-align: center;
+  color: #666666;
+  font-size: 0.9em;
+  padding: 0.5rem;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 15px;
+}
+
+/* btn da table */
+
+.btn-cadastro {
+  padding: 0;
+  margin-top: 2rem;
+}
+
+/* btn delete */
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-right: 0.2rem;
+}
+
+.edit {
+  border-radius: 10px;
+  background: #236014;
+  box-shadow: inset -5px -5px 0px #17400d, inset 5px 5px 0px #2f801b;
+  color: #e6e6e6;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.delete {
+  border-radius: 10px;
+  background: #a70702;
+  box-shadow: inset -5px -5px 0px #700501, inset 5px 5px 0px #de0903;
+  color: #e6e6e6;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.edit:hover,
+.delete:hover {
+  background-color: #666666;
+  box-shadow: none;
+}
+
+/* botão subimit */
+.fancy {
+  background-color: transparent;
+  border: 2px solid #cacaca;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 390;
+  letter-spacing: 4px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 8px 30px;
+  position: relative;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.7rem;
+  height: 2px;
+  background: #cacaca;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform: translateX(270%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  display: block;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #818181;
+  transform: translateX(30%);
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.725rem;
+  bottom: -2px;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background: #cacaca;
+}
+
+.fancy:hover::before {
+  width: 1.5rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 0.5em;
+}
+
+.fancy:hover .top-key {
+  left: -5px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+
+/* formulario de edição */
+
+
+h1{
+  width: 80%;
+  border-radius: 25px;
+  background: #9733be;
+  box-shadow: inset -20px 20px 60px #802ba2,
+              inset 20px -20px 60px #ae3bdb;
+
+    color: #e6e6e6;
+    font-size: 28px;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 2rem;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  50px 50px 100px #666666,
+             -50px -50px 100px #ffffff;
+  }
+ 
+  .form label {
+    position: relative;
+    width: 80%;
+
+  }
+  
+  .form label .input {
+    min-width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+
+  /* radio de produto */
+
+  .box-radio{
+    margin-bottom: 35px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 15px;
+    margin-bottom: 15px;
+
+  }
+
+  legend{
+    text-align: center;
+    color: grey;
+    font-size: 0.9em;
+  }
+
+  .box-radio label {
+    margin-right:50px;
+    color: grey;
+    font-size: 0.9em;
+  }
+
+  .box-radio input {
+    margin-left:50px;
+  }

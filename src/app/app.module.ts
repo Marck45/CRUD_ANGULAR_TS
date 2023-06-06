@@ -12,6 +12,7 @@ import { SuporteComponent } from './pages/suporte/suporte.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MenuSideComponent } from './component/menu-side/menu-side.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProdutosComponent } from './pages/produtos/produtos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     SuporteComponent,
     LoginComponent,
-    MenuSideComponent
+    MenuSideComponent,
+    ProdutosComponent
   ],
   imports: [
     BrowserModule,

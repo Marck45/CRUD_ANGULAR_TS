@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SuporteComponent } from './pages/suporte/suporte.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsProductComponent } from './component/forms-product/forms-product.component'; 
+import { ProdutosComponent } from './pages/produtos/produtos.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,15 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'produtos', component: ProdutosComponent
   }
 
 ];
 
 @NgModule({
-  exports: [ RouterModule],
+  exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)],
 })
 

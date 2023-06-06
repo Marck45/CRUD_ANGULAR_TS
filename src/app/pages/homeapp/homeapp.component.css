@@ -44,8 +44,8 @@
     max-height: 70%;
     max-width: 70%;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #666666,
-             -50px -50px 100px #ffffff;
+    box-shadow:  50px 50px 100px #3ad0e8,
+             -50px -50px 100px #9733be;
     margin-bottom: 2rem;
 }
 

@@ -14,6 +14,7 @@ export class MenuSideComponent {
   iconHome:string = '/assets/img/home.png';
   iconDash:string = '/assets/img/dashboard.png';
   iconCadastro:string = '/assets/img/cadastro.png';
+  iconProduto:string = '/assets/img/produtoImg.png';
   iconSuporte:string = '/assets/img/suporte.png';
   iconLogin:string = '/assets/img/login.png';
 

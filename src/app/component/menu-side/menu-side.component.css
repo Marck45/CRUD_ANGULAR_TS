@@ -8,11 +8,12 @@
     display: flex;
     justify-content: center;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #666666,
-             -50px -50px 100px #ffffff;
+    box-shadow:  50px 50px 100px #3ad0e8,
+             -50px -50px 100px #9733be;
     padding: 1rem 6rem 1rem 6rem;
     border-radius: 25px;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
+    position: relative;
 }
 
 .social a img{
@@ -30,10 +31,11 @@
     display: flex;
     justify-content: center;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #666666,
-             -50px -50px 100px #ffffff;
+    box-shadow:  0px 0px 00px #3ad0e8,
+             -50px -50px 100px #9733be;
     padding: 1rem 6rem 1rem 6rem;
     border-radius: 25px;
+    position: relative;
     
 }
 
@@ -47,5 +49,5 @@
 }
 
 .option-menu ul li{
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
