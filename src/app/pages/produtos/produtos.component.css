@@ -67,7 +67,7 @@
   color: #666666;
   font-size: 0.9em;
   padding: 0.5rem;
-  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-bottom: 1px solid rgba(105, 105, 105, 0.397);
   border-radius: 15px;
 }
 
