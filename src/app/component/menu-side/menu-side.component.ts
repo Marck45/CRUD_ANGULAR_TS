@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class MenuSideComponent {
 
   iconLinkedin:string = '/assets/img/linkedinIcon.png';
-  iconGitHub:string = '/assets/img/GitHubIcon.png';
+  iconGitHub:string = '/assets/img/gitIcon.svg';
   iconTwitter:string = '/assets/img/TTicon.png';
 
   iconHome:string = '/assets/img/home.png';
