@@ -37,6 +37,7 @@ export class FormsProductComponent implements OnInit {
       _id: new FormControl(),
       nome: new FormControl(),
       valor: new FormControl(),
+      custo: new FormControl(),
       descricao: new FormControl(),
       disponivel: new FormControl(),
 
@@ -101,6 +102,7 @@ export class FormsProductComponent implements OnInit {
       _id: form._id,
       nome: form.nome,
       valor: form.valor,
+      custo: form.custo,
       descricao: form.descricao,
       disponivel: form.disponivel,
 

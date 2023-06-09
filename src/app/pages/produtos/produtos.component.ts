@@ -30,6 +30,7 @@ export class ProdutosComponent implements OnInit {
     this.formProduto = new FormGroup({
       _id: new FormControl(),
       nome: new FormControl(),
+      custo: new FormControl(),
       valor: new FormControl(),
       descricao: new FormControl(),
       disponivel: new FormControl(),
@@ -79,6 +80,7 @@ export class ProdutosComponent implements OnInit {
     const produto = {
       _id: form._id,
       nome: form.nome,
+      custo: form.custo,
       valor: form.valor,
       descricao: form.descricao,
       disponivel: form.disponivel,
@@ -102,6 +104,7 @@ export class ProdutosComponent implements OnInit {
     const produto = {
       _id: formProduto._id,
       nome: formProduto.nome,
+      custo: formProduto.custo,
       valor: formProduto.valor,
       descricao: formProduto.descricao,
       disponivel: formProduto.disponivel,

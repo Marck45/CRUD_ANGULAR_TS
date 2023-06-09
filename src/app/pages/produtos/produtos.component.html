@@ -10,6 +10,7 @@
                         <th>Sku</th>
                         <th>Nome</th>
                         <th>Descrição</th>
+                        <th>Custo</th>
                         <th>Valor</th>
                         <th>Em estoque</th>
                         <th>Opções</th>
@@ -20,6 +21,7 @@
                         <td>{{produtos._id}}</td>
                         <td>{{produtos.nome}}</td>
                         <td>{{produtos.descricao}}</td>
+                        <td>{{'R$' + ' ' + produtos.custo}}</td>
                         <td>{{'R$' + ' ' + produtos.valor}}</td>
                         <td>{{produtos.disponivel}}</td>
                         
