@@ -6,8 +6,8 @@
         <!-- formulario de cadastro -->
         <form class="form" id="formCadastro" [formGroup]="formProduto" (ngSubmit)="onSubmit()">
             <label>
-                <input class="input" type="text" name="id" formControlName="_id" required >
-                <span>Cod do Produto</span>
+                <input class="input" type="text" name="id" formControlName="_id" required [(ngModel)]="maiorIdProduto">
+                <span>Cod Produto</span>
             </label>
             <label>
                 <input class="input" type="text" name="nome" formControlName="nome" value="" required="">

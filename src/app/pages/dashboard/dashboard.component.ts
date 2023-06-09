@@ -11,10 +11,9 @@ export class DashboardComponent implements OnInit {
   iconEstoque: string = '/assets/img/emestoque.png';
   iconValor: string = ' /assets/img/valor.png';
   totalVendas: string = '/assets/img/vendas.png';
-
-  imgPizza: string = '/assets/img/grafico-pizza.png';
-  imgColuna: string =
-    '/assets/img/Gráfico-de-colunas-100-empilhadas-removebg-preview.png';
+  maiorImg: string = '/assets/img/maior.svg';
+  custoImg:string = '/assets/img/custo.png';
+  valorImg:string = '/assets/img/aumento.png';
 
   produto = {} as Produtos;
   produtos: Produtos[] = [];
@@ -38,7 +37,6 @@ export class DashboardComponent implements OnInit {
         this.produtos = produtos;
 
         this.estoque = this.produtos.length;
-        console.log('produtos carregados com sucesso' + ' ' + produtos.length);
 
         this.calcularSomaValores();
         this.maiorEstoque();
@@ -81,6 +79,5 @@ export class DashboardComponent implements OnInit {
         };
       }
     }
-    console.log(this.maiorValor + 'aqui' + this.produtoComMaiorValor.nome);
   }
 }

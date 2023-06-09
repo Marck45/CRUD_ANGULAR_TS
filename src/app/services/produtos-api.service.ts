@@ -8,6 +8,8 @@ import { Produtos } from '../models/produtos';
 })
 export class ProdutosAPiService {
 
+  private contadorId = 0;
+
   url = 'https://api-crud-angular-marck.onrender.com/produto'; 
 
 
@@ -28,7 +30,7 @@ export class ProdutosAPiService {
           ,catchError(this.handleError));
 
   }
-
+ 
   // cadastrar novo produto
   async saveProduto(produto:Produtos){
     console.warn(produto)

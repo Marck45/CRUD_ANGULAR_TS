@@ -1,5 +1,5 @@
 export interface Produtos {
-    _id:string;
+    _id:number;
     nome:string,
     valor:number,
     custo:number,
