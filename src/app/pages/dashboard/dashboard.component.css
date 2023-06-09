@@ -44,6 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 1rem;
     margin-bottom: 2rem;
     width: 31%;
     height: 150px;
@@ -61,12 +62,14 @@
     color: #9733be;
     font-weight: bolder;
     margin: 0.5rem 0 2rem 0 ;
+    text-transform: uppercase;
 }
 
 .text-min{
     font-size: 24px;
     font-weight: bolder;
     color:#3ad0e8;
+   text-transform: capitalize;
 }
 
 .dash-large img{
