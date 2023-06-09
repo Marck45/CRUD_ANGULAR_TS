@@ -24,17 +24,10 @@
                 <span>Valor do produto</span>
             </label>
 
-            <fieldset class="box-radio">
-
-                <legend>Produto disponivel</legend>
-
-                <input type="radio" class="select" name="disponivel" id="disponivel" value=true formControlName="disponivel" checked required="">
-                <label for="disponivel">Sim</label>
-
-                <input type="radio" class="select" name="disponivel" id="nao" value=false formControlName="disponivel" required="">
-                <label for="nao">Não</label>
-
-            </fieldset>
+            <label>
+                <input class="input" name="valor" type="number" required formControlName="disponivel" required="">
+                <span>Quantidade</span>
+            </label>
 
             <button href="#" class="fancy" type="submit" [disabled]="!formProduto.valid">
                 <span class="top-key"></span>

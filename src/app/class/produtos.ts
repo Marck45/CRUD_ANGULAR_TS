@@ -5,5 +5,5 @@ export class ProdutosClass implements Produtos{
     nome: string = '';
     valor: number = 0;
     descricao: string = '';
-    disponivel: boolean = true;
+    disponivel: number = 0;
 }
