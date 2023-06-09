@@ -24,29 +24,38 @@
       </div>
       <div class="dash-min">
         <div>
-          <h5 class="title-min">Vendas</h5>
+          <h5 class="title-min">Maior estoque</h5>
+          <p class="text-min" id="vendas">{{produtoComMaiorValor.nome}} / {{maiorValor}} Uni</p>
+        </div>
+        <div>
+          <img [src]="totalVendas" alt="estoque">
+        </div>
+      </div>
+      <div class="dash-min">
+        <div>
+          <h5 class="title-min">Custo</h5>
           <p class="text-min" id="vendas">Em breve</p>
         </div>
         <div>
           <img [src]="totalVendas" alt="estoque">
         </div>
       </div>
-    </div>
-    <div class="large-box">
-      <div class="dash-large">
+      <div class="dash-min">
         <div>
-          <h5 class="title-min">Mês à Mês</h5>
+          <h5 class="title-min">Lucro</h5>
+          <p class="text-min" id="vendas">Em breve</p>
         </div>
         <div>
-          <img [src]="imgColuna" alt="grafico de pizza">
+          <img [src]="totalVendas" alt="estoque">
         </div>
       </div>
-      <div class="dash-large">
+      <div class="dash-min">
         <div>
-          <h5 class="title-min">Historico de vendas</h5>
+          <h5 class="title-min">Vendas</h5>
+          <p class="text-min" id="vendas">Em breve</p>
         </div>
         <div>
-          <img [src]="imgPizza" alt="grafico de pizza">
+          <img [src]="totalVendas" alt="estoque">
         </div>
       </div>
     </div>

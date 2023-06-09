@@ -34,6 +34,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     
 }
 
@@ -42,6 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 2rem;
     width: 31%;
     height: 150px;
     border-radius: 25px;
@@ -50,25 +53,6 @@
              -50px -50px 100px #ffffff;
 }
 
-.large-box{
-    margin-top: 3rem;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.dash-large{
-    border-radius: 25px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #666666,
-             -50px -50px 100px #ffffff;
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 /* titulos e imagens */
 

@@ -5,31 +5,33 @@ import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent implements OnInit{
-
+export class DashboardComponent implements OnInit {
   iconEstoque: string = '/assets/img/emestoque.png';
-  iconValor:string = ' /assets/img/valor.png';
-  totalVendas:string = '/assets/img/vendas.png';
+  iconValor: string = ' /assets/img/valor.png';
+  totalVendas: string = '/assets/img/vendas.png';
 
-  imgPizza:string = '/assets/img/grafico-pizza.png';
-  imgColuna:string = '/assets/img/Gráfico-de-colunas-100-empilhadas-removebg-preview.png';
+  imgPizza: string = '/assets/img/grafico-pizza.png';
+  imgColuna: string =
+    '/assets/img/Gráfico-de-colunas-100-empilhadas-removebg-preview.png';
 
   produto = {} as Produtos;
-  produtos: Produtos[] = [];  
+  produtos: Produtos[] = [];
 
-  estoque:any = '';
+  estoque: any = '';
 
-  somaValor:number = 0;
-  
+  somaValor: number = 0;
+
+  maiorValor = 0;
+
+  produtoComMaiorValor:any;
+
   ngOnInit(): void {
-
     this.getProducts();
-    
   }
 
-  constructor(private produtosAPiService:ProdutosAPiService){}
+  constructor(private produtosAPiService: ProdutosAPiService) {}
 
   async getProducts() {
     (await this.produtosAPiService.getProdutos()).subscribe(
@@ -41,15 +43,31 @@ export class DashboardComponent implements OnInit{
 
         this.calcularSomaValores();
 
+        this.maiorEstoque();
       }
     );
   }
 
-  async calcularSomaValores(){
-
-    this.produtos.forEach(produtos => {
+  async calcularSomaValores() {
+    this.produtos.forEach((produtos) => {
       this.somaValor += produtos.valor;
     });
-  }  
-}
+  }
 
+  // calcula o produto que tem maior
+  async maiorEstoque() {
+    
+    for (let i = 0; i < this.produtos.length; i++) {
+      let produto = this.produtos[i];
+      let valor = produto.disponivel;
+      if (typeof valor === 'number' && valor > this.maiorValor) {
+        this.maiorValor = valor;
+        this.produtoComMaiorValor = {
+          nome: produto.nome,
+          valor: this.maiorValor
+        };
+      }
+    }
+    console.log(this.maiorValor + 'aqui' + this.produtoComMaiorValor.nome);
+  }
+}
