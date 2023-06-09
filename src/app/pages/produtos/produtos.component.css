@@ -48,6 +48,26 @@
   height: 600px;
 }
 
+::-webkit-scrollbar {
+  width: 10px; /* Largura da scrollbar */
+  height: 70%;
+}
+
+::-webkit-scrollbar-track {
+  background: #802ba2; /* Cor de fundo da área da scrollbar */
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9733be;
+  border-radius: 2rem;
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3ad0e8; /* Cor do botão da scrollbar quando hover */
+}
+
 .table-title th {
   border-radius: 15px;
   background: #9733be;

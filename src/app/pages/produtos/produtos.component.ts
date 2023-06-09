@@ -17,6 +17,7 @@ export class ProdutosComponent implements OnInit {
   formProduto!: FormGroup;
   FormProdutoEdit!: FormGroup;
 
+
   constructor(private produtosAPiService: ProdutosAPiService) {}
 
   ngOnInit(): void {
@@ -47,7 +48,6 @@ export class ProdutosComponent implements OnInit {
     let disponivelForm = document.getElementById('disponivel') as HTMLInputElement;
     let idForm = document.getElementById('idEdit') as HTMLInputElement;
  
-
     // mudar dados formulario
     formViwer?.classList.remove('hide');
     formViwer?.classList.add('form');
@@ -56,7 +56,7 @@ export class ProdutosComponent implements OnInit {
     formHide?.classList.remove('tabela-container');
 
     // atribuir valores ao forms
-    nameForm.value = formProduto.nome;
+    nameForm = formProduto.nome;
     descricaoForm.value = formProduto.descricao;
     valorForm.value = formProduto.valor.toString();
     disponivelForm.value = formProduto.disponivel.toString();
@@ -99,8 +99,6 @@ export class ProdutosComponent implements OnInit {
 
   // upDateProduto
   async atualizarProduto(formProduto: any) {
-    console.log(formProduto, 'estou aqui');
-
     const produto = {
       _id: formProduto._id,
       nome: formProduto.nome,
