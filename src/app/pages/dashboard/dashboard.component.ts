@@ -20,12 +20,11 @@ export class DashboardComponent implements OnInit {
   produtos: Produtos[] = [];
 
   estoque: any = '';
-
   somaValor: number = 0;
-
-  maiorValor = 0;
-
+  maiorValor:number = 0;
   produtoComMaiorValor:any;
+  somaCusto:number = 0;
+  lucro:number = 0;
 
   ngOnInit(): void {
     this.getProducts();
@@ -42,16 +41,30 @@ export class DashboardComponent implements OnInit {
         console.log('produtos carregados com sucesso' + ' ' + produtos.length);
 
         this.calcularSomaValores();
-
         this.maiorEstoque();
+        this.calculaCustoEstoque()
+        this.lucroEstoque();
       }
     );
   }
-
+  // calcula o valor total do estoque
   async calcularSomaValores() {
     this.produtos.forEach((produtos) => {
       this.somaValor += produtos.valor;
     });
+  }
+
+  // calcula o custo total do estoque
+  async calculaCustoEstoque(){
+    this.produtos.forEach((produtos) => {
+      this.somaCusto += produtos.custo;
+    });
+  }
+
+  // Possivel lucro do estoque
+
+  async lucroEstoque(){
+    this.lucro = this.somaValor - this.somaCusto;
   }
 
   // calcula o produto que tem maior
