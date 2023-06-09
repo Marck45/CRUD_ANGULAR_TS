@@ -61,6 +61,7 @@ export class FormsProductComponent implements OnInit {
     let valorForm = document.getElementById('valorEdit') as HTMLInputElement;
     let disponivelForm = document.getElementById('disponivel') as HTMLInputElement;
     let idForm = document.getElementById('idEdit') as HTMLInputElement;
+    
 
     // mudar dados formulario
     formViwer?.classList.remove('hide');

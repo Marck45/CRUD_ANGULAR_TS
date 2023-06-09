@@ -7,11 +7,11 @@
             <table id="corp-list">
                 <thead>
                     <tr class="table-title" >
-                        <th>Codigo</th>
+                        <th>Sku</th>
                         <th>Nome</th>
-                        <th>Valor</th>
-                        <th>Disponivel</th>
                         <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Em estoque</th>
                         <th>Opções</th>
                     </tr>
                 </thead>
@@ -19,9 +19,10 @@
                     <tr class="table-corp" *ngFor="let produtos of produtos">
                         <td>{{produtos._id}}</td>
                         <td>{{produtos.nome}}</td>
-                        <td>{{produtos.valor + ',00 ' +'R$'}}</td>
-                        <td>{{produtos.disponivel}}</td>
                         <td>{{produtos.descricao}}</td>
+                        <td>{{'R$' + ' ' + produtos.valor}}</td>
+                        <td>{{produtos.disponivel}}</td>
+                        
                         <td>
                             <button class="btn , edit"(click)="onEdit(produtos)">Editar</button>
                             <button class="btn delete" (click)="deleteProduto(produtos)">Deletar</button>
@@ -65,17 +66,10 @@
                 <span>Valor do produto</span>
             </label>
 
-            <fieldset class="box-radio">
-
-                <legend>Produto disponivel</legend>
-
-                <input type="radio" class="select" name="disponivel" id="disponivel" value=true formControlName="disponivel" checked required="">
-                <label for="disponivel">Sim</label>
-
-                <input type="radio" class="select" name="disponivel" id="nao" value=false formControlName="disponivel" required="">
-                <label for="nao">Não</label>
-
-            </fieldset>
+            <label>
+                <input class="input" name="disponivel" type="number" required formControlName="disponivel" required="">
+                <span>Quantidade</span>
+            </label>
 
             <button class="fancy" type="submit">
                 <span class="top-key"></span>
