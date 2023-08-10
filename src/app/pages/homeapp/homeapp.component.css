@@ -6,7 +6,7 @@
     max-width: 100%;
     padding: 5rem 0rem 0rem 0rem;
     max-height: 60vh;
-    
+
 }
 
 .main-title h1{
@@ -23,7 +23,7 @@
 
 .text-img{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     max-width: 80%;
