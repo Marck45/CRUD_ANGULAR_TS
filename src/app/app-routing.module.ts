@@ -9,6 +9,9 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
 
 const routes: Routes = [
   {
+    path: '', component: HomeappComponent
+  },
+  {
     path: 'home', component: HomeappComponent
   },
   {
