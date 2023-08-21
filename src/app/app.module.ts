@@ -14,6 +14,7 @@ import { MenuSideComponent } from './component/menu-side/menu-side.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
+import { BarSearchComponent } from './component/bar-search/bar-search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProductsDetailsComponent } from './pages/products-details/products-deta
     LoginComponent,
     MenuSideComponent,
     ProdutosComponent,
-    ProductsDetailsComponent
+    ProductsDetailsComponent,
+    BarSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+.bar-container {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+input {
+  border: none;
+  outline: 0;
+  padding: 1rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+  margin-right: 2rem;
+}
+
+input:hover{
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+  color: #9733be;
+}
+
+
+button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: #9733be;
+  box-shadow: inset -20px 20px 60px #802ba2,
+    inset 20px -20px 60px #ae3bdb;
+  color: #e6e6e6;
+  cursor: pointer;
+  transition: 1s;
+}
+
+button:hover {
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+  color: #9733be;
+}
