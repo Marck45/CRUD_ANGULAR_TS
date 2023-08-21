@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MenuSideComponent } from './component/menu-side/menu-side.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
+import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
     SuporteComponent,
     LoginComponent,
     MenuSideComponent,
-    ProdutosComponent
+    ProdutosComponent,
+    ProductsDetailsComponent
   ],
   imports: [
     BrowserModule,

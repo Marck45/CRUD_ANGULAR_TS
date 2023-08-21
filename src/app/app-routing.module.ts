@@ -4,8 +4,9 @@ import { HomeappComponent } from './pages/homeapp/homeapp.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SuporteComponent } from './pages/suporte/suporte.component';
 import { LoginComponent } from './pages/login/login.component';
-import { FormsProductComponent } from './component/forms-product/forms-product.component'; 
+import { FormsProductComponent } from './component/forms-product/forms-product.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
+import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'produtos', component: ProdutosComponent
+  },
+  {
+    path: 'Produtos', component:ProductsDetailsComponent
   }
 
 ];
