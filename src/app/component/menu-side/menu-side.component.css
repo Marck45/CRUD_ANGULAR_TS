@@ -7,9 +7,10 @@
 .social{
     display: flex;
     justify-content: center;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  50px 50px 100px #3ad0e8,
-             -50px -50px 100px #9733be;
+    border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
     padding: 1rem 6rem 1rem 6rem;
     border-radius: 25px;
     margin-bottom: 6rem;
@@ -30,13 +31,9 @@
 .option-menu{
     display: flex;
     justify-content: center;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff);
-    box-shadow:  0px 0px 00px #3ad0e8,
-             -50px -50px 100px #9733be;
-    padding: 1rem 6rem 1rem 6rem;
-    border-radius: 25px;
+    padding: 1rem 3rem 1rem 3rem;
     position: relative;
-    
+
 }
 
 .option-menu ul{
@@ -50,4 +47,9 @@
 
 .option-menu ul li{
     margin-top: 1rem;
+    border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+    padding: 1rem;
 }
