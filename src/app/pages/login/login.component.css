@@ -3,9 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  max-height: 60vh;
-  padding: 5rem 0rem 0rem 0rem;
+  margin-top: 2rem;
 }
 
 .img-login {
@@ -30,10 +28,11 @@
 
 .title-form {
   border-radius: 25px;
-  background: #9733be;
-  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
 
-  color: #e6e6e6;
+  color: #9733be;
   font-size: 24px;
   padding: 5px 25px 5px 25px;
   font-weight: bold;
@@ -48,8 +47,9 @@ form {
   min-width: 35%;
   padding: 2rem;
   border-radius: 25px;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 50px 50px 100px #3ad0e8, -50px -50px 100px #9733be;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
 }
 
 form label {
@@ -65,7 +65,7 @@ form label .input {
   margin-bottom: 15px;
 }
 
-form label .input + span {
+form label .input+span {
   position: absolute;
   left: 10px;
   top: 15px;
@@ -75,19 +75,19 @@ form label .input + span {
   transition: 0.3s ease;
 }
 
-form label .input:placeholder-shown + span {
+form label .input:placeholder-shown+span {
   top: 15px;
   font-size: 0.9em;
 }
 
-form label .input:focus + span,
-.form label .input:valid + span {
+form label .input:focus+span,
+.form label .input:valid+span {
   top: 30px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-form label .input:valid + span {
+form label .input:valid+span {
   color: green;
 }
 

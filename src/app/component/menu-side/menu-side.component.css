@@ -1,7 +1,6 @@
 .side-menu-main {
-  max-width: 15%;
-  margin-top: 3rem;
-  margin-left: 1rem;
+  width: 15%;
+  position: fixed;
 }
 
 .option-menu a {
@@ -15,9 +14,6 @@
 .option-menu {
   display: flex;
   justify-content: center;
-  padding: 1rem 2rem 1rem 5rem;
-  position: relative;
-
 }
 
 .option-menu ul {

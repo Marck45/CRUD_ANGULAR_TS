@@ -1,19 +1,19 @@
 .main-container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
+    padding: 0.5rem;
+    position: relative;
+    width: 100%;
 }
 
 .menuside{
-    max-width: 15%;
-    margin-right: 5px;
-    margin-top: 0;
+    width: 15%;
+    height: 100vh;
 }
 
 .main-conteudo{
-    min-width: 85%;
+    width: 85%;
+    height: 100vh;
 }

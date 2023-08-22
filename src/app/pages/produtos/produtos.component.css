@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 5rem 1rem 0rem 0rem;
+  margin-top: 2rem;
 }
 
 .listagem-container {
@@ -22,10 +22,11 @@
 .produto-title {
   width: 15%;
   border-radius: 25px;
-  background: #9733be;
-  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;;
 
-  color: #e6e6e6;
+  color: #9733be;
   font-size: 28px;
   padding: 5px;
   font-weight: bold;
@@ -40,8 +41,9 @@
   display: flex;
   flex-direction: column;
   border-radius: 25px;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 50px 50px 100px #3ad0e8, -50px -50px 100px #9733be;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
   margin: 3rem 0 3rem 0;
   overflow-y: scroll;
   width: 890px;
@@ -61,7 +63,7 @@
 ::-webkit-scrollbar-thumb {
   background: #9733be;
   border-radius: 2rem;
-  
+
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -70,10 +72,11 @@
 
 .table-title th {
   border-radius: 15px;
-  background: #9733be;
-  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
 
-  color: #e6e6e6;
+  color: #9733be;
   font-size: 18px;
   padding: 10px;
   font-weight: bold;

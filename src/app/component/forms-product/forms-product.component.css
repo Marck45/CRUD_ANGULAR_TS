@@ -22,12 +22,13 @@
 }
 
 h1 {
-  width: 50%;
+  width: 30%;
   border-radius: 25px;
-  background: #9733be;
-  box-shadow: inset -20px 20px 60px #802ba2, inset 20px -20px 60px #ae3bdb;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
 
-  color: #e6e6e6;
+  color: #9733be;
   font-size: 28px;
   padding: 15px;
   font-weight: bold;
@@ -44,8 +45,9 @@ h1 {
   min-width: 50%;
   padding: 2rem;
   border-radius: 25px;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 50px 50px 100px #3ad0e8, -50px -50px 100px #9733be;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
 }
 
 .form label {

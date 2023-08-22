@@ -4,17 +4,17 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    padding: 5rem 0rem 0rem 0rem;
+    margin-top: 2rem;
 }
 
 /* titulo */
 .title-suport{
     border-radius: 25px;
-    background: #9733be;
-    box-shadow: inset -20px 20px 60px #802ba2,
-                inset 20px -20px 60px #ae3bdb;
-  
-      color: #e6e6e6;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+
+      color: #9733be;
       font-size: 34px;
       padding: 5px 25px 5px 25px;
       font-weight: bold;
@@ -37,7 +37,7 @@
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  50px 50px 100px #666666,
              -50px -50px 100px #ffffff;
-  
+
     font-size: 18px;
     padding: 15px;
     text-align: center;
