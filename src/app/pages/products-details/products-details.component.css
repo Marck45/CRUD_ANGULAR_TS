@@ -4,9 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 80%;
-  max-height: 60vh;
-  padding: 5rem 0rem 0rem 0rem;
+  margin-top: 2rem;
 }
 
 /* layout da informações inicias */

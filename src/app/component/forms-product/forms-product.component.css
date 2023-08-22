@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 5rem 1rem 0rem 0rem;
+  margin-top: 2rem;
 }
 
 .hide {
@@ -24,7 +24,7 @@
 h1 {
   width: 30%;
   border-radius: 25px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
 
@@ -45,7 +45,7 @@ h1 {
   min-width: 50%;
   padding: 2rem;
   border-radius: 25px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
 }
@@ -64,7 +64,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-.form label .input + span {
+.form label .input+span {
   position: absolute;
   left: 10px;
   top: 15px;
@@ -74,19 +74,19 @@ h1 {
   transition: 0.3s ease;
 }
 
-.form label .input:placeholder-shown + span {
+.form label .input:placeholder-shown+span {
   top: 15px;
   font-size: 0.9em;
 }
 
-.form label .input:focus + span,
-.form label .input:valid + span {
+.form label .input:focus+span,
+.form label .input:valid+span {
   top: 30px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-.form label .input:valid + span {
+.form label .input:valid+span {
   color: green;
 }
 
