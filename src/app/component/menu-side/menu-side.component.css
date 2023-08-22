@@ -1,6 +1,7 @@
 .side-menu-main {
   width: 15%;
   position: fixed;
+  margin-top: 2rem;
 }
 
 .option-menu a {
