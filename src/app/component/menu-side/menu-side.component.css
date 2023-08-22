@@ -1,55 +1,51 @@
-.side-menu-main{
-    max-width: 15%;
-    margin-top: 3rem;
-    margin-left: 1rem;
+.side-menu-main {
+  max-width: 15%;
+  margin-top: 3rem;
+  margin-left: 1rem;
 }
 
-.social{
-    display: flex;
-    justify-content: center;
-    border-radius: 25px;
+.option-menu a {
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+  color: #a1a1a1;
+}
+
+
+.option-menu {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem 1rem 5rem;
+  position: relative;
+
+}
+
+.option-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.toggleMenu {
+  margin-top: 1rem;
+  border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
-    padding: 1rem 6rem 1rem 6rem;
-    border-radius: 25px;
-    margin-bottom: 6rem;
-    position: relative;
+  padding: 1rem;
 }
 
-.social a img{
-    height: 3.5rem;
-}
-
-.social a, .option-menu a{
-    text-decoration: none;
-    list-style: none;
-    color: #666666;
-}
-
-
-.option-menu{
-    display: flex;
-    justify-content: center;
-    padding: 1rem 3rem 1rem 3rem;
-    position: relative;
-
-}
-
-.option-menu ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-.option-menu ul li{
-    margin-top: 1rem;
-    border-radius: 25px;
+.opt2 {
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: bolder;
+  margin-top: 1rem;
+  border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
-    padding: 1rem;
+  padding: 0.2rem;
 }

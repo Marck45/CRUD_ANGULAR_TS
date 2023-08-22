@@ -1,12 +1,61 @@
 <aside class="side-menu-main">
-    <div class="option-menu">
-        <ul>
-            <li><a href="#" routerLink="home"><img [src]="iconHome" alt="Pagina incial"></a></li>
-            <li><a href="#" routerLink="dashboard"><img [src]="iconDash" alt="Dashboard"></a></li>
-            <li><a href="#" routerLink="cadastros"><img [src]="iconCadastro" alt="Cadastro e edição"></a></li>
-            <li><a href="#" routerLink="Produtos"><img [src]="iconProduto" alt="produtos"></a></li>
-            <li><a href="#" routerLink="suporte"><img [src]="iconSuporte" alt="Suporte"></a></li>
-            <li><a href="#" routerLink="login"><img [src]="iconLogin" alt="Login"></a></li>
-        </ul>
-    </div>
+  <div class="option-menu">
+    <ul>
+      <li class="toggleMenu" (click)="toggleSubmenu('Home')">
+        <a href="#" routerLink="home"
+          ><img [src]="iconHome" alt="Pagina incial" />
+          <ul *ngIf="submenu === 'Home'">
+            <li class="opt2"><a href="#" routerLink="cadastro">Cadastrar</a></li>
+            <li class="opt2"><a href="#" routerLink="conferir">Conferir</a></li>
+            <li class="opt2"><a href="#" routerLink="editar">Editar</a></li>
+          </ul></a
+        >
+      </li>
+      <li class="toggleMenu" (click)="toggleSubmenu('dashboard')">
+        <a href="#" routerLink="dashboard"
+          ><img [src]="iconDash" alt="Dashboard" />
+          <ul *ngIf="submenu === 'dashboard'">
+            <li class="opt2"><a href="#" routerLink="cadastro">Vendas</a></li>
+            <li class="opt2"><a href="#" routerLink="conferir">Estoque</a></li>
+            <li class="opt2"><a href="#" routerLink="editar">Financeiro</a></li>
+          </ul></a
+        >
+      </li>
+      <li class="toggleMenu" (click)="toggleSubmenu('cadastros')">
+        <a href="#" routerLink="cadastros"
+          ><img [src]="iconCadastro" alt="Cadastro e edição" />
+          <ul *ngIf="submenu === 'cadastros'">
+            <li class="opt2"><a href="#" routerLink="cadastro">Cadastro</a></li>
+            <li class="opt2"><a href="#" routerLink="conferir">Edição</a></li>
+            <li class="opt2"><a href="#" routerLink="editar">Pesquisa</a></li>
+          </ul></a
+        >
+      </li>
+
+      <li class="toggleMenu" (click)="toggleSubmenu('produtos')">
+        <a href="#" routerLink="Produtos"
+          ><img [src]="iconProduto" alt="Produtos" />
+          <ul *ngIf="submenu === 'produtos'">
+            <li class="opt2"><a href="#" routerLink="cadastro">Cadastro</a></li>
+            <li class="opt2"><a href="#" routerLink="conferir">Edição</a></li>
+            <li class="opt2"><a href="#" routerLink="editar">Pesquisa</a></li>
+          </ul></a
+        >
+      </li>
+
+      <li class="toggleMenu" (click)="toggleSubmenu('suporte')">
+        <a href="#" routerLink="suporte"
+          ><img [src]="iconSuporte" alt="Suporte" />
+          <ul *ngIf="submenu === 'suporte'">
+            <li class="opt2"><a href="#" routerLink="cadastro">Cadastro</a></li>
+            <li class="opt2"><a href="#" routerLink="conferir">Edição</a></li>
+            <li class="opt2"><a href="#" routerLink="editar">Pesquisa</a></li>
+          </ul></a
+        >
+      </li>
+      <li class="toggleMenu">
+        <a href="#" routerLink="login"><img [src]="iconLogin" alt="Login" /></a>
+      </li>
+    </ul>
+  </div>
 </aside>

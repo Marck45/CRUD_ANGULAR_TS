@@ -18,4 +18,15 @@ export class MenuSideComponent {
   iconSuporte:string = '/assets/img/suporte.png';
   iconLogin:string = '/assets/img/login.png';
 
+
+  submenu: string | null = null; // Inicialmente, nenhum submenu está ativo
+
+  toggleSubmenu(submenuName: string) {
+    if (this.submenu === submenuName) {
+      this.submenu = null; // Fecha o submenu se já estiver aberto
+    } else {
+      this.submenu = submenuName; // Abre o submenu clicado
+    }
+  }
+
 }
