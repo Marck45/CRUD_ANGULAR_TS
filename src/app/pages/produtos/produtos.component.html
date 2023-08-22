@@ -24,7 +24,7 @@
                         <td>{{'R$' + ' ' + produtos.custo}}</td>
                         <td>{{'R$' + ' ' + produtos.valor}}</td>
                         <td>{{produtos.disponivel}}</td>
-                        
+
                         <td>
                             <button class="btn , edit"(click)="onEdit(produtos)">Editar</button>
                             <button class="btn delete" (click)="deleteProduto(produtos)">Deletar</button>
@@ -33,19 +33,18 @@
                 </tbody>
 
             </table>
-            <div class="btn-cadastro" routerLink="/cadastros">
-            
-                <button class="fancy">
-                    <span class="top-key"></span>
-                    <span class="text">+ produto</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </button>
-            </div>
-
         </div>
 
-        
+        <div class="btn-cadastro" routerLink="/cadastros">
+          <button class="fancy">
+            <span class="top-key"></span>
+            <span class="text">+ produto</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+        </button>
+      </div>
+
+
 
          <!-- formulario de edição -->
          <form class="hide" id="formId" [formGroup]="formProduto" (ngSubmit)="atualizarProduto(this.formProduto.value)">

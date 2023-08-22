@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+
 }
 
 .listagem-container {
@@ -11,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   max-width: 90%;
-  padding: 1rem;
+  padding: 0.5rem;
   position: relative;
 }
 
@@ -24,39 +25,39 @@
   border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;;
+    -5px -5px 10px #ffffff;
+  ;
 
   color: #9733be;
-  font-size: 28px;
+  font-size: 24px;
   padding: 5px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .tabela-container {
-  padding: 3rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
-  margin: 3rem 0 3rem 0;
+
+  margin: 2rem 0 2rem 0;
   overflow-y: scroll;
   width: 890px;
-  height: 600px;
+  height: 400px;
 }
 
 ::-webkit-scrollbar {
-  width: 10px; /* Largura da scrollbar */
-  height: 70%;
+  width: 10px;
+  /* Largura da scrollbar */
+  height: 40%;
 }
 
 ::-webkit-scrollbar-track {
-  background: #802ba2; /* Cor de fundo da área da scrollbar */
+  background: #802ba2;
+  /* Cor de fundo da área da scrollbar */
   border-radius: 2rem;
 }
 
@@ -67,7 +68,8 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3ad0e8; /* Cor do botão da scrollbar quando hover */
+  background: #3ad0e8;
+  /* Cor do botão da scrollbar quando hover */
 }
 
 .table-title th {
@@ -77,8 +79,8 @@
     -5px -5px 10px #ffffff;
 
   color: #9733be;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 16px;
+  padding: 5px;
   font-weight: bold;
   margin-bottom: 50px;
   margin-right: 50px;
@@ -98,7 +100,8 @@
 
 .btn-cadastro {
   padding: 0;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* btn delete */
@@ -128,6 +131,7 @@
   border: none;
   cursor: pointer;
 }
+
 .edit:hover,
 .delete:hover {
   background-color: #666666;
@@ -264,8 +268,10 @@ h1 {
   min-width: 50%;
   padding: 2rem;
   border-radius: 25px;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 50px 50px 100px #3ad0e8, -50px -50px 100px #9733be;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+  ;
 }
 
 .form label {
@@ -282,7 +288,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-.form label .input + span {
+.form label .input+span {
   position: absolute;
   left: 10px;
   top: 15px;
@@ -292,19 +298,19 @@ h1 {
   transition: 0.3s ease;
 }
 
-.form label .input:placeholder-shown + span {
+.form label .input:placeholder-shown+span {
   top: 15px;
   font-size: 0.9em;
 }
 
-.form label .input:focus + span,
-.form label .input:valid + span {
+.form label .input:focus+span,
+.form label .input:valid+span {
   top: 30px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-.form label .input:valid + span {
+.form label .input:valid+span {
   color: green;
 }
 

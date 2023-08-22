@@ -10,10 +10,10 @@
 
 .menuside{
     width: 15%;
-    height: 100vh;
+    min-height: 95vh;
 }
 
 .main-conteudo{
     width: 85%;
-    height: 100vh;
+    height: 95vh;
 }
