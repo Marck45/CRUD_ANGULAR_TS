@@ -23,7 +23,7 @@
                         <td>{{produtos.descricao}}</td>
                         <td>{{'R$' + ' ' + produtos.custo}}</td>
                         <td>{{'R$' + ' ' + produtos.valor}}</td>
-                        <td>{{produtos.disponivel}}</td>
+                        <td>{{produtos.medida}}</td>
 
                         <td>
                             <button class="btn , edit"(click)="onEdit(produtos)">Editar</button>
@@ -44,33 +44,148 @@
         </button>
       </div>
 
-
-
          <!-- formulario de edição -->
          <form class="hide" id="formId" [formGroup]="formProduto" (ngSubmit)="atualizarProduto(this.formProduto.value)">
-            <label>
-                <input class="input" type="text" id="idEdit" name="id" formControlName="_id" required="" value="">
-                <span>Cod Cadastro</span>
-            </label>
-            <label>
-                <input class="input" type="text" id="nameEdit" name="nome" formControlName="nome" required="" value="">
+          <div class="dados-camp">
+            <div class="dados-camp-label">
+              <label>
+                <input
+                  class="input"
+                  type="text"
+                  name="nome"
+                  formControlName="nome"
+                  value=""
+                  required=""
+                />
+                <span>Cod Produto</span>
+              </label>
+              <label>
+                <input
+                  class="input"
+                  type="text"
+                  name="nome"
+                  formControlName="nome"
+                  value=""
+                  required=""
+                />
                 <span>Nome do produto</span>
-            </label>
+              </label>
+              <label>
+                <input
+                  class="input"
+                  type="text"
+                  name="marca"
+                  formControlName="marca"
+                  value=""
+                  required=""
+                />
+                <span>Marca</span>
+              </label>
+            </div>
+            <div class="img-camp">
+              <label class="label-img-up" for="photo"><img [src]="imagemURL" alt="Clique para subir uma imagem" *ngIf="imagemURL"></label>
+              <input
+                type="file"
+                id="photo"
+                name="photo"
+                value=""
+                accept="image/*"
+                style="display: none;"
+                (change)="onImageSelected($event)"
+              />
 
-            <label>
-                <input class="input" type="text" id="descricaoEdit" name="descricao" required formControlName="descricao" required="">
-                <span>Descrição do produto</span>
-            </label>
+              <!-- Elemento <img> para mostrar a imagem selecionada -->
+            </div>
+          </div>
 
-            <label>
-                <input class="input" name="valor" id="valorEdit" type="number" required formControlName="valor" required="">
+          <div class="datails-camp">
+            <div class="valor-camp">
+              <label>
+                <input
+                  class="input"
+                  name="custo"
+                  type="number"
+                  required
+                  formControlName="custo"
+                  value=""
+                  required=""
+                />
+                <span>Custo do produto</span>
+              </label>
+
+              <label>
+                <input
+                  class="input"
+                  name="valor"
+                  type="number"
+                  required
+                  formControlName="valor"
+                  value=""
+                  required=""
+                />
                 <span>Valor do produto</span>
-            </label>
-
-            <label>
-                <input class="input" name="disponivel" type="number" required formControlName="disponivel" required="">
+              </label>
+              <label>
+                <select class="input" name="medida" required formControlName="medida">
+                  <option value="Unidade">Unidade</option>
+                  <option value="Kilo">Kg</option>
+                  <option value="Meio Kilo">Meio Kg</option>
+                  <option value="Dúzia">Dúzia</option>
+                  <option value="Meia Dúzia">Meia Dúzia</option>
+                </select>
+                <span>Medida</span>
+              </label>
+            </div>
+            <div class="estoque-camp">
+              <label>
+                <input
+                  class="input"
+                  name="quantidade"
+                  type="number"
+                  required
+                  formControlName="quantidade"
+                  value=""
+                  required=""
+                />
                 <span>Quantidade</span>
-            </label>
+              </label>
+              <label>
+                <input
+                  class="input"
+                  name="validade"
+                  type="date"
+                  required=""
+                  value=""
+                  formControlName="validade"
+                />
+                <span style="display: none;">Validade</span>
+              </label>
+              <label>
+                <input
+                  class="input"
+                  name="lote"
+                  type="number"
+                  required
+                  formControlName="lote"
+                  value=""
+                  required=""
+                />
+                <span>Lote</span>
+              </label>
+            </div>
+          </div>
+          <label>
+            <input
+              class="input"
+              type="text"
+              name="descricao"
+              required
+              formControlName="descricao"
+              value=""
+              required=""
+            />
+            <span>Descrição do produto</span>
+          </label>
 
             <button class="fancy" type="submit">
                 <span class="top-key"></span>

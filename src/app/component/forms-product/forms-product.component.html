@@ -37,8 +37,8 @@
             <input
               class="input"
               type="text"
-              name="nome"
-              formControlName="nome"
+              name="marca"
+              formControlName="marca"
               value=""
               required=""
             />
@@ -46,11 +46,12 @@
           </label>
         </div>
         <div class="img-camp">
-          <label class="label-img-up" for="imagem"><img [src]="imagemURL" alt="Clique para subir uma imagem" *ngIf="imagemURL"></label>
+          <label class="label-img-up" for="photo"><img [src]="imagemURL" alt="Clique para subir uma imagem" *ngIf="imagemURL"></label>
           <input
             type="file"
-            id="imagem"
-            name="imagem"
+            id="photo"
+            name="photo"
+            value=""
             accept="image/*"
             style="display: none;"
             (change)="onImageSelected($event)"
@@ -69,6 +70,7 @@
               type="number"
               required
               formControlName="custo"
+              value=""
               required=""
             />
             <span>Custo do produto</span>
@@ -81,12 +83,13 @@
               type="number"
               required
               formControlName="valor"
+              value=""
               required=""
             />
             <span>Valor do produto</span>
           </label>
           <label>
-            <select class="input" name="valor" required formControlName="valor">
+            <select class="input" name="medida" required formControlName="medida">
               <option value="Unidade">Unidade</option>
               <option value="Kilo">Kg</option>
               <option value="Meio Kilo">Meio Kg</option>
@@ -100,10 +103,11 @@
           <label>
             <input
               class="input"
-              name="disponivel"
+              name="quantidade"
               type="number"
               required
-              formControlName="disponivel"
+              formControlName="quantidade"
+              value=""
               required=""
             />
             <span>Quantidade</span>
@@ -111,20 +115,22 @@
           <label>
             <input
               class="input"
-              name="disponivel"
+              name="validade"
               type="date"
-              required
-              formControlName="disponivel"
+              required=""
+              value=""
+              formControlName="validade"
             />
             <span style="display: none;">Validade</span>
           </label>
           <label>
             <input
               class="input"
-              name="disponivel"
+              name="lote"
               type="number"
               required
-              formControlName="disponivel"
+              formControlName="lote"
+              value=""
               required=""
             />
             <span>Lote</span>
@@ -138,6 +144,7 @@
           name="descricao"
           required
           formControlName="descricao"
+          value=""
           required=""
         />
         <span>Descrição do produto</span>

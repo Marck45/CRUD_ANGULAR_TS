@@ -26,7 +26,6 @@ export class FormsProductComponent implements OnInit {
 
   maiorIdProduto: number = 0;
 
-
   constructor(private produtosAPiService: ProdutosAPiService) { }
 
   ngOnInit(): void {
@@ -79,7 +78,12 @@ export class FormsProductComponent implements OnInit {
       valor: new FormControl(),
       custo: new FormControl(),
       descricao: new FormControl(),
-      disponivel: new FormControl(),
+      marca: new FormControl(),
+      medida: new FormControl(),
+      quantidade: new FormControl(),
+      validade: new FormControl(),
+      lote: new FormControl(),
+      photo: new FormControl(),
     });
   }
 
@@ -110,8 +114,12 @@ export class FormsProductComponent implements OnInit {
       valor: form.valor,
       custo: form.custo,
       descricao: form.descricao,
-      disponivel: form.disponivel,
-      imagem: this.imagemSelecionada,
+      marca: form.marca,
+      medida: form.medida,
+      quantidade: form.quantidade,
+      validade: form. validade,
+      lote: form.lote,
+      photo: form.photo,
     };
 
     (await this.produtosAPiService.saveProduto(produto)).subscribe(

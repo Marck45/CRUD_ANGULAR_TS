@@ -67,10 +67,10 @@ export class DashboardComponent implements OnInit {
 
   // calcula o produto que tem maior
   async maiorEstoque() {
-    
+
     for (let i = 0; i < this.produtos.length; i++) {
       let produto = this.produtos[i];
-      let valor = produto.disponivel;
+      let valor = produto.valor;
       if (typeof valor === 'number' && valor > this.maiorValor) {
         this.maiorValor = valor;
         this.produtoComMaiorValor = {

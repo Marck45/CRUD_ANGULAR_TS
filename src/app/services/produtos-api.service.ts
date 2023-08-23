@@ -10,7 +10,7 @@ export class ProdutosAPiService {
 
   private contadorId = 0;
 
-  url = 'https://api-crud-angular-marck.onrender.com/produto'; 
+  url = 'http://localhost:3000/produto';
 
 
   // injetando o HttpClient
@@ -30,7 +30,7 @@ export class ProdutosAPiService {
           ,catchError(this.handleError));
 
   }
- 
+
   // cadastrar novo produto
   async saveProduto(produto:Produtos){
     console.warn(produto)
@@ -40,7 +40,7 @@ export class ProdutosAPiService {
       ,catchError(this.handleError));
   }
 
-  // deletar um produto cadastrardo 
+  // deletar um produto cadastrardo
   async deleteProduto(produto:Produtos){
     return this.httpClient.delete<Produtos>(this.url + '/' + produto._id, this.httpOptions)
     .pipe(

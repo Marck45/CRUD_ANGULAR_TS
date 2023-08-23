@@ -17,6 +17,10 @@ export class ProdutosComponent implements OnInit {
   formProduto!: FormGroup;
   FormProdutoEdit!: FormGroup;
 
+  imagemSelecionada: File | null = null;
+  imagemURL: string = '/assets/img/fileImg.png';
+  fileImg:string =  '/assets/img/fileImg.png';
+
 
   constructor(private produtosAPiService: ProdutosAPiService) {}
 
@@ -26,15 +30,40 @@ export class ProdutosComponent implements OnInit {
     this.createForm();
   }
 
+
+    // metodo para capturar imagem
+
+    onImageSelected(event: any) {
+      const file: File = event?.target?.files[0];
+
+      if (file) {
+        this.imagemSelecionada = file;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.imagemURL = e.target?.result as string;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        // Caso não haja arquivo selecionado, você pode definir 'imagemURL' como uma string vazia para evitar exibir uma imagem quebrada.
+        this.imagemURL = this.fileImg;
+      }
+    }
+
   // criação de produto form
   createForm() {
     this.formProduto = new FormGroup({
       _id: new FormControl(),
       nome: new FormControl(),
-      custo: new FormControl(),
       valor: new FormControl(),
+      custo: new FormControl(),
       descricao: new FormControl(),
-      disponivel: new FormControl(),
+      marca: new FormControl(),
+      medida: new FormControl(),
+      quantidade: new FormControl(),
+      validade: new FormControl(),
+      lote: new FormControl(),
+      photo: new FormControl(),
     });
   }
 
@@ -47,7 +76,7 @@ export class ProdutosComponent implements OnInit {
     let valorForm = document.getElementById('valorEdit') as HTMLInputElement;
     let disponivelForm = document.getElementById('disponivel') as HTMLInputElement;
     let idForm = document.getElementById('idEdit') as HTMLInputElement;
- 
+
     // mudar dados formulario
     formViwer?.classList.remove('hide');
     formViwer?.classList.add('form');
@@ -59,7 +88,6 @@ export class ProdutosComponent implements OnInit {
     nameForm = formProduto.nome;
     descricaoForm.value = formProduto.descricao;
     valorForm.value = formProduto.valor.toString();
-    disponivelForm.value = formProduto.disponivel.toString();
     idForm.value = formProduto._id;
     console.log('formulario de edição acionado');
   }
@@ -83,7 +111,12 @@ export class ProdutosComponent implements OnInit {
       custo: form.custo,
       valor: form.valor,
       descricao: form.descricao,
-      disponivel: form.disponivel,
+      medida: form.medida,
+      marca: form.marca,
+      quantidade: form.quantidade,
+      validade: form.validade,
+      lote: form.lote,
+      photo: form.lote
     };
 
     (await this.produtosAPiService.deleteProduto(produto)).subscribe(
@@ -105,7 +138,13 @@ export class ProdutosComponent implements OnInit {
       custo: formProduto.custo,
       valor: formProduto.valor,
       descricao: formProduto.descricao,
+      medida: formProduto.medida,
+      marca: formProduto.marca,
+      quantidade: formProduto.quantidade,
       disponivel: formProduto.disponivel,
+      validade: formProduto.validade,
+      lote: formProduto.lote,
+      photo: formProduto.photo,
     };
 
     (await this.produtosAPiService.UpdateProduto(produto)).subscribe(
