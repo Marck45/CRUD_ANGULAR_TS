@@ -1,47 +1,159 @@
-<div class='wrapper'>
+<div class="wrapper">
+  <main class="container">
+    <h1>Cadastro de Produtos</h1>
+    <!-- formulario de cadastro -->
 
-    <main class="container">
+    <form
+      class="form"
+      id="formCadastro"
+      [formGroup]="formProduto"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="dados-camp">
+        <div class="dados-camp-label">
+          <label>
+            <input
+              class="input"
+              type="text"
+              name="id"
+              formControlName="_id"
+              required
+              [(ngModel)]="maiorIdProduto"
+            />
+            <span>Cod Produto</span>
+          </label>
+          <label>
+            <input
+              class="input"
+              type="text"
+              name="nome"
+              formControlName="nome"
+              value=""
+              required=""
+            />
+            <span>Nome do produto</span>
+          </label>
+          <label>
+            <input
+              class="input"
+              type="text"
+              name="nome"
+              formControlName="nome"
+              value=""
+              required=""
+            />
+            <span>Marca</span>
+          </label>
+        </div>
+        <div class="img-camp">
+          <label class="label-img-up" for="imagem"><img [src]="imagemURL" alt="Clique para subir uma imagem" *ngIf="imagemURL"></label>
+          <input
+            type="file"
+            id="imagem"
+            name="imagem"
+            accept="image/*"
+            style="display: none;"
+            (change)="onImageSelected($event)"
+          />
 
-        <h1>Cadastro de Produtos</h1>
-        <!-- formulario de cadastro -->
-        <form class="form" id="formCadastro" [formGroup]="formProduto" (ngSubmit)="onSubmit()">
-            <label>
-                <input class="input" type="text" name="id" formControlName="_id" required [(ngModel)]="maiorIdProduto">
-                <span>Cod Produto</span>
-            </label>
-            <label>
-                <input class="input" type="text" name="nome" formControlName="nome" value="" required="">
-                <span>Nome do produto</span>
-            </label>
+          <!-- Elemento <img> para mostrar a imagem selecionada -->
+        </div>
+      </div>
 
-            <label>
-                <input class="input" name="custo" type="number" required formControlName="custo" required="">
-                <span>Custo do produto</span>
-            </label>
+      <div class="datails-camp">
+        <div class="valor-camp">
+          <label>
+            <input
+              class="input"
+              name="custo"
+              type="number"
+              required
+              formControlName="custo"
+              required=""
+            />
+            <span>Custo do produto</span>
+          </label>
 
-            <label>
-                <input class="input" name="valor" type="number" required formControlName="valor" required="">
-                <span>Valor do produto</span>
-            </label>
+          <label>
+            <input
+              class="input"
+              name="valor"
+              type="number"
+              required
+              formControlName="valor"
+              required=""
+            />
+            <span>Valor do produto</span>
+          </label>
+          <label>
+            <select class="input" name="valor" required formControlName="valor">
+              <option value="Unidade">Unidade</option>
+              <option value="Kilo">Kg</option>
+              <option value="Meio Kilo">Meio Kg</option>
+              <option value="Dúzia">Dúzia</option>
+              <option value="Meia Dúzia">Meia Dúzia</option>
+            </select>
+            <span>Medida</span>
+          </label>
+        </div>
+        <div class="estoque-camp">
+          <label>
+            <input
+              class="input"
+              name="disponivel"
+              type="number"
+              required
+              formControlName="disponivel"
+              required=""
+            />
+            <span>Quantidade</span>
+          </label>
+          <label>
+            <input
+              class="input"
+              name="disponivel"
+              type="date"
+              required
+              formControlName="disponivel"
+            />
+            <span style="display: none;">Validade</span>
+          </label>
+          <label>
+            <input
+              class="input"
+              name="disponivel"
+              type="number"
+              required
+              formControlName="disponivel"
+              required=""
+            />
+            <span>Lote</span>
+          </label>
+        </div>
+      </div>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="descricao"
+          required
+          formControlName="descricao"
+          required=""
+        />
+        <span>Descrição do produto</span>
+      </label>
 
-            <label>
-                <input class="input" type="text" name="descricao" required formControlName="descricao" required="">
-                <span>Descriçaõ do produto</span>
-            </label>
-
-            <label>
-                <input class="input" name="disponivel" type="number" required formControlName="disponivel" required="">
-                <span>Quantidade</span>
-            </label>
-
-            <button href="#" class="fancy" type="submit" [disabled]="!formProduto.valid">
-                <span class="top-key"></span>
-                <span class="text">Cadastrar</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
-            </button>
-        </form>
-
-    </main>
-
+      <button
+        href="#"
+        class="fancy"
+        type="submit"
+        [disabled]="!formProduto.valid"
+      >
+        <span class="top-key"></span>
+        <span class="text">Cadastrar</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </button>
+    </form>
+  </main>
 </div>

@@ -11,16 +11,23 @@ import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 export class FormsProductComponent implements OnInit {
   listagem = document.querySelector('#listagem');
 
+  imgProduct = '/assets/img/img-login.jpg';
+
+  imagemSelecionada: File | null = null;
+  imagemURL: string = '/assets/img/fileImg.png';
+  fileImg:string =  '/assets/img/fileImg.png';
+
+
   produto = {} as Produtos;
   produtos: Produtos[] = [];
 
   formProduto!: FormGroup;
   FormProdutoEdit!: FormGroup;
-   
+
   maiorIdProduto: number = 0;
 
 
-  constructor(private produtosAPiService: ProdutosAPiService) {}
+  constructor(private produtosAPiService: ProdutosAPiService) { }
 
   ngOnInit(): void {
 
@@ -30,19 +37,38 @@ export class FormsProductComponent implements OnInit {
 
   }
 
+  // metodo para capturar imagem
+
+  onImageSelected(event: any) {
+    const file: File = event?.target?.files[0];
+
+    if (file) {
+      this.imagemSelecionada = file;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.imagemURL = e.target?.result as string;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      // Caso não haja arquivo selecionado, você pode definir 'imagemURL' como uma string vazia para evitar exibir uma imagem quebrada.
+      this.imagemURL = this.fileImg;
+    }
+  }
+
   // cria id novo automaticamente
 
-  async obterMaiorId(){
-    
+  async obterMaiorId() {
 
-      for (let i = 0; i < this.produtos.length; i++) {
-        let produto = this.produtos[i];
-        let id = produto._id;
-        if (id > this.maiorIdProduto) {
-          this.maiorIdProduto = id;
-        }
+
+    for (let i = 0; i < this.produtos.length; i++) {
+      let produto = this.produtos[i];
+      let id = produto._id;
+      if (id > this.maiorIdProduto) {
+        this.maiorIdProduto = id;
       }
-      this.maiorIdProduto += 1;
+    }
+    this.maiorIdProduto += 1;
   }
 
   // criação de produto form
@@ -85,6 +111,7 @@ export class FormsProductComponent implements OnInit {
       custo: form.custo,
       descricao: form.descricao,
       disponivel: form.disponivel,
+      imagem: this.imagemSelecionada,
     };
 
     (await this.produtosAPiService.saveProduto(produto)).subscribe(

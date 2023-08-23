@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .container {
@@ -43,7 +44,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   min-width: 50%;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
@@ -76,19 +77,76 @@ h1 {
 
 .form label .input:placeholder-shown+span {
   top: 15px;
-  font-size: 0.9em;
+  font-size: 0.5em;
 }
 
 .form label .input:focus+span,
 .form label .input:valid+span {
   top: 30px;
-  font-size: 0.7em;
+  font-size: 0.5em;
   font-weight: 600;
 }
 
 .form label .input:valid+span {
   color: green;
 }
+
+/* imagem do produtos e detalhes do campos */
+
+.dados-camp{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.dados-camp-label{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.img-camp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 120px;
+  padding: 10px;
+  outline: 0;
+  margin-bottom: 15px;
+}
+
+.img-camp img{
+  height: 120px;
+  border-radius: 25px;
+}
+
+.label-img-up{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  height: 150px;
+  padding: 10px;
+  outline: 0;
+}
+
+/* dados de vamor do produto */
+
+.datails-camp{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.valor-camp, .estoque-camp{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
 
 /* radio de produto */
 
