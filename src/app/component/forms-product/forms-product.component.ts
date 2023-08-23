@@ -47,6 +47,12 @@ export class FormsProductComponent implements OnInit {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.imagemURL = e.target?.result as string;
+
+        // Converte a imagem em uma string Base64
+        const base64Image = e.target?.result?.toString().split(',')[1];
+
+        // Define a imagem como uma string Base64 no campo 'photo' do objeto 'produto'
+        this.produto.photo = base64Image;
       };
       reader.readAsDataURL(file);
     } else {
@@ -119,7 +125,7 @@ export class FormsProductComponent implements OnInit {
       quantidade: form.quantidade,
       validade: form. validade,
       lote: form.lote,
-      photo: form.photo,
+      photo: this.produto.photo,
     };
 
     (await this.produtosAPiService.saveProduto(produto)).subscribe(
