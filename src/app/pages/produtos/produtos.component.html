@@ -99,24 +99,8 @@
       </div>
       <div class="img-camp">
         <label class="label-img-up" for="photo">
-          <img
-            [src]="formProduto.get('photo')"
-            alt="Imagem do Produto"
-            *ngIf="formProduto.get('photo')"
-          />
+          <img [src]="formProduto.get('firebaseUrl')?.value" alt="Imagem do Produto" *ngIf="formProduto.get('firebaseUrl')?.value">
         </label>
-        <input
-          type="file"
-          id="photo"
-          name="photo"
-          id="editPhoto"
-          accept="image/*"
-          formControlName="photo"
-          style="display: none"
-          (change)="onImageSelected($event)"
-        />
-
-        <!-- Elemento <img> para mostrar a imagem selecionada -->
       </div>
     </div>
 

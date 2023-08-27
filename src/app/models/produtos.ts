@@ -1,4 +1,5 @@
 export interface Produtos {
+  firebaseUrl: any;
   _id: number;
   nome: string;
   valor: number;

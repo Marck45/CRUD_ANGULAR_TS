@@ -32,42 +32,6 @@ export class ProdutosComponent implements OnInit {
 
   }
 
-
-  // metodo para capturar imagem
-
-  onImageSelected(event: any) {
-    const file: File = event?.target?.files[0];
-
-    if (file) {
-      console.log('Imagem selecionada:', file);
-      this.imagemSelecionada = file;
-
-      const formData = new FormData();
-      formData.append('photo', file); // 'photo' deve corresponder ao nome do campo esperado no servidor
-
-      // Envie formData para o servidor aqui usando um serviço HTTP
-      this.produtosAPiService.uploadImage(formData).subscribe(
-        (response) => {
-          console.log('Imagem enviada com sucesso.', response);
-          // Você pode tratar a resposta do servidor aqui, por exemplo, atualizando a URL da imagem.
-        },
-        (error) => {
-          console.error('Erro ao enviar a imagem.', error);
-          // Lide com o erro aqui, se necessário.
-        }
-      );
-    } else {
-      console.log('Nenhum arquivo selecionado.');
-    }
-  }
-
-
-  // Função para obter uma URL de imagem segura
-  getSanitizedImageUrl(base64String: string): string {
-    return `data:image/jpeg;base64,${base64String}`;
-  }
-
-
   // criação de produto form
   createForm() {
     this.formProduto = new FormGroup({
@@ -81,8 +45,11 @@ export class ProdutosComponent implements OnInit {
       quantidade: new FormControl(),
       validade: new FormControl(),
       lote: new FormControl(),
-      photo: new FormControl('') // Inicializa com uma string vazia
+      photo: new FormControl(''), // Inicializa com uma string vazia
+      firebaseUrl: new FormControl()
     });
+
+    console.log(this.produto.photo)
   }
 
 
@@ -112,20 +79,11 @@ export class ProdutosComponent implements OnInit {
       quantidade: produtos.quantidade,
       validade: produtos.validade,
       lote: produtos.lote,
-      photo: produtos.photo // Certifique-se de que 'photo' contenha o valor correto
+      photo: produtos.photo,
+      firebaseUrl: produtos.firebaseUrl// Certifique-se de que 'photo' contenha o valor correto
     });
 
-    // Defina o valor do campo de validade do formulário com base nos dados do produto.
-    const validadeControl = this.formProduto.get('validade');
-    if (validadeControl) {
-      validadeControl.setValue(produtos.validade);
-    } else {
-      console.error('Controle "validade" não encontrado no FormGroup.');
-    }
-
   }
-
-
 
   // carregar todos os produtos
   async getProducts() {
@@ -151,7 +109,8 @@ export class ProdutosComponent implements OnInit {
       quantidade: form.quantidade,
       validade: form.validade,
       lote: form.lote,
-      photo: form.lote
+      photo: form.photo,
+      firebaseUrl: form.firebaseUrl
     };
 
     (await this.produtosAPiService.deleteProduto(produto)).subscribe(
@@ -180,6 +139,7 @@ export class ProdutosComponent implements OnInit {
       validade: formProduto.validade,
       lote: formProduto.lote,
       photo: formProduto.photo,
+      firebaseUrl: formProduto.firebaseUrl
     };
 
     (await this.produtosAPiService.UpdateProduto(produto)).subscribe(
