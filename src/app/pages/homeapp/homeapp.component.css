@@ -6,17 +6,6 @@
     margin-top: 2rem;
 }
 
-.main-title h1{
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
-    border-radius: 25px;
-    color: #9733be;
-    margin-bottom: 4rem;
-    font-size: 24px;
-    padding: 5px 25px 5px 25px;
-}
-
 .text-img{
     display: flex;
     justify-content: space-between;

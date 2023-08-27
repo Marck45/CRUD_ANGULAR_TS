@@ -16,6 +16,8 @@ import { ProdutosComponent } from './pages/produtos/produtos.component';
 import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
 import { BarSearchComponent } from './component/bar-search/bar-search.component';
 import { ButtonComponent } from './component/button/button.component';
+import { TitlePageComponent } from './component/title-page/title-page.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ButtonComponent } from './component/button/button.component';
     ProdutosComponent,
     ProductsDetailsComponent,
     BarSearchComponent,
-    ButtonComponent
+    ButtonComponent,
+    TitlePageComponent,
   ],
   imports: [
     BrowserModule,
