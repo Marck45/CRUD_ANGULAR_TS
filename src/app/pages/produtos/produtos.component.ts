@@ -80,7 +80,7 @@ export class ProdutosComponent implements OnInit {
       validade: produtos.validade,
       lote: produtos.lote,
       photo: produtos.photo,
-      firebaseUrl: produtos.firebaseUrl// Certifique-se de que 'photo' contenha o valor correto
+      firebaseUrl: produtos.firebaseUrl,
     });
 
   }
@@ -110,7 +110,7 @@ export class ProdutosComponent implements OnInit {
       validade: form.validade,
       lote: form.lote,
       photo: form.photo,
-      firebaseUrl: form.firebaseUrl
+      firebaseUrl: form.firebaseUrl,
     };
 
     (await this.produtosAPiService.deleteProduto(produto)).subscribe(
