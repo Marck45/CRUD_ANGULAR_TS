@@ -113,21 +113,26 @@ export class FormsProductComponent implements OnInit {
 
   // cadastrar um novo produto
   async cadastrarProduto(form: any) {
-    const produto = {
-      _id: form._id,
-      nome: form.nome,
-      valor: form.valor,
-      custo: form.custo,
-      descricao: form.descricao,
-      marca: form.marca,
-      medida: form.medida,
-      quantidade: form.quantidade,
-      validade: form. validade,
-      lote: form.lote,
-      photo: this.produto.photo.file,
-    };
+    const formData = new FormData(); // Crie um objeto FormData para enviar dados em form-data
 
-    (await this.produtosAPiService.saveProduto(produto)).subscribe(
+    // Adicione todos os campos ao formData
+    formData.append('_id', form._id);
+    formData.append('nome', form.nome);
+    formData.append('valor', form.valor.toString());
+    formData.append('custo', form.custo.toString());
+    formData.append('descricao', form.descricao);
+    formData.append('marca', form.marca);
+    formData.append('medida', form.medida);
+    formData.append('quantidade', form.quantidade.toString());
+    formData.append('validade', form.validade);
+    formData.append('lote', form.lote.toString());
+
+    // Adicione a imagem ao formData se estiver disponível
+    if (this.produto.photo) {
+      formData.append('photo', this.produto.photo);
+    }
+
+    (await this.produtosAPiService.saveProduto(formData)).subscribe(
       (response: Produtos[]) => {
         console.log('Produto cadastrado', response);
         this.getProducts();
@@ -139,6 +144,7 @@ export class FormsProductComponent implements OnInit {
 
     this.cleanForm();
   }
+
 
   // resetar formulario
   cleanForm() {
