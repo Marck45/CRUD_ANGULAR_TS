@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Produtos } from 'src/app/models/produtos';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-produtos',
@@ -15,40 +17,56 @@ export class ProdutosComponent implements OnInit {
   produtos: Produtos[] = [];
 
   formProduto!: FormGroup;
-  FormProdutoEdit!: FormGroup;
 
   imagemSelecionada: File | null = null;
   imagemURL: string = '/assets/img/fileImg.png';
-  fileImg:string =  '/assets/img/fileImg.png';
+  fileImg: string = '/assets/img/fileImg.png';
 
 
-  constructor(private produtosAPiService: ProdutosAPiService) {}
+  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getProducts();
 
     this.createForm();
+
   }
 
 
-    // metodo para capturar imagem
+  // metodo para capturar imagem
 
-    onImageSelected(event: any) {
-      const file: File = event?.target?.files[0];
+  onImageSelected(event: any) {
+    const file: File = event?.target?.files[0];
 
-      if (file) {
-        this.imagemSelecionada = file;
+    if (file) {
+      console.log('Imagem selecionada:', file);
+      this.imagemSelecionada = file;
 
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          this.imagemURL = e.target?.result as string;
-        };
-        reader.readAsDataURL(file);
-      } else {
-        // Caso não haja arquivo selecionado, você pode definir 'imagemURL' como uma string vazia para evitar exibir uma imagem quebrada.
-        this.imagemURL = this.fileImg;
-      }
+      const formData = new FormData();
+      formData.append('photo', file); // 'photo' deve corresponder ao nome do campo esperado no servidor
+
+      // Envie formData para o servidor aqui usando um serviço HTTP
+      this.produtosAPiService.uploadImage(formData).subscribe(
+        (response) => {
+          console.log('Imagem enviada com sucesso.', response);
+          // Você pode tratar a resposta do servidor aqui, por exemplo, atualizando a URL da imagem.
+        },
+        (error) => {
+          console.error('Erro ao enviar a imagem.', error);
+          // Lide com o erro aqui, se necessário.
+        }
+      );
+    } else {
+      console.log('Nenhum arquivo selecionado.');
     }
+  }
+
+
+  // Função para obter uma URL de imagem segura
+  getSanitizedImageUrl(base64String: string): string {
+    return `data:image/jpeg;base64,${base64String}`;
+  }
+
 
   // criação de produto form
   createForm() {
@@ -63,19 +81,15 @@ export class ProdutosComponent implements OnInit {
       quantidade: new FormControl(),
       validade: new FormControl(),
       lote: new FormControl(),
-      photo: new FormControl(),
+      photo: new FormControl('') // Inicializa com uma string vazia
     });
   }
 
-  async onEdit(formProduto: any) {
+
+  async onEdit(produtos: Produtos) {
     // Escondo o formulario de cadastro e exibe o de edição
     const formViwer = document.querySelector('#formId');
     const formHide = document.querySelector('#table-box');
-    let nameForm = document.getElementById('nameEdit') as HTMLInputElement;
-    let descricaoForm = document.getElementById('descricaoEdit') as HTMLInputElement;
-    let valorForm = document.getElementById('valorEdit') as HTMLInputElement;
-    let disponivelForm = document.getElementById('disponivel') as HTMLInputElement;
-    let idForm = document.getElementById('idEdit') as HTMLInputElement;
 
     // mudar dados formulario
     formViwer?.classList.remove('hide');
@@ -85,12 +99,33 @@ export class ProdutosComponent implements OnInit {
     formHide?.classList.remove('tabela-container');
 
     // atribuir valores ao forms
-    nameForm = formProduto.nome;
-    descricaoForm.value = formProduto.descricao;
-    valorForm.value = formProduto.valor.toString();
-    idForm.value = formProduto._id;
-    console.log('formulario de edição acionado');
+    this.formProduto.setValue(produtos);
+    console.log('Produto a ser editado:', this.produtos);
+    this.formProduto.patchValue({
+      _id: produtos._id,
+      nome: produtos.nome,
+      valor: produtos.valor,
+      custo: produtos.custo,
+      descricao: produtos.descricao,
+      marca: produtos.marca,
+      medida: produtos.medida,
+      quantidade: produtos.quantidade,
+      validade: produtos.validade,
+      lote: produtos.lote,
+      photo: produtos.photo // Certifique-se de que 'photo' contenha o valor correto
+    });
+
+    // Defina o valor do campo de validade do formulário com base nos dados do produto.
+    const validadeControl = this.formProduto.get('validade');
+    if (validadeControl) {
+      validadeControl.setValue(produtos.validade);
+    } else {
+      console.error('Controle "validade" não encontrado no FormGroup.');
+    }
+
   }
+
+
 
   // carregar todos os produtos
   async getProducts() {
@@ -98,7 +133,7 @@ export class ProdutosComponent implements OnInit {
       (produtos: Produtos[]) => {
         this.produtos = produtos;
 
-        console.log('produtos carregados com sucesso');
+        console.log('produtos carregados com sucesso', produtos);
       }
     );
   }

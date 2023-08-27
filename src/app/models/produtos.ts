@@ -10,5 +10,4 @@ export interface Produtos {
   validade: Date;
   lote: number;
   photo: any;
-
 }

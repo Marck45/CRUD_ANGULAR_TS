@@ -70,4 +70,9 @@ export class ProdutosAPiService {
     return throwError(errorMessage);
   };
 
+  // Método para enviar a imagem para o servidor
+  uploadImage(formData: FormData): Observable<any> {
+    return this.httpClient.post(`${this.url}/upload`, formData);
+  }
+
 }

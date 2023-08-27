@@ -46,26 +46,25 @@ export class FormsProductComponent implements OnInit {
 
       const reader = new FileReader();
       reader.onload = (e) => {
-        this.imagemURL = e.target?.result as string;
+        this.imagemURL = URL.createObjectURL(file); // Define a imagem para exibição na visualização
 
-        // Converte a imagem em uma string Base64
-        const base64Image = e.target?.result?.toString().split(',')[1];
-
-        // Define a imagem como uma string Base64 no campo 'photo' do objeto 'produto'
-        this.produto.photo = base64Image;
+        // Define o arquivo como a imagem selecionada no objeto 'produto'
+        this.produto.photo = file;
       };
       reader.readAsDataURL(file);
     } else {
-      // Caso não haja arquivo selecionado, você pode definir 'imagemURL' como uma string vazia para evitar exibir uma imagem quebrada.
+      // Caso não haja arquivo selecionado, você pode definir 'imagemURL' como a imagem padrão.
       this.imagemURL = this.fileImg;
+
+      // Certifique-se de limpar o campo 'photo' do objeto 'produto'
+      this.produto.photo = null;
     }
   }
+
 
   // cria id novo automaticamente
 
   async obterMaiorId() {
-
-
     for (let i = 0; i < this.produtos.length; i++) {
       let produto = this.produtos[i];
       let id = produto._id;
@@ -125,7 +124,7 @@ export class FormsProductComponent implements OnInit {
       quantidade: form.quantidade,
       validade: form. validade,
       lote: form.lote,
-      photo: this.produto.photo,
+      photo: this.produto.photo.file,
     };
 
     (await this.produtosAPiService.saveProduto(produto)).subscribe(

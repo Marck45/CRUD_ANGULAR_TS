@@ -12,7 +12,7 @@ export class ProdutosClass implements Produtos{
     quantidade: number = 0;
     validade: Date = new Date;
     lote: number = 0;
-    photo: any;
+    photo: any = null;
 
 }
 
