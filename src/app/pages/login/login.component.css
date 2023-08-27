@@ -26,20 +26,6 @@
   width: 50%;
 }
 
-.title-form {
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
-
-  color: #9733be;
-  font-size: 24px;
-  padding: 5px 25px 5px 25px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
 form {
   display: flex;
   flex-direction: column;

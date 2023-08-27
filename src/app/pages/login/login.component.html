@@ -3,9 +3,7 @@
     <img [src]="imgLogin" alt="imagem de login" />
   </div>
   <div class="form-login">
-    <div class="title-form">
-      <h2>Login</h2>
-    </div>
+   <app-title-page [titleText]="'Login'"></app-title-page>
     <div class="form-login">
       <form action="submit" id="formLogin" [formGroup]="formLogin" *ngIf="formLogin" (ngSubmit)="onSubmitLogin()" >
         <label for="nome">
@@ -43,7 +41,7 @@
     <div class="suporte">
       <a href="#" (click)="forgetPass()">Esqueceu sua senha?</a>
     </div>
-    
+
       <div class="social-login">
         <fieldset class="social-content">
           <legend>Entre pelas redes!</legend>
@@ -55,6 +53,6 @@
         </div>
       </fieldset>
       </div>
-    
+
   </div>
 </main>
