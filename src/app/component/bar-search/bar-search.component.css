@@ -1,6 +1,7 @@
 .bar-container {
   display: flex;
-  margin-bottom: 5rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
 }
 
 input {

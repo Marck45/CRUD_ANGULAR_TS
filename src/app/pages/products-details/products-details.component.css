@@ -5,6 +5,37 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 100%;
+}
+
+.home-product {
+  width: 55%;
+  margin-bottom: 5rem;
+}
+
+.title-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+.all-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.space-title {
+  margin-right: 1rem;
 }
 
 /* layout da informações inicias */
@@ -44,22 +75,20 @@
   align-items: center;
   width: 100%;
   padding: 0.75rem;
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
-
   margin-bottom: 0.5rem;
 }
 
 .datails {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
-}
-
-.datails h4 {
-  margin-right: 1rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  min-width: 75%;
 }
 
 .datails p {
@@ -72,8 +101,8 @@
 }
 
 .photo-container img {
-  width: 100%;
-  height: 53vh;
+  width: 70%;
+  height: 40vh;
   border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
@@ -84,6 +113,4 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 60%;
-  margin-top: 5rem;
 }

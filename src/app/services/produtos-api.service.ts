@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Produtos } from '../models/produtos';
@@ -73,5 +73,19 @@ export class ProdutosAPiService {
   uploadImage(formData: FormData): Observable<any> {
     return this.httpClient.post(`${this.url}/upload`, formData);
   }
+
+
+  // filtrar produtos do back
+  filtrarProdutos(searchTerm: string): Observable<any[]> {
+    // Configurar os parâmetros da solicitação GET
+    const params = new HttpParams().set('nome', searchTerm);
+
+    return this.httpClient.get<any[]>(this.url, { params })
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+
 
 }

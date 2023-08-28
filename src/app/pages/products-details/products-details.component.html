@@ -1,53 +1,76 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Pesquise por Filtros'"></app-title-page>
-  <app-bar-search (searchEvent)="performSearch($event)"></app-bar-search>
+  <div class="home-product">
+    <div class="title-search">
+      <app-title-page class="space-title" [titleText]="'Detalhes dos produtos'"></app-title-page>
+      <app-bar-search (searchEvent)="performSearch($event)"></app-bar-search>
+    </div>
+
+    <div class="all-pagination">
+      <div class="pagination">
+        <app-button [buttonText]="'Anterior'" (click)="previousItem()"></app-button>
+        <app-button [buttonText]="'Proximo'" (click)="nextItem()"></app-button>
+      </div>
+      <div class="all-products">
+        <a routerLink="../produtos"><app-button [buttonText]="'Todos os produtos'"></app-button
+        ></a>
+      </div>
+    </div>
+  </div>
+
   <div class="main-container">
     <div class="details-container">
       <div class="details-prod">
-        <h1>Dados</h1>
+        <app-sub-title [subTitleText]="'Dados'"></app-sub-title>
         <div class="datails">
           <h4>Nome:</h4>
-          <p>Sabão</p>
+          <p>{{ produtos[currentItemIndex].nome }}</p>
         </div>
         <div class="datails">
           <h4>SKU:</h4>
-          <p>14</p>
+          <p>{{ produtos[currentItemIndex]._id }}</p>
         </div>
         <div class="datails">
           <h4>Marca:</h4>
-          <p>OMO</p>
+          <p>{{ produtos[currentItemIndex].marca }}</p>
         </div>
         <div class="datails">
           <h4>Lote:</h4>
-          <p>25</p>
+          <p>{{ produtos[currentItemIndex].lote }}</p>
         </div>
         <div class="datails">
           <h4>Vencimento:</h4>
-          <p>14/05/2024</p>
+          <p>{{ produtos[currentItemIndex].validade | date : "dd/MM/yyyy" }}</p>
         </div>
-      </div>
 
-      <div class="detals-venda">
-        <h1>Vendas</h1>
+        <app-sub-title [subTitleText]="'Valores'"></app-sub-title>
+
         <div class="datails">
-          <h4>Vendas Mês:</h4>
-          <p>05</p>
+          <h4>Quantidade:</h4>
+          <p>{{ produtos[currentItemIndex].quantidade }}</p>
         </div>
         <div class="datails">
-          <h4>Vendas Mês (valor):</h4>
-          <p>250,00 R$</p>
+          <h4>Medida:</h4>
+          <p>{{ produtos[currentItemIndex].medida }}</p>
         </div>
         <div class="datails">
-          <h4>Em estoque:</h4>
-          <p>02</p>
+          <h4>Custo:</h4>
+          <p>{{ produtos[currentItemIndex].custo | currency : "BRL" }}</p>
+        </div>
+        <div class="datails">
+          <h4>Valor:</h4>
+          <p>{{ produtos[currentItemIndex].valor | currency : "BRL" }}</p>
+        </div>
+        <div class="datails">
+          <h4>Descrição:</h4>
+          <p>{{ produtos[currentItemIndex].descricao }}</p>
         </div>
       </div>
     </div>
     <div class="photo-container">
-      <img [src]="imgProd" alt="imagem do produto" />
+      <img
+        [src]="produtos[currentItemIndex].firebaseUrl"
+        alt="imagem do produto"
+      />
     </div>
-  </div>
-  <div class="all-products">
-    <a href="#"><app-button [buttonText]="'Todos os produtos'"></app-button></a>
   </div>
 </div>
