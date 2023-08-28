@@ -10,8 +10,6 @@ import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 })
 export class ProductsDetailsComponent implements OnInit {
 
-  imgProd = '/assets/img/img-login.jpg';
-
   produto = {} as Produtos;
   produtos: Produtos[] = [];
 

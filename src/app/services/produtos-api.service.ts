@@ -14,49 +14,49 @@ export class ProdutosAPiService {
 
 
   // injetando o HttpClient
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   // Headers
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
   // Obtem todos os produtoss
-  async getProdutos():Promise<Observable<Produtos[]>> {
+  async getProdutos(): Promise<Observable<Produtos[]>> {
 
     return this.httpClient.get<Produtos[]>(this.url)
       .pipe(
         retry(2)
-          ,catchError(this.handleError));
+        , catchError(this.handleError));
 
   }
 
   // cadastrar novo produto
-  async saveProduto(formData: FormData){
+  async saveProduto(formData: FormData) {
     return this.httpClient.post<Produtos[]>(this.url, formData)
-    .pipe(
-      retry(2)
-      ,catchError(this.handleError));
+      .pipe(
+        retry(2)
+        , catchError(this.handleError));
   }
 
   // deletar um produto cadastrardo
-  async deleteProduto(produto:Produtos){
+  async deleteProduto(produto: Produtos) {
     return this.httpClient.delete<Produtos>(this.url + '/' + produto._id, this.httpOptions)
-    .pipe(
-      retry(1)
-        ,catchError(this.handleError));
+      .pipe(
+        retry(1)
+        , catchError(this.handleError));
   }
 
   // atualizar um produto
-  async UpdateProduto(produto: Produtos){
+  async UpdateProduto(produto: Produtos) {
     return this.httpClient.put<Produtos[]>(this.url + '/' + produto._id, produto)
-    .pipe(
-      retry(1)
-      ,catchError(this.handleError));
+      .pipe(
+        retry(1)
+        , catchError(this.handleError));
   }
 
-   // Manipulação de erros
-   handleError(error: HttpErrorResponse) {
+  // Manipulação de erros
+  handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Erro ocorreu no lado do client
@@ -80,12 +80,11 @@ export class ProdutosAPiService {
     // Configurar os parâmetros da solicitação GET
     const params = new HttpParams().set('nome', searchTerm);
 
-    return this.httpClient.get<any[]>(this.url, { params })
+    return this.httpClient.get<any[]>(this.url + '/filter', { params })
       .pipe(
         retry(1),
         catchError(this.handleError)
       );
   }
-
 
 }
