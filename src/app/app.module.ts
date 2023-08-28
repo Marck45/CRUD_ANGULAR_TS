@@ -17,6 +17,7 @@ import { ProductsDetailsComponent } from './pages/products-details/products-deta
 import { BarSearchComponent } from './component/bar-search/bar-search.component';
 import { ButtonComponent } from './component/button/button.component';
 import { TitlePageComponent } from './component/title-page/title-page.component';
+import { SubTitleComponent } from './component/sub-title/sub-title.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TitlePageComponent } from './component/title-page/title-page.component'
     BarSearchComponent,
     ButtonComponent,
     TitlePageComponent,
+    SubTitleComponent,
   ],
   imports: [
     BrowserModule,
