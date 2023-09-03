@@ -1,7 +1,13 @@
 .side-menu-main {
-  width: 15%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   position: fixed;
-  margin-top: 2rem;
+}
+
+.option-menu {
+  display: flex;
+  width: 60%;
 }
 
 .option-menu a {
@@ -11,28 +17,34 @@
   color: #a1a1a1;
 }
 
-
-.option-menu {
-  display: flex;
-  justify-content: center;
-}
-
 .option-menu ul {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
   margin: 0;
 }
 
 .toggleMenu {
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.2rem;
   border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+.hide-image {
+  display: none;
+}
+
+.toggleMenu ul{
+  display: flex;
+  flex-direction: column;
 }
 
 .opt2 {

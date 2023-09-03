@@ -1,31 +1,28 @@
 <aside class="side-menu-main">
   <div class="option-menu">
     <ul>
-      <li class="toggleMenu" (click)="toggleSubmenu('Home')">
-        <a
-          ><img [src]="iconHome" alt="Pagina incial" />
-          <ul *ngIf="submenu === 'Home'">
-            <li class="opt2">
-              <a routerLink="home">Home</a>
-            </li>
-            <li class="opt2"><a routerLink="links">Links</a></li>
-            <li class="opt2"><a routerLink="social">Sociais</a></li>
-          </ul></a
-        >
+      <li class="toggleMenu">
+        <a href="#" routerLink="home"><img [src]="iconHome" alt="home" /></a>
       </li>
       <li class="toggleMenu" (click)="toggleSubmenu('dashboard')">
-        <a
-          ><img [src]="iconDash" alt="Dashboard" />
-          <ul *ngIf="submenu === 'dashboard'">
-            <li class="opt2"><a routerLink="cadastro">Vendas</a></li>
-            <li class="opt2"><a routerLink="dashboard">Estoque</a></li>
-            <li class="opt2"><a routerLink="editar">Finanças</a></li>
-          </ul></a
-        >
+        <a>
+          <div [ngClass]="{ 'hide-image': submenu === 'dashboard' }">
+            <img [src]="iconDash" alt="Dashboard" />
+          </div>
+          <div class="area2">
+            <ul *ngIf="submenu === 'dashboard'">
+              <li class="opt2"><a routerLink="cadastro">Vendas</a></li>
+              <li class="opt2"><a routerLink="dashboard">Estoque</a></li>
+              <li class="opt2"><a routerLink="editar">Finanças</a></li>
+            </ul>
+          </div>
+        </a>
       </li>
       <li class="toggleMenu" (click)="toggleSubmenu('cadastros')">
-        <a
-          ><img [src]="iconProduto" alt="Cadastros" />
+        <a>
+          <div [ngClass]="{ 'hide-image': submenu === 'cadastros' }">
+            <img [src]="iconProduto" alt="Cadastros" />
+          </div>
           <ul *ngIf="submenu === 'cadastros'">
             <li class="opt2"><a routerLink="cadastros">Cadastro</a></li>
             <li class="opt2"><a routerLink="produtos">Edição</a></li>
@@ -35,7 +32,9 @@
       </li>
       <li class="toggleMenu" (click)="toggleSubmenu('Vendas')">
         <a
-          ><img [src]="iconVenda" alt="Vendas" />
+          ><div [ngClass]="{ 'hide-image': submenu === 'Vendas' }">
+            <img [src]="iconVenda" alt="Vendas" />
+          </div>
           <ul *ngIf="submenu === 'Vendas'">
             <li class="opt2"><a routerLink="cadastros">Vendas</a></li>
             <li class="opt2"><a routerLink="produtos">Histórico</a></li>
@@ -43,9 +42,44 @@
           </ul></a
         >
       </li>
+      <li class="toggleMenu" (click)="toggleSubmenu('Clientes')">
+        <a
+          ><div [ngClass]="{ 'hide-image': submenu === 'Clientes' }">
+            <img [src]="iconCliente" alt="Clientes" />
+          </div>
+          <ul *ngIf="submenu === 'Clientes'">
+            <li class="opt2"><a routerLink="cadastros">Cadastro</a></li>
+            <li class="opt2"><a routerLink="produtos">Edição</a></li>
+          </ul></a
+        >
+      </li>
+      <li class="toggleMenu" (click)="toggleSubmenu('Fornecedores')">
+        <a
+          ><div [ngClass]="{ 'hide-image': submenu === 'Fornecedores' }">
+            <img [src]="iconFornecedor" alt="Fornecedores" />
+          </div>
+          <ul *ngIf="submenu === 'Fornecedores'">
+            <li class="opt2"><a routerLink="cadastros">Cadastro</a></li>
+            <li class="opt2"><a routerLink="produtos">Edição</a></li>
+          </ul></a
+        >
+      </li>
+      <li class="toggleMenu" (click)="toggleSubmenu('financas')">
+        <a
+          ><div [ngClass]="{ 'hide-image': submenu === 'financas' }">
+            <img [src]="iconfinancas" alt="financas" />
+          </div>
+          <ul *ngIf="submenu === 'financas'">
+            <li class="opt2"><a routerLink="cadastros">Despesas</a></li>
+            <li class="opt2"><a routerLink="produtos">Edição</a></li>
+          </ul></a
+        >
+      </li>
       <li class="toggleMenu" (click)="toggleSubmenu('suporte')">
         <a
-          ><img [src]="iconSuporte" alt="Suporte" />
+          ><div [ngClass]="{ 'hide-image': submenu === 'suporte' }">
+            <img [src]="iconSuporte" alt="Suporte" />
+          </div>
           <ul *ngIf="submenu === 'suporte'">
             <li class="opt2"><a routerLink="suporte">Acessos</a></li>
             <li class="opt2"><a routerLink="conferir">Manuseio</a></li>
