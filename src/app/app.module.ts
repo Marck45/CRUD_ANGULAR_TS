@@ -13,7 +13,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { MenuSideComponent } from './component/menu-side/menu-side.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
 import { BarSearchComponent } from './component/bar-search/bar-search.component';
 import { ButtonComponent } from './component/button/button.component';
 import { TitlePageComponent } from './component/title-page/title-page.component';
@@ -44,7 +43,6 @@ import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor
     LoginComponent,
     MenuSideComponent,
     ProdutosComponent,
-    ProductsDetailsComponent,
     BarSearchComponent,
     ButtonComponent,
     TitlePageComponent,

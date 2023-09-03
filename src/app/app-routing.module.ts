@@ -6,7 +6,6 @@ import { SuporteComponent } from './pages/suporte/suporte.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsProductComponent } from './component/forms-product/forms-product.component';
 import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
 import { DashVendasComponent } from './pages/dash-vendas/dash-vendas.component';
 import { DashFinancasComponent } from './pages/dash-financas/dash-financas.component';
 import { CadVendasComponent } from './pages/cad-vendas/cad-vendas.component';
@@ -43,9 +42,6 @@ const routes: Routes = [
   },
   {
     path: 'produtos', component: ProdutosComponent
-  },
-  {
-    path: 'produtosDetails', component:ProductsDetailsComponent
   },
   {
     path: 'dashVendas', component:DashVendasComponent
