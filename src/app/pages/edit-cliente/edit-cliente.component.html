@@ -1,3 +1,38 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Lista de Clientes'"></app-title-page>
+  <app-title-page [titleText]="'Editar Clientes'"></app-title-page>
+
+
+  <div class="tabela-container" id="table-box">
+    <table id="corp-list">
+      <thead>
+        <tr class="table-title">
+          <th>Cod Cliente</th>
+          <th>Nome Completo</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Notificação</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-corp">
+          <td>01</td>
+          <td>Marcos</td>
+          <td>Marcosantcarvalho99@gmail.com</td>
+          <td>86995666783</td>
+          <td>2</td>
+          <td>Sim</td>
+          <td>
+            <button class="btn , edit" >
+              Editar
+            </button>
+            <button class="btn delete" >
+              Deletar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

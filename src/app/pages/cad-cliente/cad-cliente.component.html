@@ -1,3 +1,76 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Cadastro de clientes'"></app-title-page>
+  <div class="container">
+    <app-title-page [titleText]="'Cadastro de clientes'"></app-title-page>
+
+    <form class="form">
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Cod Cliente</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Nome Completo</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>E-mail</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Telefone</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Endereço</span>
+      </label>
+      <div class="notificacao">
+        <h2>Notificações</h2>
+        <label>O cliente deseja receber nortificações sobre promoções?</label>
+          <input
+            class="input"
+            type="checkbox"
+            name="nome"
+            formControlName="nome"
+            [value]="true"
+          >
+      </div>
+      <app-button [buttonText]="'Cadastrar'"></app-button>
+    </form>
+  </div>
+
 </div>
