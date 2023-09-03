@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Produtos } from 'src/app/models/produtos';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { LoadingService } from 'src/app/service/loading.service';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class ProdutosComponent implements OnInit {
   fileImg: string = '/assets/img/fileImg.png';
 
 
-  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer) { }
+  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer, private loadingService: LoadingService ) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -87,11 +88,17 @@ export class ProdutosComponent implements OnInit {
 
   // carregar todos os produtos
   async getProducts() {
+    this.loadingService.show(); // Mostra o indicador de carregamento
+
     (await this.produtosAPiService.getProdutos()).subscribe(
       (produtos: Produtos[]) => {
         this.produtos = produtos;
-
         console.log('produtos carregados com sucesso', produtos);
+        this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
+      },
+      (error: any) => {
+        console.error('Erro ao carregar produtos', error);
+        this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
   }

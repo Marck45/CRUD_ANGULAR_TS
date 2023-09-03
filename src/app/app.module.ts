@@ -31,6 +31,7 @@ import { SupManuseiosComponent } from './pages/sup-manuseios/sup-manuseios.compo
 import { SupFinancasComponent } from './pages/sup-financas/sup-financas.component';
 import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.component';
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
+import { LoadingPageComponent } from './component/loading-page/loading-page.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor
     SupFinancasComponent,
     CadFornecedorComponent,
     EditFornecedorComponent,
+    LoadingPageComponent,
   ],
   imports: [
     BrowserModule,
