@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Produtos } from 'src/app/models/produtos';
+import { LoadingService } from 'src/app/service/loading.service';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 
 @Component({
@@ -26,7 +27,7 @@ export class FormsProductComponent implements OnInit {
 
   maiorIdProduto: number = 0;
 
-  constructor(private produtosAPiService: ProdutosAPiService) { }
+  constructor(private produtosAPiService: ProdutosAPiService, private loadingService: LoadingService) { }
 
   ngOnInit(): void {
 
@@ -65,6 +66,7 @@ export class FormsProductComponent implements OnInit {
   // cria id novo automaticamente
 
   async obterMaiorId() {
+
     for (let i = 0; i < this.produtos.length; i++) {
       let produto = this.produtos[i];
       let id = produto._id;
@@ -99,14 +101,21 @@ export class FormsProductComponent implements OnInit {
 
   // carregar todos os produtos
   async getProducts() {
+    this.loadingService.show();
+
     (await this.produtosAPiService.getProdutos()).subscribe(
       (produtos: Produtos[]) => {
         this.produtos = produtos;
 
-        console.log('produtos carregados com sucesso');
-
         this.obterMaiorId();
+
         this.createForm();
+
+        this.loadingService.hide();
+      },
+      (error: any) => {
+        console.error('Erro ao carregar produtos', error);
+        this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
   }

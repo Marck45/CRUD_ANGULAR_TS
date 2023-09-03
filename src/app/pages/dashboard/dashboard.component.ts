@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produtos } from 'src/app/models/produtos';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
-
+import { LoadingService } from 'src/app/service/loading.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -12,28 +12,35 @@ export class DashboardComponent implements OnInit {
   iconValor: string = ' /assets/img/valor.png';
   totalVendas: string = '/assets/img/vendas.png';
   maiorImg: string = '/assets/img/maior.svg';
-  custoImg:string = '/assets/img/custo.png';
-  valorImg:string = '/assets/img/aumento.png';
+  custoImg: string = '/assets/img/custo.png';
+  valorImg: string = '/assets/img/aumento.png';
 
   produto = {} as Produtos;
   produtos: Produtos[] = [];
 
   estoque: any = '';
   somaValor: number = 0;
-  maiorValor:number = 0;
-  produtoComMaiorValor:any;
-  somaCusto:number = 0;
-  lucro:number = 0;
+  maiorValor: number = 0;
+  produtoComMaiorValor: any;
+  somaCusto: number = 0;
+  lucro: number = 0;
+
+  constructor(private produtosAPiService: ProdutosAPiService, private loadingService: LoadingService) { }
+
 
   ngOnInit(): void {
     this.getProducts();
   }
 
-  constructor(private produtosAPiService: ProdutosAPiService) {}
+
 
   async getProducts() {
+    this.loadingService.show();
+
+
     (await this.produtosAPiService.getProdutos()).subscribe(
       (produtos: Produtos[]) => {
+
         this.produtos = produtos;
 
         this.estoque = this.produtos.length;
@@ -42,6 +49,12 @@ export class DashboardComponent implements OnInit {
         this.maiorEstoque();
         this.calculaCustoEstoque()
         this.lucroEstoque();
+
+        this.loadingService.hide();
+
+      },(error: any) => {
+        console.error('Erro ao carregar produtos', error);
+        this.loadingService.hide();
       }
     );
   }
@@ -53,7 +66,7 @@ export class DashboardComponent implements OnInit {
   }
 
   // calcula o custo total do estoque
-  async calculaCustoEstoque(){
+  async calculaCustoEstoque() {
     this.produtos.forEach((produtos) => {
       this.somaCusto += produtos.custo;
     });
@@ -61,7 +74,7 @@ export class DashboardComponent implements OnInit {
 
   // Possivel lucro do estoque
 
-  async lucroEstoque(){
+  async lucroEstoque() {
     this.lucro = this.somaValor - this.somaCusto;
   }
 

@@ -24,7 +24,7 @@ export class ProdutosComponent implements OnInit {
   fileImg: string = '/assets/img/fileImg.png';
 
 
-  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer, private loadingService: LoadingService ) { }
+  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer, private loadingService: LoadingService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -82,8 +82,9 @@ export class ProdutosComponent implements OnInit {
       lote: produtos.lote,
       photo: produtos.photo,
       firebaseUrl: produtos.firebaseUrl,
-    });
 
+
+    });
   }
 
   // carregar todos os produtos
@@ -93,7 +94,6 @@ export class ProdutosComponent implements OnInit {
     (await this.produtosAPiService.getProdutos()).subscribe(
       (produtos: Produtos[]) => {
         this.produtos = produtos;
-        console.log('produtos carregados com sucesso', produtos);
         this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
       },
       (error: any) => {
@@ -120,13 +120,18 @@ export class ProdutosComponent implements OnInit {
       firebaseUrl: form.firebaseUrl,
     };
 
+    this.loadingService.show();
+
     (await this.produtosAPiService.deleteProduto(produto)).subscribe(
       (response: Produtos) => {
         console.log('Produto Deletado', response);
         this.getProducts();
+
+        this.loadingService.hide();
       },
       (error: any) => {
         console.error('Erro ao cadastrar produto', error);
+        this.loadingService.hide();
       }
     );
   }
@@ -149,17 +154,20 @@ export class ProdutosComponent implements OnInit {
       firebaseUrl: formProduto.firebaseUrl
     };
 
+    this.loadingService.show();
+
     (await this.produtosAPiService.UpdateProduto(produto)).subscribe(
       (response: Produtos[]) => {
         console.log('produto atualizado', response);
         this.getProducts();
+
+        this.loadingService.hide();
       },
       (error: any) => {
         console.error('Erro ao atualizar produto', error);
+        this.loadingService.hide();
       }
     );
-
-    alert('Produto atualizado');
     this.cleanForm();
   }
 
