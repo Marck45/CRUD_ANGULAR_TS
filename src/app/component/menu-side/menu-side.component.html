@@ -33,6 +33,16 @@
           </ul></a
         >
       </li>
+      <li class="toggleMenu" (click)="toggleSubmenu('Vendas')">
+        <a
+          ><img [src]="iconVenda" alt="Vendas" />
+          <ul *ngIf="submenu === 'Vendas'">
+            <li class="opt2"><a routerLink="cadastros">Vendas</a></li>
+            <li class="opt2"><a routerLink="produtos">Histórico</a></li>
+            <li class="opt2"><a routerLink="produtosDetails">Descontos</a></li>
+          </ul></a
+        >
+      </li>
       <li class="toggleMenu" (click)="toggleSubmenu('suporte')">
         <a
           ><img [src]="iconSuporte" alt="Suporte" />

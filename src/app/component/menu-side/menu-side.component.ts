@@ -17,6 +17,7 @@ export class MenuSideComponent {
   iconProduto:string = '/assets/img/produtoImg.png';
   iconSuporte:string = '/assets/img/suporte.png';
   iconLogin:string = '/assets/img/login.png';
+  iconVenda:string = '/assets/img/vendas.png';
 
 
   submenu: string | null = null; // Inicialmente, nenhum submenu está ativo
