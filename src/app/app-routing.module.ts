@@ -20,6 +20,7 @@ import { SupManuseiosComponent } from './pages/sup-manuseios/sup-manuseios.compo
 import { SupFinancasComponent } from './pages/sup-financas/sup-financas.component';
 import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.component';
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
+import { EditDespesasComponent } from './pages/edit-despesas/edit-despesas.component';
 
 const routes: Routes = [
   {
@@ -71,7 +72,7 @@ const routes: Routes = [
     path: 'despesas', component:DespesasComponent
   },
   {
-    path: 'editDespesas', component:EditClienteComponent
+    path: 'editDespesas', component:EditDespesasComponent
   },
   {
     path: 'supAcessos', component:SupAcessosComponent

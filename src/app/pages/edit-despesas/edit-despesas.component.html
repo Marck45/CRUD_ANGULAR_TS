@@ -1,3 +1,34 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Lista de Despesas'"></app-title-page>
+  <app-title-page [titleText]="'Editar Despesas'"></app-title-page>
+
+
+  <div class="tabela-container" id="table-box">
+    <table id="corp-list">
+      <thead>
+        <tr class="table-title">
+          <th>Despesa</th>
+          <th>Valor</th>
+          <th>Data de Vencimento</th>
+          <th>Descrição</th>
+          <th>Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-corp">
+          <td>01</td>
+          <td>Marcos</td>
+          <td>Marcosantcarvalho99@gmail.com</td>
+          <td>86995666783</td>
+          <td>
+            <button class="btn , edit" >
+              Editar
+            </button>
+            <button class="btn delete" >
+              Deletar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

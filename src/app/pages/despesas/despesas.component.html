@@ -1,3 +1,52 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Cadastro de Despensas'"></app-title-page>
+  <div class="container">
+    <app-title-page [titleText]="'Cadastro de Despesas'"></app-title-page>
+    <form class="form">
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Nome da Despesa</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Valor</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Data de vencimento</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Descrição</span>
+      </label>
+      <app-button [buttonText]="'Cadastrar'" ></app-button>
+    </form>
+  </div>
 </div>

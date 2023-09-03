@@ -1,6 +1,118 @@
 .wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.listagem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.tabela-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  width: 70%;
+  margin: 2rem 0 2rem 0;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  /* Largura da scrollbar */
+  height: 40%;
+}
+
+::-webkit-scrollbar-track {
+  background: #802ba2;
+  /* Cor de fundo da área da scrollbar */
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9733be;
+  border-radius: 2rem;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3ad0e8;
+  /* Cor do botão da scrollbar quando hover */
+}
+
+.table-title th {
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+
+  color: #9733be;
+  font-size: 16px;
+  padding: 5px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.table-corp td {
+  text-align: center;
+  color: #666666;
+  font-size: 0.9em;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 15px;
+}
+
+/* btn da table */
+
+.btn-cadastro {
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* btn delete */
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-right: 0.2rem;
+}
+
+.edit {
+  border-radius: 10px;
+  background: #236014;
+  box-shadow: inset -5px -5px 0px #17400d, inset 5px 5px 0px #2f801b;
+  color: #e6e6e6;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.delete {
+  border-radius: 10px;
+  background: #a70702;
+  box-shadow: inset -5px -5px 0px #700501, inset 5px 5px 0px #de0903;
+  color: #e6e6e6;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.edit:hover,
+.delete:hover {
+  background-color: #666666;
+  box-shadow: none;
 }
