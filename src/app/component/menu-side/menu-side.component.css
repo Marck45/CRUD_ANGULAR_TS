@@ -42,7 +42,7 @@
   display: none;
 }
 
-.toggleMenu ul{
+.toggleMenu ul {
   display: flex;
   flex-direction: column;
 }
@@ -52,9 +52,9 @@
   font-size: 14px;
   font-weight: bolder;
   margin-top: 1rem;
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
-  padding: 0.2rem;
+  border-radius: 7px;
+background: #ffffff;
+box-shadow: inset 5px 5px 5px #d6d6d6,
+            inset -5px -5px 5px #ffffff;
+  padding: 0.3rem;
 }
