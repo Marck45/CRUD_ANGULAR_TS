@@ -30,12 +30,12 @@
           </ul></a
         >
       </li>
-      <li class="toggleMenu" (click)="toggleSubmenu('Vendas')">
+      <li class="toggleMenu" (click)="toggleSubmenu('vendas')">
         <a
-          ><div [ngClass]="{ 'hide-image': submenu === 'Vendas' }">
+          ><div [ngClass]="{ 'hide-image': submenu === 'vendas' }">
             <img [src]="iconVenda" alt="Vendas" />
           </div>
-          <ul *ngIf="submenu === 'Vendas'">
+          <ul *ngIf="submenu === 'vendas'">
             <li class="opt2"><a routerLink="cadVendas">Vendas</a></li>
             <li class="opt2"><a routerLink="hitVendas">Histórico</a></li>
             <li class="opt2"><a routerLink="descontos">Descontos</a></li>

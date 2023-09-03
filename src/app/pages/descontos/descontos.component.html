@@ -1,3 +1,52 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Cadastro de Desconto'"></app-title-page>
+  <div class="container">
+    <app-title-page [titleText]="'Cadastro de Desconto'"></app-title-page>
+    <form class="form">
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Nome do desconto</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Valor do desconto</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Periodo do desconto</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nome"
+          formControlName="nome"
+          value=""
+          required=""
+        />
+        <span>Descrição</span>
+      </label>
+      <app-button [buttonText]="'Cadastrar'" ></app-button>
+    </form>
+  </div>
 </div>
