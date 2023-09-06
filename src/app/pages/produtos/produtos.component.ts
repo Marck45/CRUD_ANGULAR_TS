@@ -4,6 +4,7 @@ import { Produtos } from 'src/app/models/produtos';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { LoadingService } from 'src/app/service/loading.service';
+import { NotificationService } from 'src/app/service/notification/notification.service';
 
 
 @Component({
@@ -12,7 +13,6 @@ import { LoadingService } from 'src/app/service/loading.service';
   styleUrls: ['./produtos.component.css'],
 })
 export class ProdutosComponent implements OnInit {
-  listagem = document.querySelector('#listagem');
 
   produto = {} as Produtos;
   produtos: Produtos[] = [];
@@ -24,7 +24,7 @@ export class ProdutosComponent implements OnInit {
   fileImg: string = '/assets/img/fileImg.png';
 
 
-  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer, private loadingService: LoadingService) { }
+  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer, private loadingService: LoadingService, private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -50,7 +50,6 @@ export class ProdutosComponent implements OnInit {
       firebaseUrl: new FormControl()
     });
 
-    console.log(this.produto.photo)
   }
 
 
@@ -68,7 +67,7 @@ export class ProdutosComponent implements OnInit {
 
     // atribuir valores ao forms
     this.formProduto.setValue(produtos);
-    console.log('Produto a ser editado:', this.produtos);
+
     this.formProduto.patchValue({
       _id: produtos._id,
       nome: produtos.nome,
@@ -97,7 +96,7 @@ export class ProdutosComponent implements OnInit {
         this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
       },
       (error: any) => {
-        console.error('Erro ao carregar produtos', error);
+        this.notificationService.showMessage('Erro ao carregar os produtos: ' + error.message);
         this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
@@ -130,7 +129,7 @@ export class ProdutosComponent implements OnInit {
         this.loadingService.hide();
       },
       (error: any) => {
-        console.error('Erro ao cadastrar produto', error);
+        this.notificationService.showMessage('Erro ao deletar o produto: ' + error.message);
         this.loadingService.hide();
       }
     );
@@ -158,13 +157,12 @@ export class ProdutosComponent implements OnInit {
 
     (await this.produtosAPiService.UpdateProduto(produto)).subscribe(
       (response: Produtos[]) => {
-        console.log('produto atualizado', response);
         this.getProducts();
 
         this.loadingService.hide();
       },
       (error: any) => {
-        console.error('Erro ao atualizar produto', error);
+        this.notificationService.showMessage('Erro ao atualizar o produto: ' + error.message);
         this.loadingService.hide();
       }
     );

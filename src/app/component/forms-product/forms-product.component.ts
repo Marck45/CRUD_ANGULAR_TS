@@ -115,7 +115,7 @@ export class FormsProductComponent implements OnInit {
         this.loadingService.hide();
       },
       (error: any) => {
-        this.notificationService.showMessage('Erro ao cadastrar o produto: ' + error.message);
+        this.notificationService.showMessage('Erro ao carregar o produto: ' + error.message);
         this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
