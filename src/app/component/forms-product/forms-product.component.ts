@@ -115,7 +115,7 @@ export class FormsProductComponent implements OnInit {
         this.loadingService.hide();
       },
       (error: any) => {
-        console.error('Erro ao carregar produtos', error);
+        this.notificationService.showMessage('Erro ao cadastrar o produto: ' + error.message);
         this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
@@ -145,7 +145,7 @@ export class FormsProductComponent implements OnInit {
 
     (await this.produtosAPiService.saveProduto(formData)).subscribe(
       (response: Produtos[]) => {
-        this.notificationService.showMessage('Produto cadastrado!'+ response.values);
+        this.notificationService.showMessage('Produto cadastrado!' + response.values);
         this.getProducts();
       },
       (error: any) => {
