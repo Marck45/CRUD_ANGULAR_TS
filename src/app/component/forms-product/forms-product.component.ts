@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Produtos } from 'src/app/models/produtos';
 import { LoadingService } from 'src/app/service/loading.service';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
+import { NotificationService } from 'src/app/service/notification/notification.service';
 
 @Component({
   selector: 'app-forms-product',
@@ -16,7 +17,7 @@ export class FormsProductComponent implements OnInit {
 
   imagemSelecionada: File | null = null;
   imagemURL: string = '/assets/img/fileImg.png';
-  fileImg:string =  '/assets/img/fileImg.png';
+  fileImg: string = '/assets/img/fileImg.png';
 
 
   produto = {} as Produtos;
@@ -27,7 +28,7 @@ export class FormsProductComponent implements OnInit {
 
   maiorIdProduto: number = 0;
 
-  constructor(private produtosAPiService: ProdutosAPiService, private loadingService: LoadingService) { }
+  constructor(private produtosAPiService: ProdutosAPiService, private loadingService: LoadingService, private notificationService: NotificationService) { }
 
   ngOnInit(): void {
 
@@ -122,6 +123,7 @@ export class FormsProductComponent implements OnInit {
 
   // cadastrar um novo produto
   async cadastrarProduto(form: any) {
+
     const formData = new FormData(); // Crie um objeto FormData para enviar dados em form-data
 
     // Adicione todos os campos ao formData
@@ -148,6 +150,8 @@ export class FormsProductComponent implements OnInit {
       },
       (error: any) => {
         console.error('Erro ao cadastrar produto', error);
+        // Exiba uma notificação de erro para o usuário
+        this.notificationService.showError('Erro ao cadastrar o produto: ' + error.message);
       }
     );
 

@@ -32,6 +32,7 @@ import { SupFinancasComponent } from './pages/sup-financas/sup-financas.componen
 import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.component';
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
 import { LoadingPageComponent } from './component/loading-page/loading-page.component';
+import { NotificationComponent } from './component/notification/notification.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { LoadingPageComponent } from './component/loading-page/loading-page.comp
     CadFornecedorComponent,
     EditFornecedorComponent,
     LoadingPageComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
