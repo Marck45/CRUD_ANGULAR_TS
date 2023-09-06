@@ -11,7 +11,7 @@ export class NotificationService {
   constructor() { }
 
   // Método para mostrar uma notificação de erro
-  showError(message: string) {
+  showMessage(message: string) {
     this.notificationSubject.next(message);
   }
 

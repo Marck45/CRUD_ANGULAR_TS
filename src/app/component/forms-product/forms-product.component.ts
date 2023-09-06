@@ -145,13 +145,13 @@ export class FormsProductComponent implements OnInit {
 
     (await this.produtosAPiService.saveProduto(formData)).subscribe(
       (response: Produtos[]) => {
-        console.log('Produto cadastrado', response);
+        this.notificationService.showMessage('Produto cadastrado!'+ response.values);
         this.getProducts();
       },
       (error: any) => {
         console.error('Erro ao cadastrar produto', error);
         // Exiba uma notificação de erro para o usuário
-        this.notificationService.showError('Erro ao cadastrar o produto: ' + error.message);
+        this.notificationService.showMessage('Erro ao cadastrar o produto: ' + error.message);
       }
     );
 
