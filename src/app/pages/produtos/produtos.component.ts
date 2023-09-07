@@ -82,7 +82,6 @@ export class ProdutosComponent implements OnInit {
       photo: produtos.photo,
       firebaseUrl: produtos.firebaseUrl,
 
-
     });
   }
 
@@ -94,9 +93,10 @@ export class ProdutosComponent implements OnInit {
       (produtos: Produtos[]) => {
         this.produtos = produtos;
         this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
+        this.notificationService.showSuccess('Produtos carregados carregado');
       },
       (error: any) => {
-        this.notificationService.showMessage('Erro ao carregar os produtos: ' + error.message);
+        this.notificationService.showError('Erro ao carregar os produtos: ' + ' ' + error.message);
         this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
@@ -125,11 +125,11 @@ export class ProdutosComponent implements OnInit {
       (response: Produtos) => {
         console.log('Produto Deletado', response);
         this.getProducts();
-
+        this.notificationService.showSuccess('Produto exluido!');
         this.loadingService.hide();
       },
       (error: any) => {
-        this.notificationService.showMessage('Erro ao deletar o produto: ' + error.message);
+        this.notificationService.showError('Erro ao deletar o produto: ' + ' ' + error.message);
         this.loadingService.hide();
       }
     );
@@ -158,11 +158,11 @@ export class ProdutosComponent implements OnInit {
     (await this.produtosAPiService.UpdateProduto(produto)).subscribe(
       (response: Produtos[]) => {
         this.getProducts();
-
+        this.notificationService.showSuccess('Produto atualizado!');
         this.loadingService.hide();
       },
       (error: any) => {
-        this.notificationService.showMessage('Erro ao atualizar o produto: ' + error.message);
+        this.notificationService.showError('Erro ao atualizar o produto: ' + ' ' + error.message);
         this.loadingService.hide();
       }
     );

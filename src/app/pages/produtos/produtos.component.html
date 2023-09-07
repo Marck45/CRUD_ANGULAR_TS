@@ -43,15 +43,6 @@
     </table>
   </div>
 
-  <div class="btn-cadastro" routerLink="/cadastros">
-    <button class="fancy">
-      <span class="top-key"></span>
-      <span class="text">+ produto</span>
-      <span class="bottom-key-1"></span>
-      <span class="bottom-key-2"></span>
-    </button>
-  </div>
-
   <!-- formulario de edição -->
   <form
     class="hide"
@@ -100,7 +91,11 @@
       </div>
       <div class="img-camp">
         <label class="label-img-up" for="photo">
-          <img [src]="formProduto.get('firebaseUrl')?.value" alt="Imagem do Produto" *ngIf="formProduto.get('firebaseUrl')?.value">
+          <img
+            [src]="formProduto.get('firebaseUrl')?.value"
+            alt="Imagem do Produto"
+            *ngIf="formProduto.get('firebaseUrl')?.value"
+          />
         </label>
       </div>
     </div>
@@ -174,7 +169,7 @@
             required=""
             formControlName="validade"
           />
-          <span style="display: none;">Validade</span>
+          <span style="display: none">Validade</span>
         </label>
         <label>
           <input
@@ -204,11 +199,10 @@
       <span>Descrição do produto</span>
     </label>
 
-    <button class="fancy" type="submit">
-      <span class="top-key"></span>
-      <span class="text">Salvar</span>
-      <span class="bottom-key-1"></span>
-      <span class="bottom-key-2"></span>
-    </button>
+    <app-button
+      buttonText="Salvar"
+      type="submit"
+      [disabled]="!formProduto.valid"
+    ></app-button>
   </form>
 </section>

@@ -2,22 +2,25 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
+  private notificationSubject = new Subject<{ message: string; type: 'success' | 'error' }>();
 
-  private notificationSubject = new Subject<string>();
-
-  constructor() { }
+  constructor() {}
 
   // Método para mostrar uma notificação de erro
-  showMessage(message: string) {
-    this.notificationSubject.next(message);
+  showError(message: string) {
+    this.notificationSubject.next({ message, type: 'error' });
+  }
+
+  // Método para mostrar uma notificação de sucesso
+  showSuccess(message: string) {
+    this.notificationSubject.next({ message, type: 'success' });
   }
 
   // Método para obter notificações como um Observable
   getNotifications() {
     return this.notificationSubject.asObservable();
   }
-
 }

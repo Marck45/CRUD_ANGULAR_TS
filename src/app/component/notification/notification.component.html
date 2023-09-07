@@ -1,4 +1,3 @@
-<div class="notification" *ngIf="message">
-  {{ message }}
+<div *ngFor="let notification of notifications" [ngClass]="notification.type">
+  {{ notification.message }}
 </div>
-

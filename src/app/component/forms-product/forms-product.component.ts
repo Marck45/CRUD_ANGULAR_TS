@@ -113,9 +113,11 @@ export class FormsProductComponent implements OnInit {
         this.createForm();
 
         this.loadingService.hide();
+
+        this.notificationService.showSuccess('Pronto para Cadastro');
       },
       (error: any) => {
-        this.notificationService.showMessage('Erro ao carregar o produto: ' + error.message);
+        this.notificationService.showError('Erro ao carregar o produto: ' + error.message);
         this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );
@@ -145,13 +147,13 @@ export class FormsProductComponent implements OnInit {
 
     (await this.produtosAPiService.saveProduto(formData)).subscribe(
       (response: Produtos[]) => {
-        this.notificationService.showMessage('Produto cadastrado!' + response.values);
+        this.notificationService.showSuccess('Produto cadastrado!');
         this.getProducts();
       },
       (error: any) => {
         console.error('Erro ao cadastrar produto', error);
         // Exiba uma notificação de erro para o usuário
-        this.notificationService.showMessage('Erro ao cadastrar o produto: ' + error.message);
+        this.notificationService.showError('Erro ao cadastrar o produto: ' + error.message);
       }
     );
 

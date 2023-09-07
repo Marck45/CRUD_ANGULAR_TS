@@ -49,7 +49,12 @@
           </label>
         </div>
         <div class="img-camp">
-          <label class="label-img-up" for="photo"><img [src]="imagemURL" alt="Clique para subir uma imagem" *ngIf="imagemURL"></label>
+          <label class="label-img-up" for="photo"
+            ><img
+              [src]="imagemURL"
+              alt="Clique para subir uma imagem"
+              *ngIf="imagemURL"
+          /></label>
           <input
             type="file"
             id="photo"
@@ -57,7 +62,7 @@
             formControlName="photo"
             value=""
             accept="image/*"
-            style="display: none;"
+            style="display: none"
             (change)="onImageSelected($event)"
           />
 
@@ -93,7 +98,12 @@
             <span>Valor do produto</span>
           </label>
           <label>
-            <select class="input" name="medida" required formControlName="medida">
+            <select
+              class="input"
+              name="medida"
+              required
+              formControlName="medida"
+            >
               <option value="Unidade">Unidade</option>
               <option value="Kilo">Kg</option>
               <option value="Meio Kilo">Meio Kg</option>
@@ -125,7 +135,7 @@
               value=""
               formControlName="validade"
             />
-            <span style="display: none;">Validade</span>
+            <span style="display: none">Validade</span>
           </label>
           <label>
             <input
@@ -153,18 +163,11 @@
         />
         <span>Descrição do produto</span>
       </label>
-
-      <button
-        href="#"
-        class="fancy"
+      <app-button
+        [buttonText]="'Cadastrar'"
         type="submit"
         [disabled]="!formProduto.valid"
-      >
-        <span class="top-key"></span>
-        <span class="text">Cadastrar</span>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
-      </button>
+      ></app-button>
     </form>
   </main>
 </div>
