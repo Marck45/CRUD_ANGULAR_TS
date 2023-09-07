@@ -1,9 +1,13 @@
 .notification {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background-color: red;
+  margin: 0.2rem 0rem 2rem 0.2rem;
   color: white;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border-radius: 25px;
+  background: #eb0a0a;
+  box-shadow:  5px 5px 10px #8f0606,
+               -5px -5px 10px #ff0e0e;
+
+  background: linear-gradient(145deg, #eb0a0a, #eb0a0a);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
 }
