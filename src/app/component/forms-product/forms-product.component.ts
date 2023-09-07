@@ -159,7 +159,6 @@ export class FormsProductComponent implements OnInit {
     this.cleanForm();
   }
 
-
   // resetar formulario
   cleanForm() {
     this.createForm();
