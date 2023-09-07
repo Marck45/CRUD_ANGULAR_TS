@@ -23,9 +23,6 @@ import { EditDespesasComponent } from './pages/edit-despesas/edit-despesas.compo
 
 const routes: Routes = [
   {
-    path: '', component: HomeappComponent
-  },
-  {
     path: 'home', component: HomeappComponent
   },
   {
@@ -38,7 +35,7 @@ const routes: Routes = [
     path: 'suporte', component: SuporteComponent
   },
   {
-    path: 'login', component: LoginComponent
+    path: '', component: LoginComponent
   },
   {
     path: 'produtos', component: ProdutosComponent
