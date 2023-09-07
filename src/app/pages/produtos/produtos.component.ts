@@ -93,7 +93,7 @@ export class ProdutosComponent implements OnInit {
       (produtos: Produtos[]) => {
         this.produtos = produtos;
         this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
-        this.notificationService.showSuccess('Produtos carregados carregado');
+        this.notificationService.showSuccess('Produtos carregados');
       },
       (error: any) => {
         this.notificationService.showError('Erro ao carregar os produtos: ' + ' ' + error.message);
@@ -125,7 +125,7 @@ export class ProdutosComponent implements OnInit {
       (response: Produtos) => {
         console.log('Produto Deletado', response);
         this.getProducts();
-        this.notificationService.showSuccess('Produto exluido!');
+        this.notificationService.showSuccess('Produto deletado!');
         this.loadingService.hide();
       },
       (error: any) => {
