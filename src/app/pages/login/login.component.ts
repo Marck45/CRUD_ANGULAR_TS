@@ -5,6 +5,7 @@ import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
 import { LoginServiceService } from 'src/app/services/login/login-service.service';
 import { AuthService } from 'src/app/services/auth/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
 
   constructor(private loginServiceService: LoginServiceService, private loadingService: LoadingService,
-    private notificationService: NotificationService, private authService: AuthService) { }
+    private notificationService: NotificationService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -57,6 +58,8 @@ export class LoginComponent implements OnInit {
         if (token) {
           // Chame o método login do AuthService para armazenar o token
           this.authService.login(token);
+
+          this.router.navigate(['home'])
 
           // Exiba uma notificação de sucesso
           this.notificationService.showSuccess('Login realizado!');

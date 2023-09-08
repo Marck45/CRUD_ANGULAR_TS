@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth-service.service';
 
 @Component({
   selector: 'app-menu-side',
@@ -16,11 +18,14 @@ export class MenuSideComponent {
   iconCadastro:string = '/assets/img/cadastro.png';
   iconProduto:string = '/assets/img/produtoImg.png';
   iconSuporte:string = '/assets/img/suporte.png';
-  iconLogin:string = '/assets/img/login.png';
+  iconLogout:string = '/assets/img/logoutIcon.png';
   iconVenda:string = '/assets/img/vendas.png';
   iconCliente:string = '/assets/img/loginusuario.png';
   iconFornecedor:string = '/assets/img/emestoque.png';
   iconfinancas:string = '/assets/img/aumento.png';
+
+
+  constructor (private router: Router, private authService: AuthService) {}
 
 
   submenu: string | null = null; // Inicialmente, nenhum submenu está ativo
@@ -31,6 +36,13 @@ export class MenuSideComponent {
     } else {
       this.submenu = submenuName; // Abre o submenu clicado
     }
+  }
+
+  onLogoutClick(){
+
+    this.authService.logout();
+
+    this.router.navigate(['']);
   }
 
 }
