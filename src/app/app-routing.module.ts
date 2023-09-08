@@ -20,67 +20,68 @@ import { SupFinancasComponent } from './pages/sup-financas/sup-financas.componen
 import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.component';
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
 import { EditDespesasComponent } from './pages/edit-despesas/edit-despesas.component';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
   {
-    path: 'home', component: HomeappComponent
+    path: 'home', component: HomeappComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'dashEstoque', component: DashboardComponent
+    path: 'dashEstoque', component: DashboardComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'cadEstoque', component: FormsProductComponent
+    path: 'cadEstoque', component: FormsProductComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'suporte', component: SuporteComponent
+    path: 'suporte', component: SuporteComponent, canActivate: [AuthGuardGuard]
   },
   {
     path: '', component: LoginComponent
   },
   {
-    path: 'produtos', component: ProdutosComponent
+    path: 'produtos', component: ProdutosComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'dashVendas', component:DashVendasComponent
+    path: 'dashVendas', component:DashVendasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'dashFinancas', component:DashFinancasComponent
+    path: 'dashFinancas', component:DashFinancasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'cadVendas', component:CadVendasComponent
+    path: 'cadVendas', component:CadVendasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'hitVendas', component:HitVendasComponent
+    path: 'hitVendas', component:HitVendasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'descontos', component:DescontosComponent
+    path: 'descontos', component:DescontosComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'cadCliente', component:CadClienteComponent
+    path: 'cadCliente', component:CadClienteComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'editCliente', component:EditClienteComponent
+    path: 'editCliente', component:EditClienteComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'despesas', component:DespesasComponent
+    path: 'despesas', component:DespesasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'editDespesas', component:EditDespesasComponent
+    path: 'editDespesas', component:EditDespesasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'supAcessos', component:SupAcessosComponent
+    path: 'supAcessos', component:SupAcessosComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'supManuseio', component:SupManuseiosComponent
+    path: 'supManuseio', component:SupManuseiosComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'supFinancas', component:SupFinancasComponent
+    path: 'supFinancas', component:SupFinancasComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'cadFornecedor', component:CadFornecedorComponent
+    path: 'cadFornecedor', component:CadFornecedorComponent, canActivate: [AuthGuardGuard]
   },
   {
-    path: 'editFornecedor', component:EditFornecedorComponent
+    path: 'editFornecedor', component:EditFornecedorComponent, canActivate: [AuthGuardGuard]
   }
 
 ];

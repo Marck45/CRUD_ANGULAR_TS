@@ -4,6 +4,7 @@ import { Login } from 'src/app/models/login';
 import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
 import { LoginServiceService } from 'src/app/services/login/login-service.service';
+import { AuthService } from 'src/app/services/auth/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
 
   constructor(private loginServiceService: LoginServiceService, private loadingService: LoadingService,
-    private notificationService: NotificationService) { }
+    private notificationService: NotificationService, private authService: AuthService) { }
 
   ngOnInit(): void {
 
@@ -51,11 +52,20 @@ export class LoginComponent implements OnInit {
     this.loadingService.show();
 
     (await this.loginServiceService.saveLogin(formLogin)).subscribe(
-      (response: Login[]) => {
-      console.log(formLogin)
-      this.notificationService.showSuccess('Login realizado!');
-      this.loadingService.hide();
-    },
+      (response: any) => {
+        const token = response.token;
+        if (token) {
+          // Chame o método login do AuthService para armazenar o token
+          this.authService.login(token);
+
+          // Exiba uma notificação de sucesso
+          this.notificationService.showSuccess('Login realizado!');
+        } else {
+          // Exiba uma mensagem de erro, pois o token está ausente na resposta
+          this.notificationService.showError('Erro ao realizar login: Token ausente na resposta');
+        }
+        this.loadingService.hide();
+      },
       (error: any) => {
         this.notificationService.showError('Erro ao realizar login: ' + ' ' + error.message);
         this.loadingService.hide();

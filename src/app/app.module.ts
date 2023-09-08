@@ -33,6 +33,7 @@ import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.co
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
 import { LoadingPageComponent } from './component/loading-page/loading-page.component';
 import { NotificationComponent } from './component/notification/notification.component';
+import { AuthService } from './services/auth/auth-service.service';
 
 
 @NgModule({
@@ -73,7 +74,9 @@ import { NotificationComponent } from './component/notification/notification.com
     CommonModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

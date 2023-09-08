@@ -7,18 +7,18 @@ export class AuthService {
   private isAuthenticated: boolean = false;
   private authToken: string | null = null;
 
-  login(token: string) {
-    // Ao fazer login, armazene o token JWT no serviço
-    this.isAuthenticated = true;
-    this.authToken = token;
+// No serviço AuthService
+login(token: string) {
+  // Armazene o token JWT no localStorage
+  console.log(token)
+  localStorage.setItem('authToken', token);
+  // Defina a propriedade isAuthenticated como true, se necessário
+  this.isAuthenticated = true;
+}
 
-    // Você pode armazenar o token em localStorage ou sessionStorage para persistência
-    // Exemplo com localStorage:
-    localStorage.setItem('authToken', token);
-  }
 
   logout() {
-    // Ao fazer logout, remova o token JWT do serviço
+    // Ao fazer logout, remova o token JWT tanto do serviço quanto do localStorage
     this.isAuthenticated = false;
     this.authToken = null;
 
@@ -26,7 +26,8 @@ export class AuthService {
     localStorage.removeItem('authToken');
   }
 
-  isAuthenticatedUser(): boolean {
+  get isAuthenticatedUser(): boolean {
+    // Acesse o estado de autenticação como uma propriedade de leitura
     return this.isAuthenticated;
   }
 
@@ -36,7 +37,7 @@ export class AuthService {
   }
 
   constructor() {
-    // Ao inicializar o serviço, verifique se há um token JWT armazenado
+    // Ao inicializar o serviço, verifique se há um token JWT armazenado no localStorage
     const storedToken = localStorage.getItem('authToken');
     if (storedToken) {
       this.isAuthenticated = true;
