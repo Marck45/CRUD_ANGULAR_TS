@@ -1,6 +1,5 @@
-export interface Users {
-  
-    nome:string,
+export interface Login {
+    email:string,
     password:string,
-    
+
 }

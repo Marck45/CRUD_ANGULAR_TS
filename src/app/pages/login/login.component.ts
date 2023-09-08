@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Users } from 'src/app/models/users';
+import { Login } from 'src/app/models/users';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   googleImg:string = 'assets/img/gmail.png';
   faceImg:string = '/assets/img/facebookVSG.svg';
 
-  user = {} as Users;
-  usuario: Users[] = [];
+  user = {} as Login;
+  usuario: Login[] = [];
 
   formLogin!: FormGroup;
 
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     this.formLogin = new FormGroup({
 
-      nome: new FormControl(),
+      email: new FormControl(),
       password: new FormControl(),
 
     });
