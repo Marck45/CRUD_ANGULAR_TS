@@ -43,8 +43,6 @@ export class LoginComponent implements OnInit {
   // envia dados para conferencia de login
   async onSubmitLogin() {
     this.checkLogin(this.formLogin.value);
-    console.log('login solicitado', this.formLogin.value);
-
   }
 
   // chama o serviço que chega os dados do cliente

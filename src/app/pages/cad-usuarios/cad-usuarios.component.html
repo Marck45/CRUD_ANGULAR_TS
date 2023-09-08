@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="container">
+    <app-title-page [titleText]="'Cadastrar Usuário'"></app-title-page>
+
+    <form class="form" [formGroup]="formUsers" *ngIf="formUsers" (ngSubmit)="onSubimitUser()" >
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          formControlName="name"
+          required
+        />
+        <span>Nome Completo</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="email"
+          name="email"
+          formControlName="email"
+          required
+        />
+        <span>E-mail</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="password"
+          name="password"
+          formControlName="password"
+          required
+        />
+        <span>Senha</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="password"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+          required
+        />
+        <span>Confirmar senha</span>
+      </label>
+      <app-button [buttonText]="'Criar'"></app-button>
+    </form>
+  </div>
+
+</div>
+

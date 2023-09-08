@@ -34,6 +34,7 @@ import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor
 import { LoadingPageComponent } from './component/loading-page/loading-page.component';
 import { NotificationComponent } from './component/notification/notification.component';
 import { AuthService } from './services/auth/auth-service.service';
+import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { AuthService } from './services/auth/auth-service.service';
     EditFornecedorComponent,
     LoadingPageComponent,
     NotificationComponent,
+    CadUsuariosComponent,
   ],
   imports: [
     BrowserModule,

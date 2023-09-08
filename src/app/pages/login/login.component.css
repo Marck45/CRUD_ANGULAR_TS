@@ -64,41 +64,6 @@ form label .input:valid+span {
   color: green;
 }
 
-/*  login das redes sociais */
-.social-login {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 200px;
-}
-
-.social-content {
-  padding: 1rem 3rem 1rem 3rem;
-  display: flex;
-  border-radius: 25px;
-}
-
-fieldset {
-  border-color: #3ad0e8;
-}
-
-legend {
-  color: #802ba2;
-  font-size: 14px;
-  font-weight: bolder;
-  padding: 0rem 1rem 0rem 1rem;
-}
-
-.google,
-.facebook {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* link de reset de senha */
 .suporte {
   margin-top: 3rem;
@@ -106,15 +71,37 @@ legend {
 
 .suporte a {
   text-decoration: none;
-  color: #802ba2;
-  font-size: 18px;
+  font-weight: bolder;
+  padding: 1rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+}
+
+
+/*  login das redes sociais */
+.social-login {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+}
+
+.social-login h1{
+  margin-bottom: 2rem;
+  color: #3ad0e8;
   font-weight: bolder;
 }
 
-/* media em resoluções diferentes */
-
-@media (min-width: 1440px) {
-  .img-login {
-    display: none;
-  }
+.social-login a{
+  text-decoration: none;
+  font-weight: bolder;
 }
+

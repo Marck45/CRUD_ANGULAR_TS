@@ -25,6 +25,13 @@ export class LoginServiceService {
         , catchError(this.handleError))
   }
 
+  async creatLogin(logins:Login){
+    return this.httpClient.post<Login[]>(this.url + '/register', logins)
+    .pipe(
+      retry(2)
+      , catchError(this.handleError))
+  }
+
 
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {

@@ -21,6 +21,7 @@ import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.co
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
 import { EditDespesasComponent } from './pages/edit-despesas/edit-despesas.component';
 import { AuthGuardGuard } from './guards/auth-guard.guard';
+import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,9 @@ const routes: Routes = [
   },
   {
     path: 'editFornecedor', component:EditFornecedorComponent, canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'cadUsuario', component: CadUsuariosComponent
   }
 
 ];
