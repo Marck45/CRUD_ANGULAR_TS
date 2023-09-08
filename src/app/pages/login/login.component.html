@@ -1,41 +1,32 @@
 <main class="wrapper">
-  <div class="img-login">
-    <img [src]="imgLogin" alt="imagem de login" />
-  </div>
   <div class="form-login">
    <app-title-page [titleText]="'Login'"></app-title-page>
+   <app-notification></app-notification>
     <div class="form-login">
       <form action="submit" id="formLogin" [formGroup]="formLogin" *ngIf="formLogin" (ngSubmit)="onSubmitLogin()" >
-        <label for="nome">
+        <label for="email">
           <input
             class="input"
-            type="text"
-            name="nome"
-            id="nome"
-            value=""
-            formControlName="nome"
-            required="nome"
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            required
           />
-          <span>Nome</span>
+          <span>E-mail</span>
         </label>
         <label for="password">
           <input
             class="input"
-            type="text"
+            type="password"
             name="password"
             id="password"
-            value=""
             formControlName="password"
             required
           />
           <span>Senha</span>
         </label>
-        <button href="#" class="fancy" type="submit" [disabled]="!formLogin.valid">
-          <span class="top-key"></span>
-          <span class="text">Entrar</span>
-          <span class="bottom-key-1"></span>
-          <span class="bottom-key-2"></span>
-        </button>
+       <app-button [buttonText]="'Login'" type="submit"></app-button>
       </form>
     </div>
     <div class="suporte">

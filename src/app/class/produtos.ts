@@ -1,7 +1,7 @@
 import { Produtos } from "../models/produtos";
 
 export class ProdutosClass implements Produtos{
-
+    firebaseUrl: any;
     _id: number = 0;
     nome: string = '';
     valor: number = 0;

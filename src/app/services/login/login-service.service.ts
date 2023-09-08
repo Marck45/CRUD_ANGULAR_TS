@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, retry, throwError } from 'rxjs';
-import { Login } from 'src/app/models/users';
+import { Login } from 'src/app/models/login';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,11 @@ export class LoginServiceService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  async saveLogin(login: Login) {
-    return this.httpClient.post<Login[]>(this.url, login).pipe(retry(2), catchError(this.handleError))
+  async saveLogin(logins: Login) {
+    return this.httpClient.post<Login[]>(this.url + '/auth', logins)
+      .pipe(
+        retry(2)
+        , catchError(this.handleError))
   }
 
 

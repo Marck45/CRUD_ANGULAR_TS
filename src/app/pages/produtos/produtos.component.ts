@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Produtos } from 'src/app/models/produtos';
 import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
 
@@ -24,7 +23,9 @@ export class ProdutosComponent implements OnInit {
   fileImg: string = '/assets/img/fileImg.png';
 
 
-  constructor(private produtosAPiService: ProdutosAPiService, private fb: FormBuilder, private sanitizer: DomSanitizer, private loadingService: LoadingService, private notificationService: NotificationService) { }
+  constructor(private produtosAPiService: ProdutosAPiService,
+    private loadingService: LoadingService,
+    private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.getProducts();
