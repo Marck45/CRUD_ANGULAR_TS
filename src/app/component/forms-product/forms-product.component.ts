@@ -162,5 +162,9 @@ export class FormsProductComponent implements OnInit {
   // resetar formulario
   cleanForm() {
     this.createForm();
+    // Redefina a imagem para a imagem padrão
+    this.imagemSelecionada = null;
+    this.imagemURL = this.fileImg;
+    this.produto.photo = null;
   }
 }
