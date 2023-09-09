@@ -1,37 +1,41 @@
 <div class="wrapper">
   <div class="container">
     <app-title-page [titleText]="'Cadastro de Despesas'"></app-title-page>
-    <form class="form">
+    <app-notification></app-notification>
+
+
+    <form
+      class="form"
+      [formGroup]="formExpenses"
+      (ngSubmit)="onSubmitExpenses()"
+    >
       <label>
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          name="nameExpense"
+          formControlName="nameExpense"
+          required
         />
         <span>Nome da Despesa</span>
       </label>
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          type="number"
+          name="value"
+          formControlName="value"
+          required
         />
         <span>Valor</span>
       </label>
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          type="date"
+          name="maturity"
+          formControlName="maturity"
+          required
         />
         <span>Data de vencimento</span>
       </label>
@@ -39,14 +43,17 @@
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          name="description"
+          formControlName="description"
+          required
         />
         <span>Descrição</span>
       </label>
-      <app-button [buttonText]="'Cadastrar'" ></app-button>
+      <app-button
+        [buttonText]="'Cadastrar'"
+        type="submit"
+        [disabled]="!formExpenses.valid"
+      ></app-button>
     </form>
   </div>
 </div>
