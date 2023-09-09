@@ -112,7 +112,7 @@ export class EditDespesasComponent implements OnInit {
     this.loadingService.show();
 
     (await this.expensesService.UpdateExpenses(expenses)).subscribe(
-      (response: Expenses[]) => {
+      () => {
         this.loadingExpenses();
         this.notificationService.showSuccess('Produto atualizado!');
         this.loadingService.hide();
