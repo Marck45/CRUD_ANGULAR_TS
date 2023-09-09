@@ -1,7 +1,6 @@
 <div class="wrapper">
+  <!-- listagem de despesas -->
   <app-title-page [titleText]="'Editar Despesas'"></app-title-page>
-
-
   <div class="tabela-container" id="table-box">
     <table id="corp-list">
       <thead>
@@ -15,14 +14,12 @@
       </thead>
       <tbody>
         <tr class="table-corp" *ngFor="let expenses of expenses">
-          <td>{{expenses.nameExpense}}</td>
-          <td>{{expenses.value}}</td>
-          <td>{{expenses.maturity | date : "dd/MM/yyyy" }}</td>
-          <td>{{expenses.description}}</td>
+          <td>{{ expenses.nameExpense }}</td>
+          <td>{{ expenses.value }}</td>
+          <td>{{ expenses.maturity | date : "dd/MM/yyyy" }}</td>
+          <td>{{ expenses.description }}</td>
           <td>
-            <button class="btn , edit" >
-              Editar
-            </button>
+            <button class="btn , edit" (click)="editExpense(expenses)">Editar</button>
             <button class="btn delete" (click)="excludeExpense(expenses)">
               Deletar
             </button>
@@ -31,4 +28,64 @@
       </tbody>
     </table>
   </div>
+
+  <!-- formulario de edição -->
+    <form
+      id="formId"
+      class="hide"
+      [formGroup]="formEditExpense"
+      (ngSubmit)="upExpense(this.formEditExpense.value)"
+    >
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="_id"
+        formControlName="_id"
+        required
+      />
+      <span>Nome da Despesa</span>
+    </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="nameExpense"
+          formControlName="nameExpense"
+          required
+        />
+        <span>Nome da Despesa</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="number"
+          name="value"
+          formControlName="value"
+          required
+        />
+        <span>Valor</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="date"
+          name="maturity"
+          formControlName="maturity"
+          required
+        />
+        <span style="display: none;">Data de vencimento</span>
+      </label>
+      <label>
+        <input
+          class="input"
+          type="text"
+          name="description"
+          formControlName="description"
+          required
+        />
+        <span>Descrição</span>
+      </label>
+      <app-button [buttonText]="'Cadastrar'" type="submit"></app-button>
+    </form>
 </div>

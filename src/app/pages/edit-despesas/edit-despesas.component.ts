@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Expenses } from 'src/app/models/expenses';
 import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
@@ -14,14 +15,31 @@ export class EditDespesasComponent implements OnInit {
   expense = {} as Expenses;
   expenses: Expenses[] = [];
 
+  formEditExpense!: FormGroup;
+
   constructor(private expensesService: ExpensesService,
     private loadingService: LoadingService,
     private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.loadingExpenses();
+
+    this.createForm();
   }
 
+
+  // criação de expenses form
+  createForm() {
+    this.formEditExpense = new FormGroup({
+      _id: new FormControl(),
+      nameExpense: new FormControl(),
+      value: new FormControl(),
+      maturity: new FormControl(),
+      description: new FormControl(),
+    });
+  }
+
+  // carrega todas as despesas
   async loadingExpenses() {
     this.loadingService.show();
 
@@ -30,7 +48,6 @@ export class EditDespesasComponent implements OnInit {
         this.expenses = expenses;
         this.loadingService.hide();
         this.notificationService.showSuccess('Despesas carregadas');
-        console.log(expenses);
       }, (error: any) => {
         this.notificationService.showError('Erro ao carregar os produtos: ' + ' ' + error.message);
         this.loadingService.hide();
@@ -38,6 +55,7 @@ export class EditDespesasComponent implements OnInit {
     );
   }
 
+  // exclui a despesa selecionada
   async excludeExpense(form: any) {
     this.loadingService.show();
 
@@ -56,4 +74,69 @@ export class EditDespesasComponent implements OnInit {
       }
     );
   }
+
+  async editExpense(expenses: Expenses) {
+    // Esconde o formulario de cadastro e exibe o de edição
+    const formViwer = document.querySelector('#formId');
+    const formHide = document.querySelector('#table-box');
+
+    // mudar dados formulario
+    formViwer?.classList.remove('hide');
+    formViwer?.classList.add('form');
+
+    formHide?.classList.add('hide');
+    formHide?.classList.remove('tabela-container');
+
+    // atribui valores ao forms
+
+    this.formEditExpense.setValue(expenses);
+
+    this.formEditExpense.patchValue({
+      _id: expenses._id,
+      nameExpense: expenses.nameExpense,
+      value: expenses.value,
+      maturity: expenses.maturity,
+      description: expenses.description,
+    });
+  }
+
+  async upExpense(formEditExpense: any) {
+    const expenses = {
+      _id: formEditExpense._id,
+      nameExpense: formEditExpense.nameExpense,
+      value: formEditExpense.value,
+      maturity: formEditExpense.maturity,
+      description: formEditExpense.description,
+    };
+
+    this.loadingService.show();
+
+    (await this.expensesService.UpdateExpenses(expenses)).subscribe(
+      (response: Expenses[]) => {
+        this.loadingExpenses();
+        this.notificationService.showSuccess('Produto atualizado!');
+        this.loadingService.hide();
+      },
+      (error: any) => {
+        this.notificationService.showError('Erro ao atualizar o produto: ' + ' ' + error.message);
+        this.loadingService.hide();
+      }
+    );
+    this.cleanForm();
+  }
+
+//
+cleanForm() {
+  this.createForm();
+
+  const formViwer = document.querySelector('#formId');
+  const formHide = document.querySelector('#table-box');
+
+  formViwer?.classList.add('hide');
+  formViwer?.classList.remove('form');
+
+  formHide?.classList.remove('hide');
+  formHide?.classList.add('tabela-container');
+}
+
 }

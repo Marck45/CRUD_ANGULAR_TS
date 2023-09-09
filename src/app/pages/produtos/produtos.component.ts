@@ -55,7 +55,7 @@ export class ProdutosComponent implements OnInit {
 
 
   async onEdit(produtos: Produtos) {
-    // Escondo o formulario de cadastro e exibe o de edição
+    // Esconde o formulario de cadastro e exibe o de edição
     const formViwer = document.querySelector('#formId');
     const formHide = document.querySelector('#table-box');
 

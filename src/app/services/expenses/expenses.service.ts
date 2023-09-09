@@ -7,6 +7,7 @@ import { Expenses } from 'src/app/class/expenses/expenses';
   providedIn: 'root'
 })
 export class ExpensesService {
+  [x: string]: any;
 
   url = 'http://localhost:3000/expenses'
 
@@ -41,18 +42,18 @@ export class ExpensesService {
 
     return this.httpClient.delete<void>(deleteUrl, this.httpOptions)
       .pipe(
-        retry(1),
+        retry(2),
         catchError(this.handleError)
       );
   }
 
   // atualizar uma despesa
-  async UpdateProduto(expenses: Expenses) {
-    return this.httpClient.put<Expenses[]>(this.url + '/' + expenses, expenses)
-      .pipe(
-        retry(1)
-        , catchError(this.handleError));
-  }
+  async UpdateExpenses(expenses: Expenses) {
+    return this.httpClient.put<Expenses[]>(this.url + '/' + expenses._id, expenses)
+    .pipe(
+      retry(1)
+      , catchError(this.handleError));
+}
 
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
