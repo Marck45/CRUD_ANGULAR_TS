@@ -1,6 +1,6 @@
 export interface Expenses {
-  nameExpenses: string,
-  value: String,
+  nameExpense: string,
+  value: Number,
   maturity: Date,
   description: String,
 }

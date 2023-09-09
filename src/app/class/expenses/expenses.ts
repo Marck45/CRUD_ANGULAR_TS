@@ -1,8 +1,8 @@
 import { Expenses } from "src/app/models/expenses";
 
 export class ExpensesClass implements Expenses {
-  nameExpenses: string = '';
-  value: String = '';
+  nameExpense: string = '';
+  value: Number = 0;
   maturity: Date = new Date;
   description: String = '';
 }
