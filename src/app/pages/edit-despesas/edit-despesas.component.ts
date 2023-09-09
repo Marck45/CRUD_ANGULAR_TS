@@ -14,11 +14,11 @@ export class EditDespesasComponent implements OnInit {
   expense = {} as Expenses;
   expenses: Expenses[] = [];
 
-   constructor(private expensesService: ExpensesService,
+  constructor(private expensesService: ExpensesService,
     private loadingService: LoadingService,
     private notificationService: NotificationService) { }
 
-    ngOnInit(){
+  ngOnInit() {
     this.loadingExpenses();
   }
 
@@ -30,6 +30,7 @@ export class EditDespesasComponent implements OnInit {
         this.expenses = expenses;
         this.loadingService.hide();
         this.notificationService.showSuccess('Despesas carregadas');
+        console.log(expenses);
       }, (error: any) => {
         this.notificationService.showError('Erro ao carregar os produtos: ' + ' ' + error.message);
         this.loadingService.hide();
@@ -37,4 +38,22 @@ export class EditDespesasComponent implements OnInit {
     );
   }
 
+  async excludeExpense(form: any) {
+    this.loadingService.show();
+
+    const expenseId = form._id; // Apenas pegue o _id da despesa
+
+    (await this.expensesService.deleteExpense(expenseId)).subscribe(
+      () => {
+        this.loadingExpenses();
+        this.notificationService.showSuccess('Despesa deletada!');
+        this.loadingService.hide();
+      },
+      (error) => {
+        console.error('Erro ao excluir despesa:', error);
+        this.loadingService.hide();
+        // Trate o erro de acordo com suas necessidades
+      }
+    );
+  }
 }

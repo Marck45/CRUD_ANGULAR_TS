@@ -36,11 +36,14 @@ export class ExpensesService {
 
   // deletar uma despesa
 
-  async deleteExpenses(expenses: Expenses){
-    return this.httpClient.delete<Expenses>(this.url + '/' + expenses, this.httpOptions)
+  async deleteExpense(expenseId: string): Promise<Observable<void>> {
+    const deleteUrl = `${this.url}/${expenseId}`;
+
+    return this.httpClient.delete<void>(deleteUrl, this.httpOptions)
       .pipe(
-        retry(1)
-        , catchError(this.handleError));
+        retry(1),
+        catchError(this.handleError)
+      );
   }
 
   // atualizar uma despesa

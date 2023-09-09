@@ -41,6 +41,7 @@ export class DespesasComponent implements OnInit {
     this.loadingService.show(); // Mostra o indicador de carregamento
 
     const expenses = {
+      _id: formExpenses._id,
       nameExpense: formExpenses.nameExpense,
       value: formExpenses.value,
       maturity: formExpenses.maturity,
