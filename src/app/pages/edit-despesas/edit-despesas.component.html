@@ -19,7 +19,9 @@
           <td>{{ expenses.maturity | date : "dd/MM/yyyy" }}</td>
           <td>{{ expenses.description }}</td>
           <td>
-            <button class="btn , edit" (click)="editExpense(expenses)">Editar</button>
+            <button class="btn , edit" (click)="editExpense(expenses)">
+              Editar
+            </button>
             <button class="btn delete" (click)="excludeExpense(expenses)">
               Deletar
             </button>
@@ -30,13 +32,13 @@
   </div>
 
   <!-- formulario de edição -->
-    <form
-      id="formId"
-      class="hide"
-      [formGroup]="formEditExpense"
-      (ngSubmit)="upExpense(this.formEditExpense.value)"
-    >
-    <label>
+  <form
+    id="formId"
+    class="hide"
+    [formGroup]="formEditExpense"
+    (ngSubmit)="upExpense(this.formEditExpense.value)"
+  >
+    <label style="display: none">
       <input
         class="input"
         type="text"
@@ -44,48 +46,49 @@
         formControlName="_id"
         required
       />
+      <span>id</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="nameExpense"
+        formControlName="nameExpense"
+        required
+      />
       <span>Nome da Despesa</span>
     </label>
-      <label>
-        <input
-          class="input"
-          type="text"
-          name="nameExpense"
-          formControlName="nameExpense"
-          required
-        />
-        <span>Nome da Despesa</span>
-      </label>
-      <label>
-        <input
-          class="input"
-          type="number"
-          name="value"
-          formControlName="value"
-          required
-        />
-        <span>Valor</span>
-      </label>
-      <label>
-        <input
-          class="input"
-          type="date"
-          name="maturity"
-          formControlName="maturity"
-          required
-        />
-        <span style="display: none;">Data de vencimento</span>
-      </label>
-      <label>
-        <input
-          class="input"
-          type="text"
-          name="description"
-          formControlName="description"
-          required
-        />
-        <span>Descrição</span>
-      </label>
-      <app-button [buttonText]="'Cadastrar'" type="submit"></app-button>
-    </form>
+    <label>
+      <input
+        class="input"
+        type="number"
+        name="value"
+        step="0.01"
+        formControlName="value"
+        required
+      />
+      <span>Valor</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="date"
+        name="maturity"
+        formControlName="maturity"
+        required
+      />
+      <span style="display: none">Data de vencimento</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="description"
+        formControlName="description"
+        required
+      />
+      <span>Descrição</span>
+    </label>
+    <app-button [buttonText]="'Atualizar'" type="submit"></app-button>
+  </form>
 </div>
