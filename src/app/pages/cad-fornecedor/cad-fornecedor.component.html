@@ -2,59 +2,58 @@
   <div class="container">
     <app-title-page [titleText]="'Cadastro de Fornecedor'"></app-title-page>
 
-    <form class="form">
+    <form
+      class="form"
+      [formGroup]="formSupplier"
+      (ngSubmit)="onSubmitSupplier()"
+    >
       <label>
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          name="sales"
+          formControlName="sales"
+          required
         />
-        <span>Cod Fornecedor</span>
+        <span>Vendedor</span>
       </label>
       <label>
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          name="work"
+          formControlName="work"
+          required
         />
         <span>Empresa</span>
       </label>
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          type="email"
+          name="email"
+          formControlName="email"
+          required
         />
         <span>E-mail</span>
       </label>
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          type="phone"
+          name="phone1"
+          formControlName="phone1"
+          required
         />
         <span>Telefone 01</span>
       </label>
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          type="phone"
+          name="phone2"
+          formControlName="phone2"
+          required
         />
         <span>Telefone 02</span>
       </label>
@@ -62,15 +61,13 @@
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
-          value=""
-          required=""
+          name="address"
+          formControlName="address"
+          required
         />
         <span>Endereço</span>
       </label>
-      <app-button [buttonText]="'Cadastrar'"></app-button>
+      <app-button [buttonText]="'Cadastrar'" type="submit"></app-button>
     </form>
   </div>
-
 </div>
