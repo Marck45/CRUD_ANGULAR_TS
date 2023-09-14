@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Produtos } from 'src/app/models/produtos';
-import { ProdutosAPiService } from 'src/app/services/produtos-api.service';
+import { ProdutosAPiService } from 'src/app/services/produtos/produtos-api.service';
 import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
 
