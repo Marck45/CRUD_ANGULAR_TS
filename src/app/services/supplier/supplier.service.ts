@@ -27,8 +27,8 @@ export class SupplierService {
    }
 
    // salva uma nova despesa
-   async saveSupplier(expenses: Supplier){
-     return this.httpClient.post<Supplier[]>(this.url, expenses)
+   async saveSupplier(supplier: Supplier){
+     return this.httpClient.post<Supplier[]>(this.url, supplier)
      .pipe(
        retry(2),
         catchError(this.handleError));
@@ -36,8 +36,8 @@ export class SupplierService {
 
    // deletar uma despesa
 
-   async deleteSupplier(expenseId: string): Promise<Observable<void>> {
-     const deleteUrl = `${this.url}/${expenseId}`;
+   async deleteSupplier(supplierId: string): Promise<Observable<void>> {
+     const deleteUrl = `${this.url}/${supplierId}`;
 
      return this.httpClient.delete<void>(deleteUrl, this.httpOptions)
        .pipe(
