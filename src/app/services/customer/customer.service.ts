@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, retry, catchError, throwError } from 'rxjs';
 import { Customer } from 'src/app/models/customer';
-import { Supplier } from 'src/app/models/supplier';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,7 @@ export class CustomerService {
   };
 
    // carrega todas as despesas
-   async getSupplier(): Promise<Observable<Customer[]>> {
+   async getCustomer(): Promise<Observable<Customer[]>> {
     return this.httpClient.get<Customer[]>(this.url)
     .pipe(
       retry(2),
@@ -28,7 +27,7 @@ export class CustomerService {
   }
 
   // salva uma nova despesa
-  async saveSupplier(customer: Customer){
+  async saveCustomer(customer: Customer){
     return this.httpClient.post<Customer[]>(this.url, customer)
     .pipe(
       retry(2),
@@ -37,7 +36,7 @@ export class CustomerService {
 
   // deletar uma despesa
 
-  async deleteSupplier(customerId: string): Promise<Observable<void>> {
+  async deleteCustomer(customerId: string): Promise<Observable<void>> {
     const deleteUrl = `${this.url}/${customerId}`;
 
     return this.httpClient.delete<void>(deleteUrl, this.httpOptions)
@@ -48,7 +47,7 @@ export class CustomerService {
   }
 
   // atualizar uma despesa
-  async UpdateSupplier(customer: Customer) {
+  async UpdateCustomer(customer: Customer) {
     return this.httpClient.put<Customer[]>(this.url + '/' + customer._id, customer)
     .pipe(
       retry(1)
