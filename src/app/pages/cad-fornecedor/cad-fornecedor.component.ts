@@ -24,7 +24,7 @@ export class CadFornecedorComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.createFormSupplier()
+    this.createFormSupplier();
   }
 
 

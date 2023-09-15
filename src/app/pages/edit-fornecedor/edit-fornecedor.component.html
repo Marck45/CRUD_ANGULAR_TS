@@ -1,33 +1,31 @@
 <div class="wrapper">
-  <app-title-page [titleText]="'Editar Clientes'"></app-title-page>
-
-
+  <app-title-page [titleText]="'Editar Fornecedor'"></app-title-page>
   <div class="tabela-container" id="table-box">
     <table id="corp-list">
       <thead>
         <tr class="table-title">
-          <th>Cod Fornecedor</th>
+          <th>Vendedor</th>
           <th>Empresa</th>
           <th>E-mail</th>
           <th>Telefone 01</th>
           <th>Telefone 02</th>
-          <th>endereço</th>
+          <th>Endereço</th>
           <th>Opções</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="table-corp">
-          <td>01</td>
-          <td>Marcos</td>
-          <td>Marcosantcarvalho99@gmail.com</td>
-          <td>86995666783</td>
-          <td>2</td>
-          <td>Sim</td>
+        <tr class="table-corp" *ngFor="let supplier of suppliers">
+          <td>{{ supplier.sales }}</td>
+          <td>{{ supplier.work }}</td>
+          <td>{{ supplier.email }}</td>
+          <td>{{ supplier.phone1 }}</td>
+          <td>{{ supplier.phone2 }}</td>
+          <td>{{ supplier.address }}</td>
           <td>
-            <button class="btn , edit" >
+            <button class="btn , edit" (click)="editSupplier(supplier)">
               Editar
             </button>
-            <button class="btn delete" >
+            <button class="btn delete" (click)="excludeSupplier(supplier)">
               Deletar
             </button>
           </td>
@@ -35,4 +33,88 @@
       </tbody>
     </table>
   </div>
+
+  <!-- formulario de edição -->
+
+  <form
+    id="formId"
+    class="hide"
+    [formGroup]="formEditSupplier"
+    (ngSubmit)="upSupplier(this.formEditSupplier.value)"
+  >
+    <label style="display: none">
+      <input
+        class="input"
+        type="text"
+        name="_id"
+        formControlName="_id"
+        value=""
+        required
+      />
+      <span>id</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="sales"
+        formControlName="sales"
+        value=""
+        required
+      />
+      <span>Vendedor</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="work"
+        formControlName="work"
+        value=""
+        required
+      />
+      <span>Empresa</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="email"
+        name="email"
+        formControlName="email"
+        required
+      />
+      <span>E-mail</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="phone"
+        name="phone1"
+        formControlName="phone1"
+        required
+      />
+      <span>Telefone 01</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="phone"
+        name="phone2"
+        formControlName="phone2"
+        required
+      />
+      <span>Telefone 02</span>
+    </label>
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="address"
+        formControlName="address"
+        required
+      />
+      <span>Endereço</span>
+    </label>
+    <app-button [buttonText]="'Editar'" type="submit"></app-button>
+  </form>
 </div>
