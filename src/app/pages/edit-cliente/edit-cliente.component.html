@@ -6,7 +6,6 @@
     <table id="corp-list">
       <thead>
         <tr class="table-title">
-          <th>Cod Cliente</th>
           <th>Nome Completo</th>
           <th>E-mail</th>
           <th>Telefone</th>
@@ -16,18 +15,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="table-corp">
-          <td>01</td>
-          <td>Marcos</td>
-          <td>Marcosantcarvalho99@gmail.com</td>
-          <td>86995666783</td>
-          <td>2</td>
-          <td>Sim</td>
+        <tr class="table-corp" *ngFor="let customer of customers">
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.phone }}</td>
+          <td>{{ customer.address }}</td>
+          <td>{{ customer.notification }}</td>
           <td>
-            <button class="btn , edit" >
+            <button class="btn , edit" (click)="editCustomer(customer)">
               Editar
             </button>
-            <button class="btn delete" >
+            <button class="btn delete" (click)="excludeCustomer(customer)">
               Deletar
             </button>
           </td>
@@ -35,4 +33,79 @@
       </tbody>
     </table>
   </div>
+
+   <!-- formulario de edição -->
+
+ <form
+ id="formId"
+ class="hide"
+ [formGroup]="formEditCustomer"
+ (ngSubmit)="upCustomer(this.formEditCustomer.value)"
+>
+<label style="display: none">
+  <input
+    class="input"
+    type="text"
+    name="_id"
+    formControlName="_id"
+    required
+  />
+  <span>id</span>
+</label>
+ <label>
+   <input
+     class="input"
+     type="text"
+     name="name"
+     formControlName="name"
+     required
+   />
+   <span>Nome Completo</span>
+ </label>
+ <label>
+   <input
+     class="input"
+     type="email"
+     name="email"
+     formControlName="email"
+     required
+   />
+   <span>E-mail</span>
+ </label>
+ <label>
+   <input
+     class="input"
+     type="tel"
+     name="phone"
+     formControlName="phone"
+     pattern="[0-9]{11}"
+     required
+   />
+   <span>Telefone</span>
+ </label>
+ <label>
+   <input
+     class="input"
+     type="text"
+     name="address"
+     formControlName="address"
+     required
+   />
+   <span>Endereço</span>
+ </label>
+ <div class="notificacao">
+   <h2 class="title-noti">Notificações</h2>
+   <label>O cliente deseja receber nortificações sobre promoções?</label>
+   <input
+     class="input"
+     type="checkbox"
+     name="notification"
+     formControlName="notification"
+     [value]="true"
+   />
+ </div>
+ <app-button [buttonText]="'Editar'" type="submit"></app-button>
+</form>
+
 </div>
+

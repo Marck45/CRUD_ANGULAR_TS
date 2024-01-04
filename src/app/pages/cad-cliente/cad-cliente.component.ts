@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Customer } from 'src/app/models/customer';
 import { LoadingService } from 'src/app/service/loading.service';
@@ -10,7 +10,7 @@ import { CustomerService } from 'src/app/services/customer/customer.service';
   templateUrl: './cad-cliente.component.html',
   styleUrls: ['./cad-cliente.component.css']
 })
-export class CadClienteComponent {
+export class CadClienteComponent implements OnInit {
 
   customer = {} as Customer;
   customers: Customer [] = [];
@@ -26,7 +26,6 @@ export class CadClienteComponent {
     this.createFormCustomer();
   }
 
-
   createFormCustomer() {
     this.formCustomer = new FormGroup({
       name: new FormControl(),
@@ -37,11 +36,11 @@ export class CadClienteComponent {
     });
   }
 
-  onSubmitSupplier() {
-    this.createSupplier(this.formCustomer.value);
+  onSubmitCustomer() {
+    this.createCustomer(this.formCustomer.value);
   }
 
-  async createSupplier(formCustomer: any){
+  async createCustomer(formCustomer: any){
     this.loadingService.show(); // Mostra o indicador de carregamento
 
     const customer = {
@@ -57,10 +56,10 @@ export class CadClienteComponent {
       (customer: Customer[]) => {
         this.customers = customer;
         this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
-        this.notificationService.showSuccess('Fornecedor cadastrada');
+        this.notificationService.showSuccess('Cliente cadastrado');
       },
       (error: any) => {
-        this.notificationService.showError('Erro ao cadastrar fornecedor: ' + ' ' + error.message);
+        this.notificationService.showError('Erro ao cadastrar cliente: ' + ' ' + error.message);
         this.loadingService.hide(); // Certifique-se de ocultar o indicador em caso de erro também
       }
     );

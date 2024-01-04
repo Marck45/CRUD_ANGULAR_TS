@@ -1,14 +1,19 @@
 <div class="wrapper">
   <div class="container">
-    <app-title-page [titleText]="'Cadastro de clientes'"></app-title-page>
+    <app-title-page [titleText]="'Cadastro de Clientes'"></app-title-page>
+    <app-notification></app-notification>
 
-    <form class="form">
+    <form
+      class="form"
+      [formGroup]="formCustomer"
+      (ngSubmit)="onSubmitCustomer()"
+    >
       <label>
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
+          name="name"
+          formControlName="name"
           value=""
           required=""
         />
@@ -17,9 +22,9 @@
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
+          type="email"
+          name="email"
+          formControlName="email"
           value=""
           required=""
         />
@@ -28,9 +33,10 @@
       <label>
         <input
           class="input"
-          type="text"
-          name="nome"
-          formControlName="nome"
+          type="tel"
+          name="phone"
+          formControlName="phone"
+          pattern="[0-9]{11}"
           value=""
           required=""
         />
@@ -40,26 +46,25 @@
         <input
           class="input"
           type="text"
-          name="nome"
-          formControlName="nome"
+          name="address"
+          formControlName="address"
           value=""
           required=""
         />
         <span>Endereço</span>
       </label>
       <div class="notificacao">
-        <h2>Notificações</h2>
+        <h2 class="title-noti">Notificações</h2>
         <label>O cliente deseja receber nortificações sobre promoções?</label>
-          <input
-            class="input"
-            type="checkbox"
-            name="nome"
-            formControlName="nome"
-            [value]="true"
-          >
+        <input
+          class="input"
+          type="checkbox"
+          name="notificacao"
+          formControlName="notification"
+          [value]="true"
+        />
       </div>
-      <app-button [buttonText]="'Cadastrar'"></app-button>
+      <app-button [buttonText]="'Cadastrar'" type="submit" [disabled]="!formCustomer.valid"></app-button>
     </form>
   </div>
-
 </div>
