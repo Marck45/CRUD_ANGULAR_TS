@@ -1,16 +1,15 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, retry, throwError } from 'rxjs';
-import { Expenses } from 'src/app/class/expenses/expenses';
+import { Observable, retry, catchError, throwError } from 'rxjs';
+import { Sales } from '../../models/sales';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExpensesService {
+export class SalesService {
 
-  url = 'http://localhost:3000/expenses'
+  url = 'http://localhost:3000/sales'
 
-  // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
 
   //  Headers
@@ -18,17 +17,18 @@ export class ExpensesService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  // carrega todas as despesas
-  async getExpenses(): Promise<Observable<Expenses[]>> {
-    return this.httpClient.get<Expenses[]>(this.url)
+
+   // carrega todas as despesas
+   async getSales(): Promise<Observable<Sales[]>> {
+    return this.httpClient.get<Sales[]>(this.url)
     .pipe(
       retry(2),
        catchError(this.handleError));
   }
 
   // salva uma nova despesa
-  async saveExpenses(expenses: Expenses){
-    return this.httpClient.post<Expenses[]>(this.url, expenses)
+  async saveSales(sales: Sales){
+    return this.httpClient.post<Sales[]>(this.url, sales)
     .pipe(
       retry(2),
        catchError(this.handleError));
@@ -36,8 +36,8 @@ export class ExpensesService {
 
   // deletar uma despesa
 
-  async deleteExpense(expenseId: string): Promise<Observable<void>> {
-    const deleteUrl = `${this.url}/${expenseId}`;
+  async deleteSales(salesId: string): Promise<Observable<void>> {
+    const deleteUrl = `${this.url}/${salesId}`;
 
     return this.httpClient.delete<void>(deleteUrl, this.httpOptions)
       .pipe(
@@ -47,8 +47,8 @@ export class ExpensesService {
   }
 
   // atualizar uma despesa
-  async UpdateExpenses(expenses: Expenses) {
-    return this.httpClient.put<Expenses[]>(this.url + '/' + expenses._id, expenses)
+  async UpdateSales(sales: Sales) {
+    return this.httpClient.put<Sales[]>(this.url + '/' + sales._id, sales)
     .pipe(
       retry(1)
       , catchError(this.handleError));
@@ -69,3 +69,4 @@ export class ExpensesService {
   };
 
 }
+

@@ -90,25 +90,18 @@
 
 /* lista de produtos */
 
-.listagem-produto{
+.produto{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
+.produto label{
+  min-height: 100%;
+}
 
-.listagem-produto li {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin-bottom: 1rem;
-  text-transform: capitalize;
-  border-radius: 5px;
-  background: #ffffff;
-  box-shadow: inset 5px 5px 5px #d6d6d6,
-              inset -5px -5px 5px #ffffff;
-  padding: 0.5rem;
-  width: 70%;
-
+.produto label select{
+  min-height: 80%;
 }

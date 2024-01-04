@@ -57,8 +57,8 @@ export class CadFornecedorComponent implements OnInit {
     };
 
     (await this.supplierService.saveSupplier(supplier)).subscribe(
-      (expenses: Supplier[]) => {
-        this.suppliers = expenses;
+      (supplier: Supplier[]) => {
+        this.suppliers = supplier;
         this.loadingService.hide(); // Oculta o indicador de carregamento após o carregamento completo
         this.notificationService.showSuccess('Fornecedor cadastrada');
       },
