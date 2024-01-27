@@ -8,7 +8,7 @@
 .dash-container{
     display: flex;
     flex-direction: column;
-    width: 800px;
+    justify-content: center;
     text-align: center;
 }
 
