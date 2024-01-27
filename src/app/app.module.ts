@@ -35,6 +35,7 @@ import { LoadingPageComponent } from './component/loading-page/loading-page.comp
 import { NotificationComponent } from './component/notification/notification.component';
 import { AuthService } from './services/auth/auth-service.service';
 import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.componen
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService

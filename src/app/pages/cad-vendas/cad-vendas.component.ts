@@ -24,10 +24,10 @@ export class CadVendasComponent implements OnInit {
   discountValue: number = 0;
 
   customer = {} as Customer;
-  customers: Customer [] = [];
+  customers: Customer[] = [];
 
   sales = {} as Sales;
-  sales2: Sales [] = [];
+  sales2: Sales[] = [];
 
   produtosSelecionados: string[] = [];
 
@@ -35,37 +35,44 @@ export class CadVendasComponent implements OnInit {
 
   maiorIdProduto: number = 0;
 
+  originalValueControl: FormControl = new FormControl();
+
+
   constructor(private produtosAPiService: ProdutosAPiService,
     private loadingService: LoadingService,
     private notificationService: NotificationService,
     private customerService: CustomerService,
-    private salesService: SalesService,
-    private formBuilder: FormBuilder ) { }
+    private salesService: SalesService) { }
 
   ngOnInit() {
     this.getProducts();
     this.getCustomer();
     this.getSales();
     this.createForm();
+    this.subscribeToDiscountChanges();
+  }
+
+  // Adiciona a subscrição para alterações no desconto
+  private subscribeToDiscountChanges() {
+    this.formSales.get('discount')!.valueChanges.subscribe(() => {
+      this.calcularTotal();
+    });
   }
 
 
   // formulario de vendasd
   createForm() {
     this.formSales = new FormGroup({
+      _id: new FormControl(),
       cod: new FormControl(),
       name: new FormControl(),
-      email: new FormControl(),
-      phone: new FormControl(),
-      notification: new FormControl(),
       product: new FormControl(),
       discount: new FormControl(),
       discountValue: new FormControl(),
       finalValue: new FormControl(),
+      originalValue: new FormControl(),
     });
-
   }
-
 
   // carregar todos os produtos
   async getProducts() {
@@ -143,24 +150,67 @@ export class CadVendasComponent implements OnInit {
     // Reinicialize o valor total
     this.totalValue = 0;
 
-    // Itere pelos produtos selecionados
-    for (const productId of this.selectedProducts) {
-      const produtoSelecionado = this.produtos.find(produto => produto._id === parseInt(productId, 10));
+    // Obtenha o valor do campo de produtos
+    const selectedProducts = this.formSales.get('product')!.value;
 
-      if (produtoSelecionado) {
-        // Some o valor do produto ao valor total
-        this.totalValue += produtoSelecionado.valor; // Substitua "valor" pelo nome do campo que armazena o valor do produto em seu objeto
+    // Verifique se o valor não é nulo
+    if (selectedProducts && selectedProducts.length > 0) {
+      // Itere pelos produtos selecionados
+      for (const productId of selectedProducts) {
+        const produtoSelecionado = this.produtos.find(
+          (produto) => produto._id === parseInt(productId, 10)
+        );
+
+        if (produtoSelecionado) {
+          // Some o valor do produto ao valor total
+          this.totalValue += produtoSelecionado.valor;
+        }
       }
     }
 
-    // Atualize o valor total com o desconto
-    this.totalValue -= this.discountValue;
+    // Obtenha o valor do campo de desconto
+    const discount = this.formSales.get('discount')!.value;
+
+    // Calcule o valor do desconto
+    const discountValue = (this.totalValue * discount) / 100;
+
+    // Calcule o valor original (valor total menos desconto)
+    const originalValue = this.totalValue - discountValue;
+
+    // Atualize os FormControl correspondentes
+    this.formSales.get('discountValue')!.setValue(discountValue.toFixed(2));
+    this.formSales.get('originalValue')!.setValue(this.totalValue.toFixed(2));
+    this.formSales.get('finalValue')!.setValue(originalValue.toFixed(2));
+  }
+
+   // Salva a venda
+   async saveSales(formSales: any) {
+    this.loadingService.show();
+
+
+    (await this.salesService.saveSales(formSales)).subscribe(
+      (response: any) => {
+        this.notificationService.showSuccess('Venda Realizada!');
+        this.loadingService.hide();
+
+      },
+      (error: any) => {
+        this.notificationService.showError('Erro ao cadastrar venda: ' + ' ' + error.message);
+        this.loadingService.hide();
+      }
+    );
   }
 
 
-  // envio do formulario de vendas
-  async onSubmitSales(){
+  cleanForm() {
+
+    this.createForm();
 
   }
 
+ // Envia o formulário de vendas
+ onSubmitSales() {
+  console.log('Botão de salvar clicado!');
+  this.saveSales(this.formSales.value);
+}
 }

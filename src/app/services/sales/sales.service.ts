@@ -26,14 +26,13 @@ export class SalesService {
        catchError(this.handleError));
   }
 
-  // salva uma nova despesa
-  async saveSales(sales: Sales){
-    return this.httpClient.post<Sales[]>(this.url, sales)
-    .pipe(
-      retry(2),
-       catchError(this.handleError));
+   // Salva uma nova venda
+   saveSales(sales: Sales): Observable<Sales> {
+    return this.httpClient.post<Sales>(this.url, sales, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
-
   // deletar uma despesa
 
   async deleteSales(salesId: string): Promise<Observable<void>> {

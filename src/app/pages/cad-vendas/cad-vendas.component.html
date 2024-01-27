@@ -1,10 +1,14 @@
 <div class="wrapper">
   <div class="container">
     <app-title-page [titleText]="'Cadastro de Vendas'"></app-title-page>
-    <form class="form" id="formSales" [formGroup]="formSales" (ngSubmit)="onSubmitSales()">
+    <form
+      class="form"
+      [formGroup]="formSales"
+      (ngSubmit)="onSubmitSales()"
+    >
       <div class="dados-venda">
         <div class="titulo-venda">
-          <h2>Venda </h2>
+          <h2>Venda</h2>
           <label>
             <input
               class="input"
@@ -21,48 +25,37 @@
           <h2>Cliente</h2>
           <label>
             <select
-            class="input"
+              class="input"
               type="text"
               name="name"
               formControlName="name"
-              required>
-
-              <option value="" disabled selected>Selecione um produto</option>
-              <option *ngFor="let customer of customers" [value]="customer._id">{{ customer.name }}</option>
+              required
+            >
+              <option value="" disabled selected>Selecione um cliente</option>
+              <option *ngFor="let customer of customers" [value]="customer._id">
+                {{ customer.name }}
+              </option>
             </select>
             <span>Nome do Cliente</span>
           </label>
-
-          <label>
-            <input
-              class="input"
-              type="email"
-              name="email"
-              required
-            />
-            <span>E-mail</span>
-          </label>
-          <label>
-            <input
-              class="input"
-              type="phone"
-              name="phone"
-              required
-            />
-            <span>Telefone</span>
-          </label>
-
         </div>
-        <div class="notificacao">
-          <h2>Notificações</h2>
-          <label>O cliente deseja receber nortificações sobre promoções?</label>
-            <input
+        <div class="desconto">
+          <h2>Aplicar Desconto</h2>
+          <label>
+            <select
               class="input"
-              type="checkbox"
-              name="notification"
-              formControlName="notification"
-              [value]="false"
+              name="discount"
+              formControlName="discount"
+              required
             >
+              <option value="" disabled selected>Selecione o Desconto</option>
+              <option value="0">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+            </select>
+            <span>Desconto</span>
+          </label>
         </div>
       </div>
       <div class="resumo-pedido">
@@ -77,34 +70,30 @@
               multiple
               (change)="calcularTotal()"
             >
-              <option value="" disabled selected>Selecione um ou mais produtos</option>
-              <option *ngFor="let produto of produtos" [value]="produto._id">{{ produto.nome }}</option>
+              <option value="" disabled selected>
+                Selecione um ou mais produtos
+              </option>
+              <option *ngFor="let produto of produtos" [value]="produto._id">
+                {{ produto.nome }}
+              </option>
             </select>
           </label>
         </div>
       </div>
-      <div class="desconsto-valor">
-        <div class="desconto">
-          <h2>Aplicar Desconto</h2>
-          <label>
-            <select
-              class="input"
-              name="discount"
-              formControlName="discount"
-              required
-            >
-              <option value="" disabled selected>Selecione o Desconto</option>
-              <option value="produto1">0%</option>
-              <option value="produto1">5%</option>
-              <option value="produto2">10%</option>
-              <option value="produto3">15%</option>
-            </select>
-            <span>Desconto</span>
-          </label>
-        </div>
-        <div class="valor-final">
 
-          <h2>Valor</h2>
+      <div class="desconsto-valor">
+        <h2>Valor</h2>
+        <label>
+          <input
+            class="input"
+            type="text"
+            name="originalValue"
+            formControlName="originalValue"
+            required
+          />
+          <span>Valor Original</span>
+        </label>
+        <div class="valor-final">
           <label>
             <input
               class="input"
@@ -122,7 +111,6 @@
               name="finalValue"
               formControlName="finalValue"
               required
-              [(ngModel)]="totalValue"
             />
             <span>Valor total</span>
           </label>
@@ -131,5 +119,4 @@
     </form>
     <app-button [buttonText]="'Venda'" type="submit"></app-button>
   </div>
-
 </div>

@@ -60,7 +60,7 @@ export class CadUsuariosComponent implements OnInit {
 
     );
 
-    this.cleanForm()
+    this.cleanForm();
 
   }
 

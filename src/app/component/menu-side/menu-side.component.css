@@ -1,27 +1,27 @@
 .side-menu-main {
   display: flex;
   justify-content: center;
-  width: 100%;
-  position: fixed;
+  height: 90vh;
   margin-top: 5px;
 }
 
 .option-menu {
   display: flex;
-  width: 60%;
+  justify-content: space-between;
+  width: 30%;
 }
 
 .option-menu a {
   text-decoration: none;
   list-style: none;
   text-align: center;
-  color: #a1a1a1;
+  color: #802ba2;
 }
 
 .option-menu ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -33,14 +33,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
   padding: 0.5rem;
-  height: 100px;
-  width: 80px;
 }
 
 .hide-image {
@@ -53,13 +51,21 @@
   height: 110px;
 }
 
+
+.toggleMenu img{
+  height: 50px;
+}
+
 .opt2 {
-  max-width: 80%;
+  max-width: 100%;
   font-size: 14px;
   font-weight: bolder;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: inset 5px 5px 5px #d6d6d6,
-            inset -5px -5px 5px #ffffff;
   padding: 0.4rem;
+  text-transform: uppercase;
+}
+
+
+.opt2:hover {
+  background-color: #3ad0e8;
+  border-radius: 25px;
 }
