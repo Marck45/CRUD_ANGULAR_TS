@@ -76,16 +76,41 @@ export class LoginComponent implements OnInit {
     this.cleanForm();
   }
 
+  // google
+  googleLogin() {
+    this.loginServiceService.googleRegister().subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      (error: any) => {
+        console.error(error);
+      }
+    );
+  }
+
+  // facebook
+  facebookLogin() {
+    this.loginServiceService.facebookRegister().subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      (error: any) => {
+        console.error(error);
+      }
+    );
+  }
+
+
+
+
   // limpa formulario apos login
   cleanForm() {
-
     this.creatFormLogin();
-
   }
+
   // caixa de mensagem sobre reset de senha
   forgetPass() {
     alert('Verifique sua caixa de e-mail para cadastrar a nova senha');
   }
-
 }
 

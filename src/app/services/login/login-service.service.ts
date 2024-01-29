@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, retry, throwError } from 'rxjs';
+import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Login } from 'src/app/models/login';
 
 @Injectable({
@@ -30,6 +30,28 @@ export class LoginServiceService {
     .pipe(
       retry(2)
       , catchError(this.handleError))
+  }
+
+
+  // google authenticator
+
+  googleRegister(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/auth/google`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
+
+  // facebook authenticator
+
+  facebookRegister(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/auth/facebook`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
 
