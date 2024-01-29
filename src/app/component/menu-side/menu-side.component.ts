@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth-service.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth/auth-service.service';
   templateUrl: './menu-side.component.html',
   styleUrls: ['./menu-side.component.css']
 })
-export class MenuSideComponent {
+export class MenuSideComponent implements OnInit {
 
   iconLinkedin:string = '/assets/img/linkedinIcon.png';
   iconGitHub:string = '/assets/img/gitIcon.svg';
@@ -26,6 +26,9 @@ export class MenuSideComponent {
 
 
   constructor (private router: Router, private authService: AuthService) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 
   submenu: string | null = null; // Inicialmente, nenhum submenu está ativo
@@ -44,6 +47,5 @@ export class MenuSideComponent {
 
     this.router.navigate(['']);
   }
-
 
 }

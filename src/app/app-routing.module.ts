@@ -23,6 +23,7 @@ import { EditDespesasComponent } from './pages/edit-despesas/edit-despesas.compo
 import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.component';
 
+
 const routes: Routes = [
   {
     path: 'home', component: HomeappComponent, canActivate: [AuthGuardGuard]
