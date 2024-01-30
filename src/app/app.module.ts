@@ -33,7 +33,6 @@ import { CadFornecedorComponent } from './pages/cad-fornecedor/cad-fornecedor.co
 import { EditFornecedorComponent } from './pages/edit-fornecedor/edit-fornecedor.component';
 import { LoadingPageComponent } from './component/loading-page/loading-page.component';
 import { NotificationComponent } from './component/notification/notification.component';
-import { AuthService } from './services/auth/auth-service.service';
 import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -89,7 +88,6 @@ import { AuthModule } from '@auth0/auth0-angular';
     }),
   ],
   providers: [
-    AuthService
   ],
   bootstrap: [AppComponent]
 })

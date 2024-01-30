@@ -1,55 +1,32 @@
-<main class="wrapper">
-  <div class="form-login">
-   <app-title-page [titleText]="'Login'"></app-title-page>
-   <app-notification></app-notification>
-    <div class="form-login">
-      <form action="submit" id="formLogin" [formGroup]="formLogin" *ngIf="formLogin" (ngSubmit)="onSubmitLogin()" >
-        <label for="email">
-          <input
-            class="input"
-            type="email"
-            name="email"
-            id="email"
-            formControlName="email"
-            required
-          />
-          <span>E-mail</span>
-        </label>
-        <label for="password">
-          <input
-            class="input"
-            type="password"
-            name="password"
-            id="password"
-            formControlName="password"
-            required
-          />
-          <span>Senha</span>
-        </label>
-       <app-button [buttonText]="'Login'" type="submit"></app-button>
-      </form>
-    </div>
-    <div class="suporte">
-      <a href="#">Esqueceu sua senha? </a>
-    </div>
+<!-- navbar.component.html -->
 
-      <div class="social-login">
-        <ul *ngIf="auth.user$ | async as user">
-          <li>{{ user.name }}</li>
-          <li>{{ user.email }}</li>
-        </ul>`
-       <h1>Ainda não é cliente? </h1>
-       <a routerLink="cadUsuario">Cadastre-se aqui!</a>
-       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-        <button (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">
-          Log out
-        </button>
-      </ng-container>
-
-      <ng-template #loggedOut>
-        <button (click)="auth.loginWithRedirect()">Log in</button>
-      </ng-template>
-       <button (click)="facebookLogin()">facebook</button>
-      </div>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img src="caminho-para-o-logo" alt="Logo" height="30" class="logo">
+    Nome do Seu Site
   </div>
-</main>
+
+  <div class="navbar-menu">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sobre">Sobre Nós</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/segmentos">Segmentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/produtos">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/planos">Planos</a>
+      </li>
+    </ul>
+
+    <button class="test-button" (click)="auth.loginWithRedirect()">Teste</button>
+  </div>
+</nav>
+
+

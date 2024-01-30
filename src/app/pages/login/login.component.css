@@ -1,107 +1,73 @@
-.wrapper {
+/* styles.css ou o seu arquivo de estilo personalizado */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
 }
 
-.form-login {
+.navbar-brand {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 50%;
+  font-size: 20px;
 }
 
-form {
+.logo {
+  margin-right: 10px;
+}
+
+.nav-menu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 35%;
-  padding: 2rem;
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-form label {
-  position: relative;
+.nav-item {
+  margin-right: 20px;
 }
 
-form label .input {
-  width: 300px;
-  padding: 10px 10px 20px 10px;
-  outline: 0;
-  border: 1px solid #3ad0e8;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-form label .input+span {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  color: #9733be;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
-}
-
-form label .input:placeholder-shown+span {
-  top: 15px;
-  font-size: 0.9em;
-}
-
-form label .input:focus+span,
-.form label .input:valid+span {
-  top: 30px;
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
-form label .input:valid+span {
-  color: green;
-}
-
-/* link de reset de senha */
-.suporte {
-  margin-top: 3rem;
-}
-
-.suporte a {
+.nav-link {
   text-decoration: none;
-  font-weight: bolder;
-  padding: 1rem;
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
+.nav-link:hover {
+  color: #ffd700; /* Cor ao passar o mouse (pode ajustar conforme desejado) */
+}
 
-/*  login das redes sociais */
-.social-login {
-  margin-top: 5rem;
+.test-button {
+  background-color: #ffd700;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Centraliza a barra de navegação no topo */
+.main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 2rem;
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
-.social-login h1{
-  margin-bottom: 2rem;
-  color: #3ad0e8;
-  font-weight: bolder;
+.main-content {
+  margin-top: 70px; /* Ajuste conforme necessário para evitar sobreposição com a barra de navegação */
 }
-
-.social-login a{
-  text-decoration: none;
-  font-weight: bolder;
-}
-
