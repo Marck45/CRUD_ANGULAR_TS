@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Login } from 'src/app/models/login';
 import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
 import { LoginServiceService } from 'src/app/services/login/login-service.service';
-import { AuthService } from 'src/app/services/auth/auth-service.service';
+// import { AuthService } from 'src/app/services/auth/auth-service.service';
 import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +26,7 @@ export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
 
   constructor(private loginServiceService: LoginServiceService, private loadingService: LoadingService,
-    private notificationService: NotificationService, private authService: AuthService, private router: Router) { }
+    private notificationService: NotificationService, private router: Router, public auth: AuthService, @Inject(DOCUMENT) public document: Document) { }
 
   ngOnInit(): void {
 
@@ -55,7 +57,7 @@ export class LoginComponent implements OnInit {
         const token = response.token;
         if (token) {
           // Chame o método login do AuthService para armazenar o token
-          this.authService.login(token);
+          // this.authService.login(token);
 
           this.router.navigate(['home'])
 

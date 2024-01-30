@@ -30,15 +30,26 @@
       </form>
     </div>
     <div class="suporte">
-      <a href="#" (click)="forgetPass()">Esqueceu sua senha? </a>
+      <a href="#">Esqueceu sua senha? </a>
     </div>
 
       <div class="social-login">
+        <ul *ngIf="auth.user$ | async as user">
+          <li>{{ user.name }}</li>
+          <li>{{ user.email }}</li>
+        </ul>`
        <h1>Ainda não é cliente? </h1>
        <a routerLink="cadUsuario">Cadastre-se aqui!</a>
-       <button (click)="googleLogin()">google</button>
+       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <button (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">
+          Log out
+        </button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <button (click)="auth.loginWithRedirect()">Log in</button>
+      </ng-template>
        <button (click)="facebookLogin()">facebook</button>
       </div>
-
   </div>
 </main>

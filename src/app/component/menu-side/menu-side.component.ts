@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth-service.service';
+import { AuthService } from '@auth0/auth0-angular';
+
 
 @Component({
   selector: 'app-menu-side',
@@ -25,7 +26,7 @@ export class MenuSideComponent implements OnInit {
   iconfinancas:string = '/assets/img/aumento.png';
 
 
-  constructor (private router: Router, private authService: AuthService) {}
+  constructor (private router: Router, private auth: AuthService) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -42,8 +43,7 @@ export class MenuSideComponent implements OnInit {
   }
 
   onLogoutClick(){
-
-    this.authService.logout();
+    this.auth.logout({ logoutParams: { returnTo: document.location.origin } })
 
     this.router.navigate(['']);
   }

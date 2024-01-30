@@ -1,10 +1,13 @@
 <div class="main-container">
-  <div class="menuside">
-    <app-menu-side ></app-menu-side>
+  <div class="menuside" *ngIf="auth.isAuthenticated$ | async">
+    <app-menu-side></app-menu-side>
   </div>
- <div class="main-conteudo">
+  <div class="main-conteudo" *ngIf="auth.isAuthenticated$ | async">
     <router-outlet></router-outlet>
     <app-loading-page [isLoading]="isLoading"></app-loading-page>
- </div>
-</div>
+  </div>
 
+  <div class="main-container" *ngIf="!(auth.isAuthenticated$ | async)">
+    <app-login></app-login>
+  </div>
+</div>

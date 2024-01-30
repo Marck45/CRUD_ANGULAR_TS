@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { LoadingService } from './service/loading.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { LoadingService } from './service/loading.service';
 export class AppComponent {
   isLoading: boolean = false;
 
-  constructor(private router: Router, private loadingService: LoadingService) {
+  constructor(private router: Router, private loadingService: LoadingService, public auth: AuthService) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.loadingService.show();

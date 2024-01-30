@@ -37,6 +37,9 @@ import { AuthService } from './services/auth/auth-service.service';
 import { CadUsuariosComponent } from './pages/cad-usuarios/cad-usuarios.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// autenticação
+import { AuthModule } from '@auth0/auth0-angular';
+
 
 @NgModule({
   declarations: [
@@ -76,7 +79,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     CommonModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthModule.forRoot({
+      domain: 'dev-gl67hi28yjnlooee.us.auth0.com',
+      clientId: 'yohcrR8e5wkqV9pg6L3v92mcl3QVU27O',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
   ],
   providers: [
     AuthService
