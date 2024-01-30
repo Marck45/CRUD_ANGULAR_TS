@@ -2,7 +2,7 @@
 
 <nav class="navbar">
   <div class="navbar-brand">
-    <img [src]="logoImg" alt="Mk Pro Logo" height="150" class="logo">
+    <img [src]="logoImg" alt="Mk Pro Logo" height="150" class="logo" />
   </div>
 
   <div class="navbar-menu">
@@ -23,8 +23,46 @@
         <a class="nav-link" routerLink="/planos">Planos</a>
       </li>
     </ul>
-    <button class="test-button" (click)="auth.loginWithRedirect()">Teste</button>
+    <button class="test-button" (click)="auth.loginWithRedirect()">
+      Teste
+    </button>
   </div>
 </nav>
 
+<main class="main-container">
+  <section class="aboutUs" id="sobre">
+    <div class="video-container">
+      <!-- Inserir o código do player de vídeo aqui -->
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/eDf91hihLpo?autoplay=1"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="company-info">
+      <h2>Sobre Nós</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate
+        elementum nisl, euismod egestas libero pharetra id. Aenean ut
+        scelerisque elit. Morbi congue, quam quis lacinia sagittis, sem nulla
+        rhoncus urna, id pellentesque dolor elit sollicitudin eros.
+      </p>
 
+      <!-- Detalhes adicionais -->
+      <h2>Utilidade</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate
+        elementum nisl, euismod egestas libero pharetra id. </p>
+
+      <h2>Público</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate
+        elementum nisl, euismod egestas libero pharetra id. </p>
+
+      <h2>Benefícios</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate
+        elementum nisl, euismod egestas libero pharetra id. </p>
+      <!-- Adicione mais detalhes conforme necessário -->
+    </div>
+  </section>
+</main>
