@@ -10,7 +10,6 @@ export class AuthService {
 // No serviço AuthService
 login(token: string) {
   // Armazene o token JWT no localStorage
-  console.log(token)
   localStorage.setItem('authToken', token);
   // Defina a propriedade isAuthenticated como true, se necessário
   this.isAuthenticated = true;
