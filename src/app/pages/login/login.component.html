@@ -2,8 +2,7 @@
 
 <nav class="navbar">
   <div class="navbar-brand">
-    <img src="caminho-para-o-logo" alt="Logo" height="30" class="logo">
-    Nome do Seu Site
+    <img [src]="logoImg" alt="Mk Pro Logo" height="150" class="logo">
   </div>
 
   <div class="navbar-menu">
@@ -24,7 +23,6 @@
         <a class="nav-link" routerLink="/planos">Planos</a>
       </li>
     </ul>
-
     <button class="test-button" (click)="auth.loginWithRedirect()">Teste</button>
   </div>
 </nav>
