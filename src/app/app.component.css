@@ -2,15 +2,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     width: 100%;
     height: 100vh;
 }
 
 .menuside{
     width: 15%;
+    margin-top: 1rem;
 }
 
 .main-conteudo{
     width: 85%;
+    margin-top: 5rem;
 }

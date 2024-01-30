@@ -1,18 +1,13 @@
 /* styles.css ou o seu arquivo de estilo personalizado */
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
 .navbar {
   background-color: #333;
   color: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   padding: 10px 20px;
+  min-width: 100%;
 }
 
 .navbar-brand {

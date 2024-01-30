@@ -1,3 +1,5 @@
+<app-login *ngIf="!(auth.isAuthenticated$ | async)"></app-login>
+
 <div class="main-container">
   <div class="menuside" *ngIf="auth.isAuthenticated$ | async">
     <app-menu-side></app-menu-side>
@@ -5,9 +7,5 @@
   <div class="main-conteudo" *ngIf="auth.isAuthenticated$ | async">
     <router-outlet></router-outlet>
     <app-loading-page [isLoading]="isLoading"></app-loading-page>
-  </div>
-
-  <div class="main-container" *ngIf="!(auth.isAuthenticated$ | async)">
-    <app-login></app-login>
   </div>
 </div>
