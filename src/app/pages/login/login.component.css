@@ -85,7 +85,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   width: 90%;
   border-bottom: 3px solid #9733be;
 }
@@ -108,7 +108,7 @@
 }
 
 .company-info {
-  width: 50%; /* Ajuste conforme necessário */
+  width: 30%; /* Ajuste conforme necessário */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -132,3 +132,25 @@
   color: #555;
 }
 
+/* seguimentos de mercado */
+
+.market-segments{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 90%;
+  border-bottom: 3px solid #9733be;
+}
+
+.img-segmentos{
+  width: 80%;
+}
+
+.carousel-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+}

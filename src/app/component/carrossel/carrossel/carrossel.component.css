@@ -1,0 +1,30 @@
+/* carousel.component.css */
+.carousel-container {
+  display: flex;
+
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 200px; /* Ajuste conforme necessário */
+  margin-right: 15px; /* Espaçamento entre os cards */
+  margin-bottom: 15px;
+  padding: 1rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+}
