@@ -30,3 +30,11 @@
   box-shadow: 5px 5px 10px #a1a1a1,
     -5px -5px 10px #ffffff;
 }
+
+.card img {
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-weight: bolder;
+}
