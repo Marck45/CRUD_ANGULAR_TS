@@ -148,9 +148,31 @@
   width: 80%;
 }
 
+.img-segmentos h2{
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
 .carousel-container{
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 90%;
+}
+
+/* demonstração do produtos */
+
+.products-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  border-bottom: 3px solid #9733be;
+}
+
+.prod-p{
+  width: 100%;
 }

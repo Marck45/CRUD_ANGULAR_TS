@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // autenticação
 import { AuthModule } from '@auth0/auth0-angular';
 import { CarrosselComponent } from './component/carrossel/carrossel/carrossel.component';
+import { PageProductsComponent } from './component/page-products/page-products.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { CarrosselComponent } from './component/carrossel/carrossel/carrossel.co
     NotificationComponent,
     CadUsuariosComponent,
     CarrosselComponent,
+    PageProductsComponent,
   ],
   imports: [
     BrowserModule,
