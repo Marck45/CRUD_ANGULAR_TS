@@ -176,3 +176,16 @@
 .prod-p{
   width: 100%;
 }
+
+
+/* planos e preços */
+
+.plan-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  border-bottom: 3px solid #9733be;
+  height: 100vh;
+}

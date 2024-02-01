@@ -1,0 +1,60 @@
+.plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan h1 {
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.all-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #a1a1a1,
+    -5px -5px 10px #ffffff;
+}
+
+.card li{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card li{
+  list-style: none;
+}
+
+.card li p{
+  margin: 0;
+}
+
+.card li img{
+  width: 30px;
+  margin-left: 10px;
+}
+
+.function{
+  margin-bottom: 2rem;
+}
