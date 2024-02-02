@@ -1,1 +1,45 @@
-<p>page-contact works!</p>
+<div class="contat-container">
+
+  <h1>Experimente durante 15 dias</h1>
+
+  <form action="submit" class="form">
+
+    <label>
+      <input
+        class="input"
+        type="text"
+        name="nome"
+        formControlName="nome"
+        value=""
+        required=""
+      />
+      <span>Nome</span>
+    </label>
+
+    <label>
+      <input
+        class="input"
+        type="email"
+        name="nome"
+        formControlName="nome"
+        value=""
+        required=""
+      />
+      <span>E-mail</span>
+    </label>
+
+    <label>
+      <input
+        class="input"
+        type="phone"
+        name="phone"
+        formControlName="phone"
+        value=""
+        required=""
+      />
+      <span>DDD + Telefone</span>
+    </label>
+    <p>Ao continuar o cadastro você aceita nossa <strong>política de privacidade.</strong></p>
+    <app-button buttonText="Teste Gratís" type="submit"></app-button>
+  </form>
+</div>
