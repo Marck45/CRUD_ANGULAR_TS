@@ -6,8 +6,8 @@
 }
 
 .plan h1 {
-  margin-bottom: 2rem;
-  margin-top: 5rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
   font-weight: bolder;
   font-size: 2rem;
 }
@@ -17,7 +17,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-top: 5rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 

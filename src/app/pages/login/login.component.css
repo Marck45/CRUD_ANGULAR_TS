@@ -171,6 +171,7 @@
   flex-direction: column;
   width: 90%;
   border-bottom: 3px solid #9733be;
+  margin-bottom: 2rem;
 }
 
 .prod-p{
@@ -187,5 +188,19 @@
   flex-direction: column;
   width: 90%;
   border-bottom: 3px solid #9733be;
+  margin-bottom: 2rem;
+}
+
+
+/* contatos */
+
+.contact-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  border-bottom: 3px solid #9733be;
   height: 100vh;
+
 }

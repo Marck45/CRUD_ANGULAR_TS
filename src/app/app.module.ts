@@ -41,6 +41,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { CarrosselComponent } from './component/carrossel/carrossel/carrossel.component';
 import { PageProductsComponent } from './component/page-products/page-products.component';
 import { PagePlanosComponent } from './component/page-planos/page-planos.component';
+import { PageContactComponent } from './component/page-contact/page-contact.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { PagePlanosComponent } from './component/page-planos/page-planos.compone
     CarrosselComponent,
     PageProductsComponent,
     PagePlanosComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,
