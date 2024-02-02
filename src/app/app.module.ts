@@ -42,6 +42,7 @@ import { CarrosselComponent } from './component/carrossel/carrossel/carrossel.co
 import { PageProductsComponent } from './component/page-products/page-products.component';
 import { PagePlanosComponent } from './component/page-planos/page-planos.component';
 import { PageContactComponent } from './component/page-contact/page-contact.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { PageContactComponent } from './component/page-contact/page-contact.comp
     PageProductsComponent,
     PagePlanosComponent,
     PageContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
