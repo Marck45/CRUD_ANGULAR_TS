@@ -13,7 +13,15 @@ export class LoginComponent {
 
   showPopup: boolean = false;
 
+  showMobileMenu = false;
+
   constructor(public auth: AuthService, @Inject(DOCUMENT) public document: Document) { }
+
+  menuOnClick() {
+    document.getElementById("menu-bar")!.classList.toggle("change");
+    document.getElementById("nav")!.classList.toggle("change");
+    document.getElementById("menu-bg")!.classList.toggle("change-bg");
+  }
 
 }
 
