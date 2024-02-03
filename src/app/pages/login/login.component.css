@@ -88,7 +88,6 @@
   align-items: center;
   height: 100vh;
   width: 90%;
-  border-bottom: 3px solid #9733be;
 }
 
 .video-container {
@@ -142,7 +141,6 @@
   flex-direction: column;
   height: 100vh;
   width: 90%;
-  border-bottom: 3px solid #9733be;
 }
 
 .img-segmentos{
@@ -171,7 +169,6 @@
   align-items: center;
   flex-direction: column;
   width: 90%;
-  border-bottom: 3px solid #9733be;
   margin-bottom: 2rem;
 }
 
@@ -188,8 +185,8 @@
   align-items: center;
   flex-direction: column;
   width: 90%;
-  border-bottom: 3px solid #9733be;
   margin-bottom: 2rem;
+  height: 100vh;
 }
 
 
@@ -201,7 +198,7 @@
   align-items: center;
   flex-direction: column;
   width: 90%;
-  height: 90vh;
+  height: 100vh;
 }
 
 

@@ -23,6 +23,19 @@
   width: 100px;
 }
 
+.whats{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.whats p {
+  display: flex;
+  align-items: center;
+}
+.whats img{
+  width: 40px;
+}
+
 .adress p {
   margin-bottom: 1rem;
   font-weight: 400;
