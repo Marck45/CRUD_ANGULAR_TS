@@ -70,3 +70,22 @@ p{
 .form label .input:valid+span {
   color: green;
 }
+
+
+/* responsividade mobile */
+
+
+@media screen and (max-width: 768px) {
+  h1{
+    color: #9733be;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contat-container{
+   margin-top: 20rem;
+  }
+}
