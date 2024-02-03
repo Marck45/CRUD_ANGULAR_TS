@@ -94,3 +94,44 @@ a {
 .term-div li {
   margin: 0;
 }
+
+
+/* responsividade mobile */
+
+@media screen and (max-width: 768px) {
+
+  .main-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 0.5rem;
+  }
+  .navigation{
+    display: none;
+  }
+  .links{
+    display: none;
+  }
+
+  .adress-social{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .term {
+    width: 35%;
+  }
+
+  .term-div li  a{
+    font-size: 0.75rem;
+  }
+
+  .saler p, .developer p{
+    font-size: 0.75rem;
+  }
+
+  .second-footer {
+    width: 100%;
+  }
+}
