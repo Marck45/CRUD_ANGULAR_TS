@@ -43,6 +43,7 @@ import { PageProductsComponent } from './component/page-products/page-products.c
 import { PagePlanosComponent } from './component/page-planos/page-planos.component';
 import { PageContactComponent } from './component/page-contact/page-contact.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { PopUpComponent } from './component/pop-up/pop-up.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { FooterComponent } from './component/footer/footer.component';
     PagePlanosComponent,
     PageContactComponent,
     FooterComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,

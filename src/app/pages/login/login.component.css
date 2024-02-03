@@ -96,7 +96,7 @@
   justify-content: center;
   width: 50%;
   margin-right: 50px;
-  height: 70%;
+  height: 60%;
 }
 
 .video-container iframe {
@@ -217,3 +217,4 @@
   height: 50vh;
   margin-top: 0;
 }
+

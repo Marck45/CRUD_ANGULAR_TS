@@ -1,0 +1,14 @@
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup-container">
+    <h2>Desculpe, as vagas estão esgotadas!</h2>
+    <p>
+      Por favor, inscreva-se no link abaixo para ser avisado quando as vagas
+      estiverem disponíveis:
+    </p>
+    <a href="https://forms.gle/fFzmgEiahjx5K98J9" target="_blank"
+      >Inscrever-se para ser avisado</a
+    >
+    <button (click)="closePopup()" class="close-button">Fechar</button>
+    <!-- Conteúdo do pop-up -->
+  </div>
+</div>
