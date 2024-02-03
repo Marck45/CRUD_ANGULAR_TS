@@ -26,7 +26,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 18.75rem;
   padding: 1rem;
   border-radius: 25px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
@@ -58,3 +58,29 @@
 .function{
   margin-bottom: 2rem;
 }
+
+
+/* responsividade 1024 */
+
+@media screen and (max-width: 1024px) {
+  .card{
+    width: 12.75rem;
+    padding: 0.75rem;
+  }
+
+}
+
+
+/* responsividade 768  */
+
+
+@media screen and (max-width: 768px) {
+
+  .all-card {
+    flex-direction: column;
+    margin-bottom: 2rem;
+    height: auto;
+  }
+
+}
+
