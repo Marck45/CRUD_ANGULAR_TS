@@ -7,8 +7,9 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
-logoImg = "./assets/img/logo.png"
+export class LoginComponent {
+
+  logoImg = "./assets/img/logo.png"
 
   constructor(public auth: AuthService, @Inject(DOCUMENT) public document: Document) { }
 
