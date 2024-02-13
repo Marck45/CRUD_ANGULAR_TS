@@ -20,12 +20,13 @@ export class HomeappComponent implements AfterViewInit {
   title: string = 'Mk Pro Service'
 
   @ViewChild('pieChart1') private chartRef1!: ElementRef;
-  @ViewChild('pieChart2') private chartRef2!: ElementRef;
+  @ViewChild('lineChart') private lineChartRef!: ElementRef;
+
   charts: any[] = [];
 
   ngAfterViewInit(): void {
     this.createChart(this.chartRef1.nativeElement, ['Finanças', 'Clientes', 'Estoque', 'Vendas', 'Lucro']);
-    this.createChart(this.chartRef2.nativeElement, ['Produto A', 'Produto B', 'Produto C', 'Produto D', 'Produto E']);
+    this.createLineChart(this.lineChartRef.nativeElement, ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']);
   }
 
   private createChart(element: any, labels: string[]): void {
@@ -49,4 +50,18 @@ export class HomeappComponent implements AfterViewInit {
     this.charts.push(chart);
   }
 
+  private createLineChart(element: any, labels: string[]): void {
+    const lineChart = new Chart(element, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Vendas Mensais',
+          data: [100, 200, 150, 250, 180, 300],
+          borderColor: 'blue',
+          borderWidth: 2,
+        }]
+      }
+    });
+  }
 }

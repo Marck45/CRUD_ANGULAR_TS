@@ -10,21 +10,23 @@
             <img [src]="iconVenda" alt="vendas" />
             <h1>Vendas</h1>
           </div>
-          <span>R$: 1200,00</span>
+          <span>{{ 25000 | currency:'BRL':'symbol':'1.2-2' }}</span>
         </div>
         <div class="cardRed">
           <div class="imgTitle">
             <img [src]="iconfinancas" alt="finanças" />
             <h1>Financeiro</h1>
           </div>
-          <span>R$: 1700,00</span>
+          <span>{{ 18000 | currency:'BRL':'symbol':'1.2-2' }}</span>
+
         </div>
         <div class="cardAmarelo">
           <div class="imgTitle">
             <img [src]="iconProduto" alt="estoque" />
             <h1>Estoque</h1>
           </div>
-          <span>R$: 1200,00</span>
+          <span>{{ 24000 | currency:'BRL':'symbol':'1.2-2' }}</span>
+
         </div>
         <div class="cardBlue">
           <div class="imgTitle">
@@ -40,14 +42,16 @@
             <img [src]="iconCusto" alt="vendas" />
             <h1>Receita</h1>
           </div>
-          <span>R$: 1200,00</span>
+          <span>{{ 10000 | currency:'BRL':'symbol':'1.2-2' }}</span>
+
         </div>
         <div class="largCard">
           <div class="imgTitle">
             <img [src]="iconCusto" alt="vendas" />
             <h1>Lucro</h1>
           </div>
-          <span>R$: 1200,00</span>
+          <span>{{ 3500 | currency:'BRL':'symbol':'1.2-2' }}</span>
+
         </div>
         <div class="largCard">
           <div class="imgTitle">
@@ -62,7 +66,7 @@
           <canvas #pieChart1></canvas>
         </div>
         <div class="graficsCard">
-          <canvas #pieChart2></canvas>
+          <canvas #lineChart></canvas>
         </div>
       </div>
     </div>
