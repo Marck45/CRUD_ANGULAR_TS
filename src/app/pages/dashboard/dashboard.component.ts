@@ -1,96 +1,71 @@
-import { Component, OnInit } from '@angular/core';
-import { Produtos } from 'src/app/models/produtos';
+import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { ProdutosAPiService } from 'src/app/services/produtos/produtos-api.service';
 import { LoadingService } from 'src/app/service/loading.service';
+import Chart from 'chart.js/auto';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent implements OnInit {
-  iconEstoque: string = '/assets/img/emestoque.png';
-  iconValor: string = ' /assets/img/valor.png';
-  totalVendas: string = '/assets/img/vendas.png';
-  maiorImg: string = '/assets/img/maior.svg';
-  custoImg: string = '/assets/img/custo.png';
-  valorImg: string = '/assets/img/aumento.png';
+export class DashboardComponent implements AfterViewInit {
+  mainImg: string = '/assets/img/Sistema cadastro.PNG';
+  iconVenda: string = '/assets/img/vendas.png';
+  iconSuporte: string = '/assets/img/suporte.png';
+  iconfinancas: string = '/assets/img/aumento.png';
+  iconProduto: string = '/assets/img/produtoImg.png';
+  iconCliente: string = '/assets/img/loginusuario.png';
+  iconCusto: string = '/assets/img/custo.png';
 
-  produto = {} as Produtos;
-  produtos: Produtos[] = [];
+  title: string = 'Relatorio de Estoque';
 
-  estoque: any = '';
-  somaValor: number = 0;
-  maiorValor: number = 0;
-  produtoComMaiorValor: any;
-  somaCusto: number = 0;
-  lucro: number = 0;
+  @ViewChild('pieChart1') private chartRef1!: ElementRef;
+  @ViewChild('lineChart') private lineChartRef!: ElementRef;
+
+  charts: any[] = [];
 
   constructor(private produtosAPiService: ProdutosAPiService, private loadingService: LoadingService) { }
 
 
-  ngOnInit(): void {
-    this.getProducts();
+  ngAfterViewInit(): void {
+    this.createChart(this.chartRef1.nativeElement, ['Finanças', 'Clientes', 'Estoque', 'Vendas', 'Lucro']);
+    this.createLineChart(this.lineChartRef.nativeElement, ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']);
   }
 
-
-
-  async getProducts() {
-    this.loadingService.show();
-
-
-    (await this.produtosAPiService.getProdutos()).subscribe(
-      (produtos: Produtos[]) => {
-
-        this.produtos = produtos;
-
-        this.estoque = this.produtos.length;
-
-        this.calcularSomaValores();
-        this.maiorEstoque();
-        this.calculaCustoEstoque()
-        this.lucroEstoque();
-
-        this.loadingService.hide();
-
-      },(error: any) => {
-        console.error('Erro ao carregar produtos', error);
-        this.loadingService.hide();
+  private createChart(element: any, labels: string[]): void {
+    const chart = new Chart(element, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Vendas Totais',
+          data: [12, 19, 3, 5, 2],
+          backgroundColor: [
+            'red',
+            'blue',
+            'yellow',
+            'green',
+            'purple'
+          ]
+        }]
       }
-    );
+    });
+
+    this.charts.push(chart);
   }
-  // calcula o valor total do estoque
-  async calcularSomaValores() {
-    this.produtos.forEach((produtos) => {
-      this.somaValor += produtos.valor;
+
+  private createLineChart(element: any, labels: string[]): void {
+    const lineChart = new Chart(element, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Vendas Mensais',
+          data: [100, 200, 150, 250, 180, 300],
+          borderColor: 'blue',
+          borderWidth: 2,
+        }]
+      }
     });
   }
 
-  // calcula o custo total do estoque
-  async calculaCustoEstoque() {
-    this.produtos.forEach((produtos) => {
-      this.somaCusto += produtos.custo;
-    });
-  }
-
-  // Possivel lucro do estoque
-
-  async lucroEstoque() {
-    this.lucro = this.somaValor - this.somaCusto;
-  }
-
-  // calcula o produto que tem maior
-  async maiorEstoque() {
-
-    for (let i = 0; i < this.produtos.length; i++) {
-      let produto = this.produtos[i];
-      let valor = produto.valor;
-      if (typeof valor === 'number' && valor > this.maiorValor) {
-        this.maiorValor = valor;
-        this.produtoComMaiorValor = {
-          nome: produto.nome,
-          valor: this.maiorValor
-        };
-      }
-    }
-  }
 }

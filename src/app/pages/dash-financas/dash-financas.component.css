@@ -1,6 +1,141 @@
 .wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.main-vendas {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cardRed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ff7f7f, #ff4c4c);
+  /* Gradiente de vermelho */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.cardGreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #7fff7f, #4cff4c);
+  /* Gradiente de verde */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.cardAmarelo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffff7f, #ffff4c);
+  /* Gradiente de amarelo */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.cardBlue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #7fc9ff, #4ca6ff);
+  /* Gradiente de azul */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.imgTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h1{
+  margin: 0;
+}
+
+img{
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+span{
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.fistCard, .grafics{
+  display: flex;
+  justify-content: space-between;
+}
+
+.grandCard{
+  display: flex;
+  justify-content: space-between;
+}
+
+.largCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 15rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 5px 5px 10px #a1a1a1,
+      -5px -5px 10px #ffffff;
+}
+
+.graficsCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 15rem;
+  width: 25rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 5px 5px 10px #a1a1a1,
+      -5px -5px 10px #ffffff;
 }
