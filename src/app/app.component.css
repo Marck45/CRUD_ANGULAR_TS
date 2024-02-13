@@ -16,12 +16,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  min-width: 90%;
   margin-top: 5rem;
 }
 
 .perfil-cad {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
 }
