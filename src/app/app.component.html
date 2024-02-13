@@ -1,11 +1,14 @@
 <app-login *ngIf="!(auth.isAuthenticated$ | async)"></app-login>
 
-<div class="main-container" *ngIf="auth.isAuthenticated$ | async" >
+<div class="main-container" *ngIf="auth.isAuthenticated$ | async">
   <div class="menuside">
     <app-menu-side></app-menu-side>
   </div>
   <div class="main-conteudo">
-    <router-outlet></router-outlet>
+    <div class="perfil">
+      <router-outlet></router-outlet>
+      <app-pefil-cad class="perfil-cad"></app-pefil-cad>
+    </div>
     <app-loading-page [isLoading]="isLoading"></app-loading-page>
   </div>
 </div>

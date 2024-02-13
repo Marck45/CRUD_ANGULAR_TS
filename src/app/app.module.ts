@@ -44,6 +44,7 @@ import { PagePlanosComponent } from './component/page-planos/page-planos.compone
 import { PageContactComponent } from './component/page-contact/page-contact.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { PopUpComponent } from './component/pop-up/pop-up.component';
+import { PefilCadComponent } from './component/pefil-cad/pefil-cad.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { PopUpComponent } from './component/pop-up/pop-up.component';
     PageContactComponent,
     FooterComponent,
     PopUpComponent,
+    PefilCadComponent,
   ],
   imports: [
     BrowserModule,

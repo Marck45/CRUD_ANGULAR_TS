@@ -1,0 +1,20 @@
+<div>
+  <li class="toggleMenu" (click)="toggleSubmenu('dashboard')">
+    <a>
+      <div [ngClass]="{ 'hide-image': submenu === 'dashboard' }">
+        <img [src]="iconLogin" alt="Dashboard" />
+      </div>
+      <div class="area2">
+        <ul *ngIf="(submenu === 'dashboard') && (auth.user$ | async) as user">
+          <h1>PERFIL</h1>
+          <li class="opt2">{{ user.name }}</li>
+          <li class="opt2">{{ user.email }}</li>
+          <li class="opt2"><a (click)="onLogoutClick()" routerLink="dashFinancas">LogOut</a></li>
+        </ul>
+      </div>
+    </a>
+  </li>
+</div>
+
+
+

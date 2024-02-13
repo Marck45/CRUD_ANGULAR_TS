@@ -13,6 +13,21 @@
 }
 
 .main-conteudo{
-    width: 85%;
+    width: 100%;
     margin-top: 5rem;
+}
+
+.perfil{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.perfil-cad{
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
