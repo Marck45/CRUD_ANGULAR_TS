@@ -41,11 +41,4 @@ export class MenuSideComponent implements OnInit {
       this.submenu = submenuName; // Abre o submenu clicado
     }
   }
-
-  onLogoutClick(){
-    this.auth.logout({ logoutParams: { returnTo: document.location.origin } })
-
-    this.router.navigate(['']);
-  }
-
 }
