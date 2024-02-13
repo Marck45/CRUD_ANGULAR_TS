@@ -1,33 +1,27 @@
-.main-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    width: 100%;
-    height: 100vh;
-}
-
-.menuside{
-    width: 15%;
-    margin-top: 1rem;
-}
-
-.main-conteudo{
-    width: 100%;
-    margin-top: 5rem;
-}
-
-.perfil{
+.main-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: start;
   width: 100%;
+  height: 100vh;
 }
 
-.perfil-cad{
+.menuside {
+  width: 15%;
+  margin-top: 1rem;
+}
+
+.main-conteudo {
   display: flex;
-  width: 30%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.perfil-cad {
+  display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 2rem;
 }

@@ -1,7 +1,8 @@
 import { NgModule,  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+
 
 import { AppComponent } from './app.component';
 import { FormsProductComponent } from './component/forms-product/forms-product.component';
@@ -45,6 +46,7 @@ import { PageContactComponent } from './component/page-contact/page-contact.comp
 import { FooterComponent } from './component/footer/footer.component';
 import { PopUpComponent } from './component/pop-up/pop-up.component';
 import { PefilCadComponent } from './component/pefil-cad/pefil-cad.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -100,6 +102,7 @@ import { PefilCadComponent } from './component/pefil-cad/pefil-cad.component';
         redirect_uri: window.location.origin
       }
     }),
+    NgChartsModule,
   ],
   providers: [
   ],

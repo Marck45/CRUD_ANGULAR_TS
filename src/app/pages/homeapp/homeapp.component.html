@@ -1,19 +1,70 @@
 <main class="wrapper">
-  <app-title-page></app-title-page>
-  <div class="text-img">
-    <div class="main-apresentacao">
-      <p>
-        O EasyMarket é um sistema de gestão especialmente projetado para
-        pequenos mercados. Com uma interface intuitiva e funcionalidades
-        abrangentes, o EasyMarket simplifica o controle de clientes, vendas,
-        estoque e compras.Simplifique suas operações e potencialize o sucesso do seu
-        negocio com o EasyMarket.
-      </p>
-    </div>
-    <div class="main-img">
-      <div class="img1"><img [src]="mainImg" alt="imagem principal do sistema" /></div>
-      <div class="img2"><img [src]="mainImg" alt="imagem principal do sistema" /></div>
-      <div class="img3"><img [src]="mainImg" alt="imagem principal do sistema" /></div>
+  <app-title-page [titleText]="title"></app-title-page>
+
+  <div class="container">
+    <!-- vendas -->
+    <div class="main-vendas">
+      <div class="fistCard">
+        <div class="cardGreen">
+          <div class="imgTitle">
+            <img [src]="iconVenda" alt="vendas" />
+            <h1>Vendas</h1>
+          </div>
+          <span>R$: 1200,00</span>
+        </div>
+        <div class="cardRed">
+          <div class="imgTitle">
+            <img [src]="iconfinancas" alt="finanças" />
+            <h1>Financeiro</h1>
+          </div>
+          <span>R$: 1700,00</span>
+        </div>
+        <div class="cardAmarelo">
+          <div class="imgTitle">
+            <img [src]="iconProduto" alt="estoque" />
+            <h1>Estoque</h1>
+          </div>
+          <span>R$: 1200,00</span>
+        </div>
+        <div class="cardBlue">
+          <div class="imgTitle">
+            <img [src]="iconCliente" alt="clientes" />
+            <h1>Clientes</h1>
+          </div>
+          <span>50</span>
+        </div>
+      </div>
+      <div class="grandCard">
+        <div class="largCard">
+          <div class="imgTitle">
+            <img [src]="iconCusto" alt="vendas" />
+            <h1>Receita</h1>
+          </div>
+          <span>R$: 1200,00</span>
+        </div>
+        <div class="largCard">
+          <div class="imgTitle">
+            <img [src]="iconCusto" alt="vendas" />
+            <h1>Lucro</h1>
+          </div>
+          <span>R$: 1200,00</span>
+        </div>
+        <div class="largCard">
+          <div class="imgTitle">
+            <img [src]="iconCusto" alt="vendas" />
+            <h1>% de Crecimento</h1>
+          </div>
+          <span>7%</span>
+        </div>
+      </div>
+      <div class="grafics">
+        <div class="graficsCard">
+          <canvas #pieChart1></canvas>
+        </div>
+        <div class="graficsCard">
+          <canvas #pieChart2></canvas>
+        </div>
+      </div>
     </div>
   </div>
 </main>

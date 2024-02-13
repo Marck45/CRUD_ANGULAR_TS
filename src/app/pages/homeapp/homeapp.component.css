@@ -5,48 +5,137 @@
   align-items: center;
 }
 
-.text-img {
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  max-width: 70%;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
-.main-img {
-  border-radius: 25px;
-  max-height: 70vh;
+.main-vendas {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cardRed {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.img1, .img2, .img3 {
-  margin-bottom: 1rem;
-  width: 50%;
-}
-
-.main-img img {
-  border-radius: 25px;
-  max-width: 100%;
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 5px 5px 10px #a1a1a1,
-    -5px -5px 10px #ffffff;
-}
-
-.main-apresentacao {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 80%;
-  margin-right: 5rem;
-}
-
-.main-apresentacao p {
-  font-weight: bold;
-  font-size: 18px;
-  color: #9733be;
   padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ff7f7f, #ff4c4c);
+  /* Gradiente de vermelho */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.cardGreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #7fff7f, #4cff4c);
+  /* Gradiente de verde */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.cardAmarelo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffff7f, #ffff4c);
+  /* Gradiente de amarelo */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.cardBlue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #7fc9ff, #4ca6ff);
+  /* Gradiente de azul */
+  box-shadow: 5px 5px 10px #a1a1a1, -5px -5px 10px #ffffff;
+}
+
+.imgTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h1{
+  margin: 0;
+}
+
+img{
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+span{
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.fistCard, .grafics{
+  display: flex;
+  justify-content: space-between;
+}
+
+.grandCard{
+  display: flex;
+  justify-content: space-between;
+}
+
+.largCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  width: 15rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 5px 5px 10px #a1a1a1,
+      -5px -5px 10px #ffffff;
+}
+
+.graficsCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  height: 15rem;
+  width: 25rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 5px 5px 10px #a1a1a1,
+      -5px -5px 10px #ffffff;
 }
