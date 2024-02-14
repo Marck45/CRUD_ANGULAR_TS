@@ -8,6 +8,7 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./pefil-cad.component.css']
 })
 export class PefilCadComponent {
+[x: string]: any;
 
   iconLogin:string = '/assets/img/login.png';
 

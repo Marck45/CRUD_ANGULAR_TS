@@ -26,6 +26,8 @@ h1{
 .toggleMenu ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -48,12 +50,21 @@ h1{
 .opt2 {
   font-size: 0.75rem;
   font-weight: bolder;
-  padding: 0.4rem;
+  padding: 0.5rem;
   text-transform: uppercase;
+
 }
 
 .opt2:hover {
   background-color: #3ad0e8;
+  border-radius: 25px;
+}
+
+.profile-picture{
+  display: flex;
+  align-items: center;
+  width: 50px;
+  margin-bottom: 0.75rem;
   border-radius: 25px;
 }
 

@@ -7,9 +7,11 @@
       <div class="area2">
         <ul *ngIf="(submenu === 'dashboard') && (auth.user$ | async) as user">
           <h1>PERFIL</h1>
+          <img class="profile-picture" [src]="user.picture" alt="Perfil de {{ user.name }}">
           <li class="opt2">{{ user.name }}</li>
-          <li class="opt2">{{ user.email }}</li>
-          <li class="opt2"><a (click)="onLogoutClick()" routerLink="dashFinancas">LogOut</a></li>
+          <li class="opt2">{{ user.nickname}}</li>
+          <li class="opt2"><a href="/configuracao">Configuração</a></li>
+          <li class="opt2"><a (click)="onLogoutClick()">LogOut</a></li>
         </ul>
       </div>
     </a>
