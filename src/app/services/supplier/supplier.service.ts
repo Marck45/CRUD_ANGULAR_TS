@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { Observable, retry, catchError, throwError } from 'rxjs';
 import { Supplier } from 'src/app/models/supplier';
 
@@ -11,7 +12,7 @@ export class SupplierService {
   url = 'http://localhost:3000/supplier'
 
    // injetando o HttpClient
-   constructor(private httpClient: HttpClient) { }
+   constructor(private httpClient: HttpClient, private auth: AuthService) { }
 
    //  Headers
    httpOptions = {
@@ -69,4 +70,3 @@ export class SupplierService {
    };
 
  }
-

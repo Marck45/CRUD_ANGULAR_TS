@@ -2,6 +2,8 @@
 
   <h1>Experimente durante 15 dias</h1>
 
+  <app-notification style="max-width: 50%;"></app-notification>
+
   <form class="form" [formGroup]="formLeads" (ngSubmit)="onSubmitLeads()">
 
     <label>
@@ -10,10 +12,12 @@
         type="text"
         name="name"
         formControlName="name"
-        value=""
-        required=""
+        required
       />
       <span>Nome</span>
+      <div *ngIf="formLeads.get('name')?.hasError('required') && formLeads.get('name')?.touched" class="error-message">
+        Nome é obrigatório.
+      </div>
     </label>
 
     <label>
@@ -22,10 +26,15 @@
         type="email"
         name="email"
         formControlName="email"
-        value=""
-        required=""
+        required
       />
       <span>E-mail</span>
+      <div *ngIf="formLeads.get('email')?.hasError('required') && formLeads.get('email')?.touched" class="error-message">
+        E-mail é obrigatório.
+      </div>
+      <div *ngIf="formLeads.get('email')?.hasError('email') && formLeads.get('email')?.touched" class="error-message">
+        E-mail inválido.
+      </div>
     </label>
 
     <label>
@@ -34,22 +43,27 @@
         type="phone"
         name="phone"
         formControlName="phone"
-        value=""
-        required=""
+        required
       />
       <span>DDD + Telefone</span>
+      <div *ngIf="formLeads.get('phone')?.hasError('required') && formLeads.get('phone')?.touched" class="error-message">
+        Telefone é obrigatório.
+      </div>
     </label>
     <label>
       <textarea
         class="input"
         name="description"
         formControlName="description"
-        required=""
+        required
       ></textarea>
       <span>Mensagem</span>
+      <div *ngIf="formLeads.get('description')?.hasError('required') && formLeads.get('description')?.touched" class="error-message">
+        Mensagem é obrigatória.
+      </div>
     </label>
 
     <p>Ao continuar o cadastro você aceita nossa <strong>política de privacidade.</strong></p>
-    <app-button [buttonText]="textButton" type="submit"></app-button>
+    <app-button [buttonText]="textButton" type="submit" [disabled]="!formLeads.valid"></app-button>
   </form>
 </div>

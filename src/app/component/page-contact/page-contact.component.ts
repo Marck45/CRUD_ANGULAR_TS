@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Leads } from 'src/app/models/leads';
 import { LoadingService } from 'src/app/service/loading.service';
 import { NotificationService } from 'src/app/service/notification/notification.service';
@@ -19,7 +19,7 @@ export class PageContactComponent implements OnInit {
   lead = {} as Leads;
   leads: Leads[] = []
 
-  constructor( private loadingService: LoadingService, private notificationService: NotificationService, private LeadsService: LeadsService){}
+  constructor(private loadingService: LoadingService, private notificationService: NotificationService, private LeadsService: LeadsService) {}
 
   ngOnInit(): void {
     this.createFormLeads();
@@ -28,10 +28,10 @@ export class PageContactComponent implements OnInit {
 
   createFormLeads() {
     this.formLeads = new FormGroup({
-      name: new FormControl(),
-      email: new FormControl(),
-      phone: new FormControl(),
-      description: new FormControl(),
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
     });
   }
 
@@ -39,7 +39,7 @@ export class PageContactComponent implements OnInit {
     this.createLeads(this.formLeads.value);
   }
 
-  async createLeads(formLeads: any){
+  async createLeads(formLeads: any) {
     this.loadingService.show(); // Mostra o indicador de carregamento
 
     const lead = {
@@ -63,5 +63,4 @@ export class PageContactComponent implements OnInit {
 
     this.createFormLeads();
   }
-
 }
